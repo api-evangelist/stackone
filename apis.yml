@@ -15,7 +15,8 @@ apis:
       products, and AI Agent Actions. Ship hundreds of integrations in days. 
 name: StackOne
 tags:
-  - API
+  - Integrations
+  - iPaaS
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -32,3 +33,39 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
+common:
+  - name: GitHub Organization
+    url: https://github.com/StackOneHQ
+    type: GitHubOrganization
+  - name: StackOne | The Universal Integration Layer for Modern Products
+    description: 'null'
+    url: https://www.stackone.com/
+    type: Website
+  - name: Case Studies - Learn Why Product Teams Love Building with StackOne
+    description: 'null'
+    url: https://www.stackone.com/case-studies
+    type: CaseStudies
+  - name: Blog - The Knowledge Hub for Unified APIs & Integration Expertise
+    description: 'null'
+    url: https://www.stackone.com/blog
+    type: Blog
+  - name: Changelog - Whats New?
+    description: 'null'
+    url: https://www.stackone.com/changelog
+    type: ChangeLog
+  - name: Events - Upcoming Events at StackOne
+    description: 'null'
+    url: https://www.stackone.com/events
+    type: Events
+  - name: StackOne Basics - Stackone
+    description: 'null'
+    url: https://docs.stackone.com/guides/stackone-basics
+    type: Documentation
+  - name: Getting Started - Stackone
+    description: 'null'
+    url: https://docs.stackone.com/agents/guides/getting-started
+    type: GettingStarted
+  - name: Company - We Fuel Innovation by Connecting Software
+    description: 'null'
+    url: https://www.stackone.com/company
+    type: About
