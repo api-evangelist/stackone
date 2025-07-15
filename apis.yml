@@ -5,7 +5,8 @@ apis:
   - aid: stackone:stackone
     name: StackOne
     tags:
-      - API
+      - Integrations
+      - iPaaS
     humanURL: ' https://www.stackone.com/'
     properties:
       - url: ' https://www.stackone.com/'
@@ -20,6 +21,42 @@ tags:
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
+common:
+  - url: https://github.com/StackOneHQ
+    name: GitHub Organization
+    type: GitHubOrganization
+  - url: https://www.stackone.com/
+    name: StackOne | The Universal Integration Layer for Modern Products
+    type: Website
+    description: 'null'
+  - url: https://www.stackone.com/case-studies
+    name: Case Studies - Learn Why Product Teams Love Building with StackOne
+    type: CaseStudies
+    description: 'null'
+  - url: https://www.stackone.com/blog
+    name: Blog - The Knowledge Hub for Unified APIs & Integration Expertise
+    type: Blog
+    description: 'null'
+  - url: https://www.stackone.com/changelog
+    name: Changelog - Whats New?
+    type: ChangeLog
+    description: 'null'
+  - url: https://www.stackone.com/events
+    name: Events - Upcoming Events at StackOne
+    type: Events
+    description: 'null'
+  - url: https://docs.stackone.com/guides/stackone-basics
+    name: StackOne Basics - Stackone
+    type: Documentation
+    description: 'null'
+  - url: https://docs.stackone.com/agents/guides/getting-started
+    name: Getting Started - Stackone
+    type: GettingStarted
+    description: 'null'
+  - url: https://www.stackone.com/company
+    name: Company - We Fuel Innovation by Connecting Software
+    type: About
+    description: 'null'
 created: '2025-06-05'
 modified: '2025-07-15'
 position: Consuming
@@ -33,39 +70,3 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
-common:
-  - name: GitHub Organization
-    url: https://github.com/StackOneHQ
-    type: GitHubOrganization
-  - name: StackOne | The Universal Integration Layer for Modern Products
-    description: 'null'
-    url: https://www.stackone.com/
-    type: Website
-  - name: Case Studies - Learn Why Product Teams Love Building with StackOne
-    description: 'null'
-    url: https://www.stackone.com/case-studies
-    type: CaseStudies
-  - name: Blog - The Knowledge Hub for Unified APIs & Integration Expertise
-    description: 'null'
-    url: https://www.stackone.com/blog
-    type: Blog
-  - name: Changelog - Whats New?
-    description: 'null'
-    url: https://www.stackone.com/changelog
-    type: ChangeLog
-  - name: Events - Upcoming Events at StackOne
-    description: 'null'
-    url: https://www.stackone.com/events
-    type: Events
-  - name: StackOne Basics - Stackone
-    description: 'null'
-    url: https://docs.stackone.com/guides/stackone-basics
-    type: Documentation
-  - name: Getting Started - Stackone
-    description: 'null'
-    url: https://docs.stackone.com/agents/guides/getting-started
-    type: GettingStarted
-  - name: Company - We Fuel Innovation by Connecting Software
-    description: 'null'
-    url: https://www.stackone.com/company
-    type: About
