@@ -418,6 +418,8 @@ common:
 created: '2025-06-05'
 modified: '2025-07-15'
 position: Consuming
+segments:
+  - iPaaS
 description: >-
   StackOne is an AI-powered embedded integration platform as a service (iPaaS)
   designed to simplify and accelerate how SaaS vendors and AI agents connect
