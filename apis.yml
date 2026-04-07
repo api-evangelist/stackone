@@ -17,9 +17,9 @@ apis:
   - aid: stackone:hris-api
     name: StackOne Unified HRIS API
     tags:
+      - Employees
       - HRIS
       - Human Resources
-      - Employees
       - Unified API
     humanURL: https://docs.stackone.com/hris/introduction
     properties:
@@ -35,8 +35,8 @@ apis:
   - aid: stackone:ats-api
     name: StackOne Unified ATS API
     tags:
-      - ATS
       - Applicant Tracking
+      - ATS
       - Recruitment
       - Unified API
     humanURL: https://docs.stackone.com/ats/introduction
@@ -52,9 +52,9 @@ apis:
   - aid: stackone:crm-api
     name: StackOne Unified CRM API
     tags:
+      - Contacts
       - CRM
       - Customer Relationship Management
-      - Contacts
       - Unified API
     humanURL: https://docs.stackone.com/crm/introduction
     properties:
@@ -69,9 +69,9 @@ apis:
   - aid: stackone:lms-api
     name: StackOne Unified LMS API
     tags:
-      - LMS
-      - Learning Management
       - Courses
+      - Learning Management
+      - LMS
       - Unified API
     humanURL: https://docs.stackone.com/lms/introduction
     properties:
@@ -85,9 +85,9 @@ apis:
   - aid: stackone:iam-api
     name: StackOne Unified IAM API
     tags:
+      - Access Management
       - IAM
       - Identity
-      - Access Management
       - Unified API
     humanURL: https://docs.stackone.com/iam/introduction
     properties:
@@ -117,9 +117,9 @@ apis:
   - aid: stackone:marketing-api
     name: StackOne Unified Marketing API
     tags:
-      - Marketing
       - Campaigns
       - Email
+      - Marketing
       - SMS
       - Unified API
     humanURL: https://docs.stackone.com/marketing/introduction
@@ -133,9 +133,9 @@ apis:
   - aid: stackone:ticketing-api
     name: StackOne Unified Ticketing API
     tags:
-      - Ticketing
-      - Support
       - Helpdesk
+      - Support
+      - Ticketing
       - Unified API
     humanURL: https://docs.stackone.com/ticketing/introduction
     properties:
@@ -148,9 +148,9 @@ apis:
   - aid: stackone:messaging-api
     name: StackOne Unified Messaging API
     tags:
-      - Messaging
-      - Communication
       - Chat
+      - Communication
+      - Messaging
       - Unified API
     humanURL: https://docs.stackone.com/messaging/introduction
     properties:
@@ -163,9 +163,9 @@ apis:
   - aid: stackone:screening-api
     name: StackOne Unified Screening API
     tags:
-      - Screening
-      - Background Checks
       - Assessments
+      - Background Checks
+      - Screening
       - Unified API
     humanURL: https://docs.stackone.com/screening/introduction
     properties:
@@ -178,10 +178,10 @@ apis:
   - aid: stackone:platform-api
     name: StackOne Platform API
     tags:
-      - Platform
-      - Administration
-      - Actions
       - Accounts
+      - Actions
+      - Administration
+      - Platform
     humanURL: https://docs.stackone.com/reference/getting-started-with-your-api
     properties:
       - url: https://docs.stackone.com/reference/getting-started-with-your-api
