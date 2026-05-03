@@ -1,0 +1,267 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "StackOne People Operations"
+  description: >-
+    Unified workflow capability for HR and people operations using StackOne's
+    unified APIs. Combines HRIS (employee data, time-off, employments) and
+    ATS (candidates, jobs, applications) into a single people operations
+    interface. Designed for HR teams, people analytics, and AI agents managing
+    workforce data across multiple HR and recruitment platforms.
+  tags:
+    - Human Resources
+    - HRIS
+    - Recruitment
+    - Unified API
+    - People Operations
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+binds:
+  - namespace: env
+    keys:
+      STACKONE_API_KEY: STACKONE_API_KEY
+
+capability:
+  consumes:
+    - import: stackone
+      location: ./shared/stackone-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: stackone-people-api
+      description: "Unified REST API for people operations across HRIS and ATS platforms."
+      resources:
+        - path: /v1/employees
+          name: employees
+          description: "Employee management across HRIS systems"
+          operations:
+            - method: GET
+              name: list-employees
+              description: "List all employees"
+              call: "stackone.list-employees"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-employee
+              description: "Create a new employee"
+              call: "stackone.create-employee"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/employees/{id}
+          name: employee
+          description: "Single employee"
+          operations:
+            - method: GET
+              name: get-employee
+              description: "Get employee by ID"
+              call: "stackone.get-employee"
+              with:
+                id: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: PATCH
+              name: update-employee
+              description: "Update employee details"
+              call: "stackone.update-employee"
+              with:
+                id: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/time-off
+          name: time-off
+          description: "Time off requests"
+          operations:
+            - method: GET
+              name: list-time-off
+              description: "List time off requests"
+              call: "stackone.list-time-off"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-time-off
+              description: "Submit a time off request"
+              call: "stackone.create-time-off"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/candidates
+          name: candidates
+          description: "Recruitment candidates"
+          operations:
+            - method: GET
+              name: list-candidates
+              description: "List candidates from ATS"
+              call: "stackone.list-candidates"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/candidates/{id}
+          name: candidate
+          description: "Single candidate"
+          operations:
+            - method: GET
+              name: get-candidate
+              description: "Get candidate details"
+              call: "stackone.get-candidate"
+              with:
+                id: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/jobs
+          name: jobs
+          description: "Open job positions"
+          operations:
+            - method: GET
+              name: list-jobs
+              description: "List open jobs"
+              call: "stackone.list-jobs"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/applications
+          name: applications
+          description: "Job applications"
+          operations:
+            - method: GET
+              name: list-applications
+              description: "List job applications"
+              call: "stackone.list-applications"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: stackone-people-mcp
+      transport: http
+      description: "MCP server for AI-assisted people operations across HRIS and ATS systems."
+      tools:
+        - name: list-employees
+          description: "List all employees from a connected HRIS system (BambooHR, Workday, etc.)"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "stackone.list-employees"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-employee
+          description: "Get detailed information for a specific employee"
+          hints:
+            readOnly: true
+          call: "stackone.get-employee"
+          with:
+            id: "tools.employee_id"
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: create-employee
+          description: "Create a new employee record in the connected HRIS system"
+          hints:
+            readOnly: false
+          call: "stackone.create-employee"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: update-employee
+          description: "Update employee information in the connected HRIS system"
+          hints:
+            readOnly: false
+            idempotent: true
+          call: "stackone.update-employee"
+          with:
+            id: "tools.employee_id"
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-time-off
+          description: "List time off requests from the connected HRIS system"
+          hints:
+            readOnly: true
+          call: "stackone.list-time-off"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: create-time-off
+          description: "Submit a time off request for an employee"
+          hints:
+            readOnly: false
+          call: "stackone.create-time-off"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-candidates
+          description: "List recruitment candidates from the connected ATS system"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "stackone.list-candidates"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-candidate
+          description: "Get full profile for a recruitment candidate"
+          hints:
+            readOnly: true
+          call: "stackone.get-candidate"
+          with:
+            id: "tools.candidate_id"
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-jobs
+          description: "List open job positions from the connected ATS system"
+          hints:
+            readOnly: true
+          call: "stackone.list-jobs"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-applications
+          description: "List job applications across the connected ATS system"
+          hints:
+            readOnly: true
+          call: "stackone.list-applications"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."

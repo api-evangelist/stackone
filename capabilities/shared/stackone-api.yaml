@@ -1,0 +1,482 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "StackOne Unified API"
+  description: "StackOne Unified API covering platform (accounts, connect sessions), ATS (recruitment), HRIS (employees), CRM (contacts), and Marketing (campaigns/templates)."
+  tags:
+    - Integrations
+    - iPaaS
+    - Unified API
+    - Human Resources
+    - Recruitment
+    - CRM
+    - Marketing
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+binds:
+  - namespace: env
+    keys:
+      STACKONE_API_KEY: STACKONE_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: stackone
+      baseUri: https://api.stackone.com
+      description: "StackOne unified integration platform API"
+      authentication:
+        type: basic
+        username: "{{STACKONE_API_KEY}}"
+        password: ""
+      resources:
+        - name: accounts
+          path: /accounts
+          description: "Manage linked integration accounts"
+          operations:
+            - name: list-accounts
+              method: GET
+              description: "List all linked integration accounts"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-account
+              method: GET
+              description: "Get a specific linked account"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-account
+              method: DELETE
+              description: "Remove a linked account"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: connect-sessions
+          path: /connect_sessions
+          description: "Manage integration connect sessions"
+          operations:
+            - name: create-connect-session
+              method: POST
+              description: "Create a connect session for onboarding"
+              body:
+                type: json
+                data:
+                  provider: "{{tools.provider}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: hris-employees
+          path: /unified/hris/employees
+          description: "HRIS employee management"
+          operations:
+            - name: list-employees
+              method: GET
+              description: "List employees across HRIS systems"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+                  description: "StackOne account ID for the HRIS integration"
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                - name: page_size
+                  in: query
+                  type: integer
+                  required: false
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-employee
+              method: GET
+              description: "Get a specific employee"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-employee
+              method: POST
+              description: "Create a new employee"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              body:
+                type: json
+                data:
+                  first_name: "{{tools.first_name}}"
+                  last_name: "{{tools.last_name}}"
+                  email: "{{tools.email}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: update-employee
+              method: PATCH
+              description: "Update an employee"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              body:
+                type: json
+                data:
+                  fields: "{{tools.fields}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: hris-time-off
+          path: /unified/hris/time_off
+          description: "HRIS time off request management"
+          operations:
+            - name: list-time-off
+              method: GET
+              description: "List time off requests"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-time-off
+              method: POST
+              description: "Create a time off request"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              body:
+                type: json
+                data:
+                  employee_id: "{{tools.employee_id}}"
+                  type: "{{tools.type}}"
+                  start_date: "{{tools.start_date}}"
+                  end_date: "{{tools.end_date}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: ats-candidates
+          path: /unified/ats/candidates
+          description: "ATS candidate management"
+          operations:
+            - name: list-candidates
+              method: GET
+              description: "List candidates across ATS systems"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-candidate
+              method: GET
+              description: "Get a specific candidate"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: ats-jobs
+          path: /unified/ats/jobs
+          description: "ATS job management"
+          operations:
+            - name: list-jobs
+              method: GET
+              description: "List jobs across ATS systems"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-job
+              method: GET
+              description: "Get a specific job"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: ats-applications
+          path: /unified/ats/applications
+          description: "ATS application tracking"
+          operations:
+            - name: list-applications
+              method: GET
+              description: "List job applications"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-application
+              method: GET
+              description: "Get a specific application"
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  required: true
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: crm-contacts
+          path: /unified/crm/contacts
+          description: "CRM contact management"
+          operations:
+            - name: list-contacts
+              method: GET
+              description: "List contacts across CRM systems"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-contact
+              method: POST
+              description: "Create a new CRM contact"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              body:
+                type: json
+                data:
+                  first_name: "{{tools.first_name}}"
+                  last_name: "{{tools.last_name}}"
+                  email: "{{tools.email}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: marketing-campaigns
+          path: /unified/marketing/campaigns
+          description: "Marketing campaign management"
+          operations:
+            - name: list-campaigns
+              method: GET
+              description: "List campaigns across marketing platforms"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: proxy
+          path: /unified/proxy
+          description: "Proxy requests to provider APIs"
+          operations:
+            - name: proxy-request
+              method: POST
+              description: "Forward a request directly to a provider API"
+              inputParameters:
+                - name: x-account-id
+                  in: header
+                  type: string
+                  required: true
+              body:
+                type: json
+                data:
+                  path: "{{tools.path}}"
+                  method: "{{tools.method}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: stackone-rest
+      resources:
+        - path: /v1/accounts
+          name: accounts
+          operations:
+            - method: GET
+              name: list-accounts
+              description: "List linked accounts"
+              call: "stackone.list-accounts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/hris/employees
+          name: employees
+          operations:
+            - method: GET
+              name: list-employees
+              description: "List employees"
+              call: "stackone.list-employees"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/ats/candidates
+          name: candidates
+          operations:
+            - method: GET
+              name: list-candidates
+              description: "List candidates"
+              call: "stackone.list-candidates"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/crm/contacts
+          name: contacts
+          operations:
+            - method: GET
+              name: list-contacts
+              description: "List CRM contacts"
+              call: "stackone.list-contacts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: stackone-mcp
+      transport: http
+      tools:
+        - name: list-accounts
+          description: "List all StackOne linked integration accounts"
+          hints:
+            readOnly: true
+          call: "stackone.list-accounts"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-employees
+          description: "List employees from a connected HRIS system"
+          hints:
+            readOnly: true
+          call: "stackone.list-employees"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-candidates
+          description: "List candidates from a connected ATS system"
+          hints:
+            readOnly: true
+          call: "stackone.list-candidates"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-contacts
+          description: "List contacts from a connected CRM system"
+          hints:
+            readOnly: true
+          call: "stackone.list-contacts"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.stackone.com/schemas/hris/employee",
+  "title": "StackOne Employee",
+  "description": "A normalized employee record from the StackOne Unified HRIS API",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "description": "StackOne unified identifier" },
+    "remote_id": { "type": "string", "description": "Provider-native identifier" },
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "employment_type": { "type": "string" },
+    "start_date": { "type": "string", "format": "date" },
+    "department": { "type": "string" },
+    "job_title": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "avatar_url": { "type": "string", "format": "uri" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}

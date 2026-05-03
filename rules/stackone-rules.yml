@@ -1,0 +1,70 @@
+rules:
+  stackone-operation-ids:
+    description: All operations must have an operationId
+    message: 'Operation must have an operationId: {{path}}'
+    severity: error
+    given: '$.paths[*][*]'
+    then:
+      field: operationId
+      function: truthy
+
+  stackone-tags-required:
+    description: All operations must have at least one tag
+    message: 'Operation at {{path}} must have at least one tag'
+    severity: error
+    given: '$.paths[*][*]'
+    then:
+      field: tags
+      function: truthy
+
+  stackone-unified-path-prefix:
+    description: Unified API paths must start with /unified/{category}/
+    message: 'Unified API path {{path}} must begin with /unified/'
+    severity: warn
+    given: '$.paths[?(/unified/)][*]~'
+    then:
+      function: pattern
+      functionOptions:
+        match: '^/unified/'
+
+  stackone-v1-server:
+    description: StackOne API server must be api.stackone.com
+    message: 'Server URL must be https://api.stackone.com'
+    severity: error
+    given: '$.servers[*].url'
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://api\.stackone\.com'
+
+  stackone-bearer-auth:
+    description: Requests must use basic authentication
+    message: 'Operation {{path}} should use basic or bearer auth'
+    severity: warn
+    given: '$.components.securitySchemes'
+    then:
+      function: truthy
+
+  stackone-successful-response:
+    description: All operations must define at least one success response
+    message: 'Operation at {{path}} must define a 200, 201, or 204 response'
+    severity: error
+    given: '$.paths[*][*].responses'
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: ['200']
+            - required: ['201']
+            - required: ['204']
+
+  stackone-plural-collection-paths:
+    description: Collection resource paths must use plural nouns
+    message: 'Collection path {{path}} should use plural nouns'
+    severity: warn
+    given: '$.paths[*]~'
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: '/unified/[^/]+/[a-z]+$(?<!s)'

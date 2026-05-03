@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "stackone": "https://api.stackone.com/schema/",
+    "remote_id": "stackone:remoteIdentifier",
+    "account_id": "stackone:accountIdentifier",
+    "Employee": {
+      "@id": "schema:Person",
+      "@type": "@id"
+    },
+    "Candidate": {
+      "@id": "schema:Person",
+      "@type": "@id"
+    },
+    "Job": {
+      "@id": "schema:JobPosting",
+      "@type": "@id"
+    },
+    "Contact": {
+      "@id": "schema:Person",
+      "@type": "@id"
+    },
+    "Campaign": {
+      "@id": "schema:Event",
+      "@type": "@id"
+    },
+    "first_name": "schema:givenName",
+    "last_name": "schema:familyName",
+    "email": "schema:email",
+    "phone": "schema:telephone",
+    "job_title": "schema:jobTitle",
+    "department": "schema:department",
+    "start_date": "schema:startDate",
+    "created_at": "schema:dateCreated",
+    "updated_at": "schema:dateModified"
+  }
+}

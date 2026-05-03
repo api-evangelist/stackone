@@ -1,0 +1,85 @@
+vocabulary:
+  name: StackOne
+  description: Domain vocabulary for the StackOne unified integration platform
+  terms:
+    - term: Unified API
+      definition: >-
+        StackOne's normalized API layer that presents a consistent data model
+        and endpoint structure across multiple third-party SaaS providers of the
+        same category (e.g., all HRIS systems via one unified HRIS API).
+      aliases:
+        - Universal API
+        - Normalized API
+
+    - term: Account
+      definition: >-
+        A linked integration between a StackOne project and a third-party provider
+        (e.g., a specific BambooHR instance). Identified by an Account ID passed
+        in the x-account-id header.
+      aliases:
+        - Integration
+        - Connected Account
+
+    - term: Provider
+      definition: >-
+        A third-party SaaS application that StackOne connects to (e.g., Workday,
+        Salesforce, BambooHR, Greenhouse). StackOne normalizes data from hundreds
+        of providers.
+      aliases:
+        - Connector
+        - Integration Source
+
+    - term: Unified HRIS API
+      definition: >-
+        StackOne's unified interface for HR information systems. Normalizes employee,
+        employment, location, and time-off data across HR platforms.
+      aliases:
+        - HRIS API
+
+    - term: Unified ATS API
+      definition: >-
+        StackOne's unified interface for applicant tracking systems. Normalizes
+        candidates, jobs, applications, interviews, and offers across recruitment platforms.
+      aliases:
+        - ATS API
+
+    - term: Unified CRM API
+      definition: >-
+        StackOne's unified interface for customer relationship management systems.
+        Normalizes contacts, accounts, and lists across CRM platforms.
+      aliases:
+        - CRM API
+
+    - term: Connect Session
+      definition: >-
+        A temporary session used to onboard a new provider integration.
+        The connect session URL is presented to end users to authenticate and
+        authorize StackOne's access to their provider account.
+      aliases:
+        - OAuth Session
+        - Onboarding Session
+
+    - term: Remote ID
+      definition: >-
+        The native identifier of a resource in the provider's system (e.g.,
+        the BambooHR employee ID). StackOne assigns its own unified ID while
+        preserving the remote_id for reference.
+      aliases:
+        - Provider ID
+        - Native ID
+
+    - term: Proxy Request
+      definition: >-
+        A mechanism to forward a raw request to a provider API through StackOne,
+        bypassing the unified data model. Used for provider-specific operations
+        not covered by the unified APIs.
+      aliases:
+        - Pass-through Request
+
+    - term: AI Agent Actions
+      definition: >-
+        Pre-built StackOne actions for AI agents — structured tool calls that
+        map to provider APIs, with parameter normalization and multi-tenant routing.
+      aliases:
+        - Agent Actions
+        - AI Toolset

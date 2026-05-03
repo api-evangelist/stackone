@@ -7,10 +7,12 @@ apis:
     tags:
       - Integrations
       - iPaaS
-    humanURL: ' https://www.stackone.com/'
+    humanURL: https://www.stackone.com/
     properties:
-      - url: ' https://www.stackone.com/'
+      - url: https://www.stackone.com/
         type: Documentation
+      - url: https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/openapi/stackone-openapi.yml
+        type: OpenAPI
     description: >-
       One integration platform, two powerful interfaces: Unified APIs for SaaS
       products, and AI Agent Actions. Ship hundreds of integrations in days.

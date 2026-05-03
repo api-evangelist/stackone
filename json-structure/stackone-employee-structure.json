@@ -1,0 +1,19 @@
+{
+  "title": "StackOne Employee",
+  "description": "Normalized employee record returned by the StackOne Unified HRIS API",
+  "type": "object",
+  "fields": [
+    { "name": "id", "type": "string", "required": true, "description": "StackOne unified identifier" },
+    { "name": "remote_id", "type": "string", "description": "Provider-native identifier" },
+    { "name": "first_name", "type": "string" },
+    { "name": "last_name", "type": "string" },
+    { "name": "email", "type": "string", "format": "email" },
+    { "name": "employment_type", "type": "string" },
+    { "name": "start_date", "type": "string", "format": "date" },
+    { "name": "department", "type": "string" },
+    { "name": "job_title", "type": "string" },
+    { "name": "manager_id", "type": "string" },
+    { "name": "created_at", "type": "string", "format": "date-time" },
+    { "name": "updated_at", "type": "string", "format": "date-time" }
+  ]
+}

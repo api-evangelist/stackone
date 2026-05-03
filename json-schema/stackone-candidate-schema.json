@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.stackone.com/schemas/ats/candidate",
+  "title": "StackOne Candidate",
+  "description": "A normalized candidate record from the StackOne Unified ATS API",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "remote_id": { "type": "string" },
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "phone": { "type": "string" },
+    "location": { "type": "string" },
+    "resume_url": { "type": "string", "format": "uri" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}

@@ -1,0 +1,117 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "StackOne Customer Engagement"
+  description: >-
+    Unified workflow capability for customer-facing operations using StackOne's
+    unified APIs. Combines CRM (contacts, accounts, lists) and Marketing
+    (campaigns, email/push/omni-channel templates) for managing customer
+    relationships and multi-channel communications across platforms.
+    Designed for marketing teams, CRM administrators, and AI agents
+    automating customer outreach.
+  tags:
+    - CRM
+    - Marketing
+    - Customer Engagement
+    - Unified API
+    - Campaigns
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+binds:
+  - namespace: env
+    keys:
+      STACKONE_API_KEY: STACKONE_API_KEY
+
+capability:
+  consumes:
+    - import: stackone
+      location: ./shared/stackone-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8081
+      namespace: stackone-engagement-api
+      description: "Unified REST API for CRM and marketing operations."
+      resources:
+        - path: /v1/contacts
+          name: contacts
+          description: "CRM contacts"
+          operations:
+            - method: GET
+              name: list-contacts
+              description: "List CRM contacts"
+              call: "stackone.list-contacts"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-contact
+              description: "Create a new contact"
+              call: "stackone.create-contact"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/campaigns
+          name: campaigns
+          description: "Marketing campaigns"
+          operations:
+            - method: GET
+              name: list-campaigns
+              description: "List marketing campaigns"
+              call: "stackone.list-campaigns"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9091
+      namespace: stackone-engagement-mcp
+      transport: http
+      description: "MCP server for AI-assisted CRM and marketing operations."
+      tools:
+        - name: list-contacts
+          description: "List contacts from the connected CRM system (Salesforce, HubSpot, etc.)"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "stackone.list-contacts"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: create-contact
+          description: "Create a new contact in the connected CRM system"
+          hints:
+            readOnly: false
+          call: "stackone.create-contact"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-campaigns
+          description: "List marketing campaigns from the connected platform (Mailchimp, Braze, etc.)"
+          hints:
+            readOnly: true
+          call: "stackone.list-campaigns"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: proxy-request
+          description: "Proxy a custom request to any connected provider API"
+          hints:
+            readOnly: false
+          call: "stackone.proxy-request"
+          with:
+            x-account-id: "tools.account_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
