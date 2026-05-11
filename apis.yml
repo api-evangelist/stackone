@@ -700,6 +700,8 @@ common:
       - name: edrone
       - name: iCIMS
       - name: turbopuffer
+  - type: Integrations
+    url: https://www.stackone.com/connectors/
 created: '2025-06-05'
 modified: '2026-03-16'
 position: Consuming
@@ -711,6 +713,107 @@ description: >-
   with enterprise software. It combines a proprietary LLM-based agent with a
   real-time execution engine to automate and manage integrations no need for
   manual API wiring or data syncing.
+integrations:
+  - name: 1Password
+  - name: 360Learning
+  - name: ActiveCampaign
+  - name: Adobe Learning Manager
+  - name: Adobe PDF Services
+  - name: ADP Workforce Now
+  - name: Affinity
+  - name: Aha!
+  - name: Aircall
+  - name: Airship
+  - name: Airtable
+  - name: Algolia
+  - name: Amplemarket
+  - name: Amplitude
+  - name: Anthropic
+  - name: Apollo
+  - name: ApprovalMax
+  - name: Asana
+  - name: Ashby
+  - name: Attentive
+  - name: Attio
+  - name: Auth0
+  - name: Autodesk
+  - name: Azure Blob Storage
+  - name: Azure DevOps
+  - name: BambooHR
+  - name: Basecamp
+  - name: BigChange
+  - name: BigCommerce
+  - name: Bitbucket
+  - name: Bitly
+  - name: Box
+  - name: Brainier
+  - name: Braze
+  - name: BreatheHR
+  - name: BreezyHR
+  - name: Browserbase
+  - name: Bullhorn
+  - name: Cal.com
+  - name: Calendly
+  - name: Canva
+  - name: Capsule CRM
+  - name: Cascade HR
+  - name: CezanneHR
+  - name: Chargify (Maxio)
+  - name: CharlieHR
+  - name: CircleCI
+  - name: ClickUp
+  - name: Clockify
+  - name: Cloudflare
+  - name: Cohere
+  - name: Confluence
+  - name: Constant Contact
+  - name: Cornerstone
+  - name: Coursera
+  - name: Customer.io
+  - name: Databricks
+  - name: Datadog
+  - name: Demio
+  - name: Deputy
+  - name: Discord
+  - name: Discourse
+  - name: Dixa
+  - name: Docebo
+  - name: DocuSign
+  - name: Domo
+  - name: Drata
+  - name: Dropbox
+  - name: Dropbox Sign
+  - name: EasyLlama
+  - name: Easyship
+  - name: Elastic Cloud
+  - name: Envoy
+  - name: Eploy
+  - name: Eventbrite
+  - name: Expensify
+  - name: Factorial
+  - name: Fastbill
+  - name: FastSpring
+  - name: Fathom
+  - name: Figma
+  - name: Fireflies.ai
+  - name: Fivetran
+  - name: Fourth
+  - name: FreshBooks
+  - name: Freshdesk
+  - name: Freshsales
+  - name: Freshservice
+  - name: Front
+  - name: GitBook
+  - name: GitHub
+  - name: GitLab
+  - name: Globalization Partners
+  - name: Gmail
+  - name: Go1
+  - name: GoCardless
+  - name: Gong
+  - name: Google Analytics
+  - name: Google BigQuery
+  - name: Google Calendar
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
