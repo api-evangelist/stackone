@@ -197,7 +197,7 @@ name: StackOne
 tags:
   - Integrations
   - iPaaS
-type: Contract
+kind: contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
