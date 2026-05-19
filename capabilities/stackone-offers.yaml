@@ -1,0 +1,257 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Marketing — Offers
+  description: 'Marketing — Offers. 3 operations. Lead operation: List Offers. Self-contained Naftiko capability covering
+    one Stackone business surface.'
+  tags:
+  - Stackone
+  - Offers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    STACKONE_API_KEY: STACKONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: stackone-offers
+    baseUri: https://api.stackone.com
+    description: Marketing — Offers business capability. Self-contained, no shared references.
+    resources:
+    - name: unified-ats-offers
+      path: /unified/ats/offers
+      operations:
+      - name: atslistoffers
+        method: GET
+        description: List Offers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: atscreateoffer
+        method: POST
+        description: Creates an offer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-ats-offers-id
+      path: /unified/ats/offers/{id}
+      operations:
+      - name: atsgetoffer
+        method: GET
+        description: Get Offer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+    authentication:
+      type: basic
+      username: '{{env.STACKONE_USER}}'
+      password: '{{env.STACKONE_PASS}}'
+  exposes:
+  - type: rest
+    namespace: stackone-offers-rest
+    port: 8080
+    description: REST adapter for Marketing — Offers. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/unified/ats/offers
+      name: unified-ats-offers
+      description: REST surface for unified-ats-offers.
+      operations:
+      - method: GET
+        name: atslistoffers
+        description: List Offers
+        call: stackone-offers.atslistoffers
+        with:
+          x-account-id: rest.x-account-id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: atscreateoffer
+        description: Creates an offer
+        call: stackone-offers.atscreateoffer
+        with:
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/ats/offers/{id}
+      name: unified-ats-offers-id
+      description: REST surface for unified-ats-offers-id.
+      operations:
+      - method: GET
+        name: atsgetoffer
+        description: Get Offer
+        call: stackone-offers.atsgetoffer
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: stackone-offers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Marketing — Offers. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-offers
+      description: List Offers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-offers.atslistoffers
+      with:
+        x-account-id: tools.x-account-id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-offer
+      description: Creates an offer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: stackone-offers.atscreateoffer
+      with:
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-offer
+      description: Get Offer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-offers.atsgetoffer
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.

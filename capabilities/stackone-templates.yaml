@@ -1,0 +1,837 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Marketing — Templates
+  description: 'Marketing — Templates. 12 operations. Lead operation: List email templates. Self-contained Naftiko capability
+    covering one Stackone business surface.'
+  tags:
+  - Stackone
+  - Templates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    STACKONE_API_KEY: STACKONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: stackone-templates
+    baseUri: https://api.stackone.com
+    description: Marketing — Templates business capability. Self-contained, no shared references.
+    resources:
+    - name: unified-marketing-templates-email
+      path: /unified/marketing/templates/email
+      operations:
+      - name: marketinglistemailtemplates
+        method: GET
+        description: List email templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: marketingcreateemailtemplate
+        method: POST
+        description: Create email template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-marketing-templates-email-id
+      path: /unified/marketing/templates/email/{id}
+      operations:
+      - name: marketinggetemailtemplate
+        method: GET
+        description: Get email template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: marketingupdateemailtemplate
+        method: PATCH
+        description: Update email template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-marketing-templates-omni_channel
+      path: /unified/marketing/templates/omni_channel
+      operations:
+      - name: marketinglistomnichanneltemplates
+        method: GET
+        description: List omni-channel templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: marketingcreateomnichanneltemplate
+        method: POST
+        description: Create omni-channel template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-marketing-templates-omni_channel-id
+      path: /unified/marketing/templates/omni_channel/{id}
+      operations:
+      - name: marketinggetomnichanneltemplate
+        method: GET
+        description: Get omni-channel template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: marketingupdateomnichanneltemplate
+        method: PATCH
+        description: Update omni-channel template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-marketing-templates-push
+      path: /unified/marketing/templates/push
+      operations:
+      - name: marketinglistpushtemplates
+        method: GET
+        description: List push templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: marketingcreatepushtemplate
+        method: POST
+        description: Create push template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-marketing-templates-push-id
+      path: /unified/marketing/templates/push/{id}
+      operations:
+      - name: marketinggetpushtemplate
+        method: GET
+        description: Get push template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+      - name: marketingupdatepushtemplate
+        method: PATCH
+        description: Update push template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.STACKONE_USER}}'
+      password: '{{env.STACKONE_PASS}}'
+  exposes:
+  - type: rest
+    namespace: stackone-templates-rest
+    port: 8080
+    description: REST adapter for Marketing — Templates. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/unified/marketing/templates/email
+      name: unified-marketing-templates-email
+      description: REST surface for unified-marketing-templates-email.
+      operations:
+      - method: GET
+        name: marketinglistemailtemplates
+        description: List email templates
+        call: stackone-templates.marketinglistemailtemplates
+        with:
+          x-account-id: rest.x-account-id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: marketingcreateemailtemplate
+        description: Create email template
+        call: stackone-templates.marketingcreateemailtemplate
+        with:
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/marketing/templates/email/{id}
+      name: unified-marketing-templates-email-id
+      description: REST surface for unified-marketing-templates-email-id.
+      operations:
+      - method: GET
+        name: marketinggetemailtemplate
+        description: Get email template
+        call: stackone-templates.marketinggetemailtemplate
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: marketingupdateemailtemplate
+        description: Update email template
+        call: stackone-templates.marketingupdateemailtemplate
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/marketing/templates/omni-channel
+      name: unified-marketing-templates-omni-channel
+      description: REST surface for unified-marketing-templates-omni_channel.
+      operations:
+      - method: GET
+        name: marketinglistomnichanneltemplates
+        description: List omni-channel templates
+        call: stackone-templates.marketinglistomnichanneltemplates
+        with:
+          x-account-id: rest.x-account-id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: marketingcreateomnichanneltemplate
+        description: Create omni-channel template
+        call: stackone-templates.marketingcreateomnichanneltemplate
+        with:
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/marketing/templates/omni-channel/{id}
+      name: unified-marketing-templates-omni-channel-id
+      description: REST surface for unified-marketing-templates-omni_channel-id.
+      operations:
+      - method: GET
+        name: marketinggetomnichanneltemplate
+        description: Get omni-channel template
+        call: stackone-templates.marketinggetomnichanneltemplate
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: marketingupdateomnichanneltemplate
+        description: Update omni-channel template
+        call: stackone-templates.marketingupdateomnichanneltemplate
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/marketing/templates/push
+      name: unified-marketing-templates-push
+      description: REST surface for unified-marketing-templates-push.
+      operations:
+      - method: GET
+        name: marketinglistpushtemplates
+        description: List push templates
+        call: stackone-templates.marketinglistpushtemplates
+        with:
+          x-account-id: rest.x-account-id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: marketingcreatepushtemplate
+        description: Create push template
+        call: stackone-templates.marketingcreatepushtemplate
+        with:
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/marketing/templates/push/{id}
+      name: unified-marketing-templates-push-id
+      description: REST surface for unified-marketing-templates-push-id.
+      operations:
+      - method: GET
+        name: marketinggetpushtemplate
+        description: Get push template
+        call: stackone-templates.marketinggetpushtemplate
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: marketingupdatepushtemplate
+        description: Update push template
+        call: stackone-templates.marketingupdatepushtemplate
+        with:
+          x-account-id: rest.x-account-id
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: stackone-templates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Marketing — Templates. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-email-templates
+      description: List email templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketinglistemailtemplates
+      with:
+        x-account-id: tools.x-account-id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-email-template
+      description: Create email template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: stackone-templates.marketingcreateemailtemplate
+      with:
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-email-template
+      description: Get email template
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketinggetemailtemplate
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-email-template
+      description: Update email template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketingupdateemailtemplate
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-omni-channel-templates
+      description: List omni-channel templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketinglistomnichanneltemplates
+      with:
+        x-account-id: tools.x-account-id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-omni-channel-template
+      description: Create omni-channel template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: stackone-templates.marketingcreateomnichanneltemplate
+      with:
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-omni-channel-template
+      description: Get omni-channel template
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketinggetomnichanneltemplate
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-omni-channel-template
+      description: Update omni-channel template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketingupdateomnichanneltemplate
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-push-templates
+      description: List push templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketinglistpushtemplates
+      with:
+        x-account-id: tools.x-account-id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-push-template
+      description: Create push template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: stackone-templates.marketingcreatepushtemplate
+      with:
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-push-template
+      description: Get push template
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketinggetpushtemplate
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-push-template
+      description: Update push template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: stackone-templates.marketingupdatepushtemplate
+      with:
+        x-account-id: tools.x-account-id
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,541 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Marketing — Candidates
+  description: 'Marketing — Candidates. 7 operations. Lead operation: List Candidates. Self-contained Naftiko capability covering
+    one Stackone business surface.'
+  tags:
+  - Stackone
+  - Candidates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    STACKONE_API_KEY: STACKONE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: stackone-candidates
+    baseUri: https://api.stackone.com
+    description: Marketing — Candidates business capability. Self-contained, no shared references.
+    resources:
+    - name: unified-ats-candidates
+      path: /unified/ats/candidates
+      operations:
+      - name: atslistcandidates
+        method: GET
+        description: List Candidates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+      - name: atscreatecandidate
+        method: POST
+        description: Create Candidate (early access)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-ats-candidates-id
+      path: /unified/ats/candidates/{id}
+      operations:
+      - name: atsgetcandidate
+        method: GET
+        description: Get Candidate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+      - name: atsupdatecandidate
+        method: PATCH
+        description: Update Candidate (early access)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-ats-candidates-id-notes
+      path: /unified/ats/candidates/{id}/notes
+      operations:
+      - name: atslistcandidatenotes
+        method: GET
+        description: List Candidate Notes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+      - name: atscreatecandidatenote
+        method: POST
+        description: Create Candidate Note
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: unified-ats-candidates-id-notes-subResourceId
+      path: /unified/ats/candidates/{id}/notes/{subResourceId}
+      operations:
+      - name: atsgetcandidatenote
+        method: GET
+        description: Get Candidate Note
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: subResourceId
+          in: path
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: string
+          description: The page number of the results to fetch
+        - name: page_size
+          in: query
+          type: string
+          description: The number of results per page
+        - name: raw
+          in: query
+          type: boolean
+          description: Indicates that the raw request result is returned
+        - name: fields
+          in: query
+          type: string
+          description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        - name: sync_token
+          in: query
+          type: string
+          description: The sync token to select the only updated results
+        - name: updated_after
+          in: query
+          type: string
+          description: Use a string with a date to only select results updated after that given date
+        - name: proxy
+          in: query
+          type: object
+          description: Query parameters that can be used to pass through parameters to the underlying provider request by
+            surrounding them with "proxy" key
+        - name: x-account-id
+          in: header
+          type: string
+          description: The account identifier
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.STACKONE_USER}}'
+      password: '{{env.STACKONE_PASS}}'
+  exposes:
+  - type: rest
+    namespace: stackone-candidates-rest
+    port: 8080
+    description: REST adapter for Marketing — Candidates. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/unified/ats/candidates
+      name: unified-ats-candidates
+      description: REST surface for unified-ats-candidates.
+      operations:
+      - method: GET
+        name: atslistcandidates
+        description: List Candidates
+        call: stackone-candidates.atslistcandidates
+        with:
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+          x-account-id: rest.x-account-id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: atscreatecandidate
+        description: Create Candidate (early access)
+        call: stackone-candidates.atscreatecandidate
+        with:
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/ats/candidates/{id}
+      name: unified-ats-candidates-id
+      description: REST surface for unified-ats-candidates-id.
+      operations:
+      - method: GET
+        name: atsgetcandidate
+        description: Get Candidate
+        call: stackone-candidates.atsgetcandidate
+        with:
+          id: rest.id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+          x-account-id: rest.x-account-id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: atsupdatecandidate
+        description: Update Candidate (early access)
+        call: stackone-candidates.atsupdatecandidate
+        with:
+          id: rest.id
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/ats/candidates/{id}/notes
+      name: unified-ats-candidates-id-notes
+      description: REST surface for unified-ats-candidates-id-notes.
+      operations:
+      - method: GET
+        name: atslistcandidatenotes
+        description: List Candidate Notes
+        call: stackone-candidates.atslistcandidatenotes
+        with:
+          id: rest.id
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+          x-account-id: rest.x-account-id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: atscreatecandidatenote
+        description: Create Candidate Note
+        call: stackone-candidates.atscreatecandidatenote
+        with:
+          id: rest.id
+          x-account-id: rest.x-account-id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/unified/ats/candidates/{id}/notes/{subresourceid}
+      name: unified-ats-candidates-id-notes-subresourceid
+      description: REST surface for unified-ats-candidates-id-notes-subResourceId.
+      operations:
+      - method: GET
+        name: atsgetcandidatenote
+        description: Get Candidate Note
+        call: stackone-candidates.atsgetcandidatenote
+        with:
+          id: rest.id
+          subResourceId: rest.subResourceId
+          page: rest.page
+          page_size: rest.page_size
+          raw: rest.raw
+          fields: rest.fields
+          sync_token: rest.sync_token
+          updated_after: rest.updated_after
+          proxy: rest.proxy
+          x-account-id: rest.x-account-id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: stackone-candidates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Marketing — Candidates. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-candidates
+      description: List Candidates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-candidates.atslistcandidates
+      with:
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+        x-account-id: tools.x-account-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-candidate-early-access
+      description: Create Candidate (early access)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: stackone-candidates.atscreatecandidate
+      with:
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-candidate
+      description: Get Candidate
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-candidates.atsgetcandidate
+      with:
+        id: tools.id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+        x-account-id: tools.x-account-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-candidate-early-access
+      description: Update Candidate (early access)
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: stackone-candidates.atsupdatecandidate
+      with:
+        id: tools.id
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-candidate-notes
+      description: List Candidate Notes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-candidates.atslistcandidatenotes
+      with:
+        id: tools.id
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+        x-account-id: tools.x-account-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-candidate-note
+      description: Create Candidate Note
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: stackone-candidates.atscreatecandidatenote
+      with:
+        id: tools.id
+        x-account-id: tools.x-account-id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-candidate-note
+      description: Get Candidate Note
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: stackone-candidates.atsgetcandidatenote
+      with:
+        id: tools.id
+        subResourceId: tools.subResourceId
+        page: tools.page
+        page_size: tools.page_size
+        raw: tools.raw
+        fields: tools.fields
+        sync_token: tools.sync_token
+        updated_after: tools.updated_after
+        proxy: tools.proxy
+        x-account-id: tools.x-account-id
+      outputParameters:
+      - type: object
+        mapping: $.
