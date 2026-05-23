@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HrisCreateEmployeeRequestDto",
+  "title": "HrisCreateEmployeeRequestDto",
+  "type": "object",
+  "properties": {
+    "personal_email": {
+      "type": "string",
+      "description": "The employee personal email",
+      "example": "isaac.newton@example.com"
+    },
+    "hire_date": {
+      "type": "string",
+      "description": "The employee hire date",
+      "example": "2022-01-01"
+    },
+    "job_title": {
+      "type": "string",
+      "description": "The employee job title",
+      "example": "Physicist"
+    },
+    "work_email": {
+      "type": "string",
+      "description": "The employee work email",
+      "example": "newton@example.com"
+    },
+    "avatar": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Image"
+        }
+      ],
+      "description": "The employee avatar",
+      "example": "https://example.com/avatar.png"
+    },
+    "manager_id": {
+      "type": "string",
+      "description": "The employee manager ID",
+      "example": "67890"
+    },
+    "start_date": {
+      "type": "string",
+      "description": "The employee start date",
+      "example": "2022-01-01"
+    },
+    "ethnicity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EthnicityEnum"
+        }
+      ],
+      "description": "The employee ethnicity",
+      "example": "white"
+    },
+    "employment_contract_type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EmploymentScheduleTypeEnum"
+        }
+      ],
+      "description": "The employment work schedule type (e.g., full-time, part-time)",
+      "example": "full_time"
+    },
+    "employment_type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EmploymentTypeEnum"
+        }
+      ],
+      "description": "The employee employment type",
+      "example": "full_time"
+    },
+    "work_location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HrisLocationsCreateRequestDto"
+        }
+      ],
+      "description": "The employee work location"
+    },
+    "tenure": {
+      "type": "string",
+      "description": "The employee tenure",
+      "example": 2
+    },
+    "first_name": {
+      "type": "string",
+      "description": "The employee first name",
+      "example": "Issac"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "The employee company name",
+      "example": "Example Corp"
+    },
+    "employments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Employment"
+      },
+      "description": "The employee employments"
+    },
+    "work_phone_number": {
+      "type": "string",
+      "description": "The employee work phone number",
+      "example": "+1234567890"
+    },
+    "department": {
+      "type": "string",
+      "description": "The employee department",
+      "example": "Physics"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "The employee avatar Url",
+      "example": "https://example.com/avatar.png"
+    },
+    "birthday": {
+      "type": "string",
+      "description": "The employee birthday",
+      "example": "2023-06-14T00:00:00Z"
+    },
+    "name": {
+      "type": "string",
+      "description": "The employee name",
+      "example": "Issac Newton"
+    },
+    "employment_status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EmploymentStatusEnum"
+        }
+      ],
+      "description": "The employee employment status",
+      "example": "active"
+    },
+    "gender": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenderEnum"
+        }
+      ],
+      "description": "The employee gender",
+      "example": "male"
+    },
+    "home_location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HrisLocationsCreateRequestDto"
+        }
+      ],
+      "description": "The employee home location"
+    },
+    "termination_date": {
+      "type": "string",
+      "description": "The employee termination date",
+      "example": "2023-06-14T00:00:00Z"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "description": "The employee date_of_birth",
+      "example": "1990-01-01"
+    },
+    "personal_phone_number": {
+      "type": "string",
+      "description": "The employee personal phone number",
+      "example": "+1234567890"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "The employee display name",
+      "example": "Sir Issac Newton"
+    },
+    "work_anniversary": {
+      "type": "string",
+      "description": "The employee work anniversary",
+      "example": "2022-06-14T00:00:00Z"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "The employee last name",
+      "example": "Newton"
+    },
+    "marital_status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaritalStatusEnum"
+        }
+      ],
+      "description": "The employee marital status",
+      "example": "single"
+    },
+    "custom_fields": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EmployeeCustomFields"
+      },
+      "description": "The employee custom fields"
+    }
+  }
+}

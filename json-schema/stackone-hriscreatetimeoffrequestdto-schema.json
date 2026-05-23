@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/HrisCreateTimeOffRequestDto",
+  "title": "HrisCreateTimeOffRequestDto",
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeOffStatusEnum"
+        }
+      ],
+      "description": "The status of the time off request"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeOffTypeEnum"
+        }
+      ],
+      "description": "The type of the time off request"
+    },
+    "start_date": {
+      "type": "string",
+      "description": "The start date of the time off request"
+    },
+    "end_date": {
+      "type": "string",
+      "description": "The end date of the time off request"
+    },
+    "employee_id": {
+      "type": "string",
+      "description": "The employee ID",
+      "example": "1687-3"
+    },
+    "approver_id": {
+      "type": "string",
+      "description": "The approver ID",
+      "example": "1687-4"
+    }
+  }
+}

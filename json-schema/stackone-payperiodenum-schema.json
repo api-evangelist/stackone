@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PayPeriodEnum",
+  "title": "PayPeriodEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "hour",
+        "day",
+        "week",
+        "every_two_weeks",
+        "month",
+        "quarter",
+        "every_six_months",
+        "year",
+        "unmapped_value"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

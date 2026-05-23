@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NoteResult",
+  "title": "NoteResult",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/components/schemas/Note"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

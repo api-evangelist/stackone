@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmploymentStatusEnum",
+  "title": "EmploymentStatusEnum",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "enum": [
+        "active",
+        "pending",
+        "terminated",
+        "leave",
+        "unmapped_value"
+      ]
+    },
+    "source_value": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

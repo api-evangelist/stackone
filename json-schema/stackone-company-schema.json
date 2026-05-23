@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Company",
+  "title": "Company",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "description": "The created_at date",
+      "example": "2023-06-14T01:00:00Z"
+    },
+    "updated_at": {
+      "type": "string",
+      "description": "The updated_at date",
+      "example": "2023-06-14T01:00:00Z"
+    },
+    "id": {
+      "type": "string"
+    }
+  }
+}

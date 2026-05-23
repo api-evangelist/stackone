@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AttachmentType",
+  "title": "AttachmentType",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "resume",
+        "unmapped_value"
+      ]
+    }
+  }
+}

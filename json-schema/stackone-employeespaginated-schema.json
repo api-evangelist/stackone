@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmployeesPaginated",
+  "title": "EmployeesPaginated",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "next_page": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Employee"
+      }
+    }
+  },
+  "required": [
+    "next_page",
+    "data"
+  ]
+}

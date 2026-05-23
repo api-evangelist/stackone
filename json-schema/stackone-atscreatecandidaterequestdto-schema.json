@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AtsCreateCandidateRequestDto",
+  "title": "AtsCreateCandidateRequestDto",
+  "type": "object",
+  "properties": {
+    "last_name": {
+      "type": "string"
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CandidateEmail"
+      }
+    },
+    "phone": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "application_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "first_name",
+    "last_name",
+    "emails",
+    "title"
+  ]
+}

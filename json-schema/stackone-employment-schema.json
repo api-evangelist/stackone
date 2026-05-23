@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Employment",
+  "title": "Employment",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique ID of the employment",
+      "example": "123456"
+    },
+    "employment_contract_type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EmploymentScheduleTypeEnum"
+        }
+      ],
+      "description": "The employment work schedule type (e.g., full-time, part-time)",
+      "example": "full_time"
+    },
+    "job_title": {
+      "type": "string",
+      "description": "The job title of the employee",
+      "example": "Software Engineer"
+    },
+    "pay_rate": {
+      "type": "string",
+      "description": "The pay rate for the employee",
+      "example": "40.00"
+    },
+    "pay_currency": {
+      "type": "string",
+      "description": "The currency used for pay",
+      "example": "USD"
+    },
+    "created_at": {
+      "type": "string",
+      "description": "The created_at date",
+      "example": "2023-06-14T01:00:00Z"
+    },
+    "pay_period": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PayPeriodEnum"
+        }
+      ],
+      "description": "The pay period",
+      "example": "monthly"
+    },
+    "updated_at": {
+      "type": "string",
+      "description": "The updated_at date",
+      "example": "2023-06-14T01:00:00Z"
+    },
+    "employee_id": {
+      "type": "string",
+      "description": "The employee ID associated with this employment",
+      "example": "1687-3"
+    },
+    "employment_type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EmploymentTypeEnum"
+        }
+      ],
+      "description": "The type of employment (e.g., contractor, permanent)",
+      "example": "permanent"
+    },
+    "effective_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The effective date of the employment contract",
+      "example": "2023-07-01"
+    },
+    "pay_frequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PayFrequencyEnum"
+        }
+      ],
+      "description": "The pay frequency",
+      "example": "hourly"
+    }
+  },
+  "required": [
+    "employee_id"
+  ]
+}

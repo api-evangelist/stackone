@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Answer",
+  "title": "Answer",
+  "type": "object",
+  "properties": {
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/components/schemas/AnswerEnum"
+    }
+  },
+  "required": [
+    "values"
+  ]
+}

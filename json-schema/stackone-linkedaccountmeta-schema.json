@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LinkedAccountMeta",
+  "title": "LinkedAccountMeta",
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ats",
+        "hris",
+        "hris-legacy",
+        "crm",
+        "marketing",
+        "stackone"
+      ]
+    },
+    "models": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "provider",
+    "category",
+    "models"
+  ]
+}

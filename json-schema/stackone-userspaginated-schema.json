@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UsersPaginated",
+  "title": "UsersPaginated",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "next_page": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/User"
+      }
+    }
+  },
+  "required": [
+    "next_page",
+    "data",
+    "raw"
+  ]
+}

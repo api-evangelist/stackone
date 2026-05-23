@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Questionnaire",
+  "title": "Questionnaire",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "answers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Answer"
+      }
+    }
+  },
+  "required": [
+    "answers"
+  ]
+}

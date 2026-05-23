@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProxyRequestBody",
+  "title": "ProxyRequestBody",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "description": "The body of the request"
+    },
+    "url": {
+      "type": "string",
+      "description": "The base url of the request",
+      "default": "",
+      "example": "https://api.sample-integration.com/v1"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "get",
+        "post",
+        "put",
+        "delete",
+        "patch",
+        "job"
+      ],
+      "description": "The method of the request",
+      "default": "get"
+    },
+    "path": {
+      "type": "string",
+      "description": "The path of the request including any query paramters",
+      "default": "",
+      "example": "/employees/directory"
+    },
+    "headers": {
+      "type": "object",
+      "description": "The headers to send in the request",
+      "example": {
+        "Accept": "application/json"
+      }
+    }
+  }
+}

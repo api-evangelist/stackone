@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ConnectSession",
+  "title": "ConnectSession",
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ats",
+          "hris",
+          "hris-legacy",
+          "crm",
+          "marketing",
+          "stackone"
+        ]
+      },
+      "example": [
+        "ats",
+        "hris",
+        "hrisLegacy",
+        "crm",
+        "marketing",
+        "stackOne"
+      ]
+    },
+    "id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "origin_owner_name": {
+      "type": "string"
+    },
+    "origin_owner_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "origin_username": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "organization_id",
+    "project_id",
+    "provider",
+    "origin_owner_id",
+    "origin_owner_name",
+    "created_at"
+  ]
+}

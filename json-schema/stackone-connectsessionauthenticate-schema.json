@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ConnectSessionAuthenticate",
+  "title": "ConnectSessionAuthenticate",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "description": "The token to authenticate with"
+    }
+  },
+  "required": [
+    "token"
+  ]
+}

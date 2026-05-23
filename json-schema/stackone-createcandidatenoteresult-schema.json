@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateCandidateNoteResult",
+  "title": "CreateCandidateNoteResult",
+  "type": "object",
+  "properties": {
+    "statusCode": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "statusCode",
+    "message",
+    "timestamp"
+  ]
+}

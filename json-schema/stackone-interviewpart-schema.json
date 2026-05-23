@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InterviewPart",
+  "title": "InterviewPart",
+  "type": "object",
+  "properties": {
+    "meeting_provider": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string"
+    },
+    "interviewer_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "meeting_url": {
+      "type": "string"
+    }
+  }
+}

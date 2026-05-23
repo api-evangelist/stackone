@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AtsCreateOfferRequestDto",
+  "title": "AtsCreateOfferRequestDto",
+  "type": "object",
+  "properties": {
+    "offer_history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OfferHistory"
+      }
+    },
+    "application_id": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "offer_status": {
+      "$ref": "#/components/schemas/OfferStatusEnum"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "application_id",
+    "start_date",
+    "offer_status"
+  ]
+}

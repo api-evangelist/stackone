@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InterviewsResult",
+  "title": "InterviewsResult",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/components/schemas/Interview"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

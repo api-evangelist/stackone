@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JobResult",
+  "title": "JobResult",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "job": {
+      "$ref": "#/components/schemas/Job"
+    }
+  },
+  "required": [
+    "job"
+  ]
+}

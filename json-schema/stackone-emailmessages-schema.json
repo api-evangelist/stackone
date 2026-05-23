@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmailMessages",
+  "title": "EmailMessages",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "message_type": {
+      "$ref": "#/components/schemas/MessageTypeEnum"
+    },
+    "message_content": {
+      "$ref": "#/components/schemas/EmailMessageContents"
+    }
+  }
+}

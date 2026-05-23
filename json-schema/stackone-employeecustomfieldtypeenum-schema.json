@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmployeeCustomFieldTypeEnum",
+  "title": "EmployeeCustomFieldTypeEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "date",
+        "float",
+        "integer",
+        "list",
+        "text",
+        "unmapped_value"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

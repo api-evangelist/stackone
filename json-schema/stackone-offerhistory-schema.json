@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OfferHistory",
+  "title": "OfferHistory",
+  "type": "object",
+  "properties": {
+    "updated_at": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "start_date"
+  ]
+}

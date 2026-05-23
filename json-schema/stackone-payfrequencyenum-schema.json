@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PayFrequencyEnum",
+  "title": "PayFrequencyEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "hourly",
+        "weekly",
+        "bi_weekly",
+        "four_weekly",
+        "semi_monthly",
+        "monthly",
+        "bi_monthly",
+        "quarterly",
+        "semi_annually",
+        "yearly",
+        "thirteen_monthly",
+        "pro_rata",
+        "unmapped_value",
+        "half_yearly"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

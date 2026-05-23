@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TimeOffPaginated",
+  "title": "TimeOffPaginated",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "next_page": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TimeOff"
+      }
+    }
+  },
+  "required": [
+    "next_page",
+    "data"
+  ]
+}

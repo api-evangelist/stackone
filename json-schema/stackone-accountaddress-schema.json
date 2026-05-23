@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountAddress",
+  "title": "AccountAddress",
+  "type": "object",
+  "properties": {
+    "street_1": {
+      "type": "string"
+    },
+    "street_2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "location_type": {
+      "type": "string"
+    }
+  }
+}

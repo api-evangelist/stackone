@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EmploymentTypeEnum",
+  "title": "EmploymentTypeEnum",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "enum": [
+        "full_time",
+        "part_time",
+        "contractor",
+        "intern",
+        "permanent",
+        "apprentice",
+        "freelance",
+        "terminated",
+        "temporary",
+        "seasonal",
+        "volunteer",
+        "probation",
+        "internal",
+        "external",
+        "employer_of_record",
+        "unmapped_value"
+      ]
+    },
+    "source_value": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

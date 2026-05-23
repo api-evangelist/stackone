@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RejectedReasonTypeEnum",
+  "title": "RejectedReasonTypeEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "rejected_by_candidate",
+        "rejected_by_organization",
+        "other",
+        "unknown",
+        "unmapped_value"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

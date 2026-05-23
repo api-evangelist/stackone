@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NotesVisibilityEnum",
+  "title": "NotesVisibilityEnum",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "enum": [
+        "private",
+        "public"
+      ]
+    },
+    "source_value": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

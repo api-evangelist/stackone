@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TimeOffTypeEnum",
+  "title": "TimeOffTypeEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "sick",
+        "unmapped_value",
+        "vacation"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

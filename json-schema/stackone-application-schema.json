@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Application",
+  "title": "Application",
+  "type": "object",
+  "properties": {
+    "candidate": {
+      "$ref": "#/components/schemas/ApplicationCandidate"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "interview_stage_id": {
+      "type": "string"
+    },
+    "rejected_reason_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rejected_at": {
+      "type": "string"
+    },
+    "interview_stage": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/InterviewStage"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "rejected_reasons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RejectedReason"
+      }
+    },
+    "questionnaire": {
+      "$ref": "#/components/schemas/Questionnaire"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ApplicationAttachment"
+      }
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "location_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "application_status": {
+      "$ref": "#/components/schemas/ApplicationStatusEnum"
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "application_status",
+    "questionnaire",
+    "candidate"
+  ]
+}

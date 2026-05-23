@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Interview",
+  "title": "Interview",
+  "type": "object",
+  "properties": {
+    "application_id": {
+      "type": "string"
+    },
+    "end_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "interview_parts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/InterviewPart"
+      }
+    },
+    "interviewers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Interviewer"
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "interview_stage": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/InterviewStage"
+      }
+    },
+    "start_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "meeting_url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "interview_stage_id": {
+      "type": "string"
+    },
+    "interview_status": {
+      "$ref": "#/components/schemas/InterviewStatusEnum"
+    },
+    "interviewer_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "application_id",
+    "interview_stage_id",
+    "interview_status",
+    "interviewer_ids",
+    "start_at",
+    "end_at"
+  ]
+}

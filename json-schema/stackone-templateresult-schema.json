@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TemplateResult",
+  "title": "TemplateResult",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/components/schemas/Template"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

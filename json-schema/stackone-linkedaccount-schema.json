@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LinkedAccount",
+  "title": "LinkedAccount",
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "origin_owner_name": {
+      "type": "string"
+    },
+    "origin_username": {
+      "type": "string"
+    },
+    "credentials": {
+      "type": "object"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "origin_owner_id": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "provider",
+    "active",
+    "origin_owner_id",
+    "origin_owner_name",
+    "origin_username",
+    "created_at",
+    "updated_at"
+  ]
+}

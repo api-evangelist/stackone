@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Offer",
+  "title": "Offer",
+  "type": "object",
+  "properties": {
+    "offer_history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OfferHistory"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "offer_status": {
+      "$ref": "#/components/schemas/OfferStatusEnum"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "application_id": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "currency": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "application_id",
+    "start_date",
+    "offer_status"
+  ]
+}

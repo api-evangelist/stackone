@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RejectedReason",
+  "title": "RejectedReason",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "rejected_reason_type": {
+      "$ref": "#/components/schemas/RejectedReasonTypeEnum"
+    }
+  },
+  "required": [
+    "id",
+    "label",
+    "rejected_reason_type"
+  ]
+}

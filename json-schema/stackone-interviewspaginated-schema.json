@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InterviewsPaginated",
+  "title": "InterviewsPaginated",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Interview"
+      }
+    },
+    "raw": {
+      "type": "string"
+    },
+    "next_page": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "next_page",
+    "data"
+  ]
+}

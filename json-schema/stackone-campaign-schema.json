@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Campaign",
+  "title": "Campaign",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Message"
+      },
+      "example": [
+        {
+          "id": "message-id-1",
+          "message_content": {
+            "body": "This is an example SMS body.",
+            "from": "1-555-123-4567"
+          },
+          "message_type": {
+            "sourceValue": "sms-message",
+            "value": "sms"
+          },
+          "name": "SMS Message"
+        },
+        {
+          "id": "message-id-2",
+          "message_content": {
+            "body": "<h1>This is an example</h1>\n            <p>email body</p>",
+            "from": "Jane Smith",
+            "preheader": "This is the preheader of the email.",
+            "reply-to": "reply@example.com",
+            "subject": "Example Email Subject"
+          },
+          "message_type": {
+            "sourceValue": "email-message",
+            "value": "email"
+          },
+          "name": "Email Message"
+        },
+        {
+          "id": "message-id-3",
+          "message_content": {
+            "body": "This is an example push notification body."
+          },
+          "message_type": {
+            "sourceValue": "ios-push",
+            "value": "ios_push"
+          },
+          "name": "iOS Push Message"
+        }
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "email",
+          "sms",
+          "web_push",
+          "ios_push",
+          "android_push",
+          "unknown",
+          "unmapped_value"
+        ]
+      },
+      "example": [
+        "email",
+        "sms",
+        "ios_push",
+        "android_push"
+      ]
+    },
+    "first_sent_at": {
+      "type": "string"
+    },
+    "last_sent_at": {
+      "type": "string"
+    },
+    "archived": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "draft": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

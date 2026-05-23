@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateEmployeeResult",
+  "title": "CreateEmployeeResult",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "statusCode": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "statusCode",
+    "message",
+    "timestamp"
+  ]
+}

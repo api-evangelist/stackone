@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MessageTypeEnum",
+  "title": "MessageTypeEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "email",
+        "sms",
+        "web_push",
+        "ios_push",
+        "android_push",
+        "app_push",
+        "omni_channel",
+        "unknown",
+        "unmapped_value"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AnswerEnum",
+  "title": "AnswerEnum",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "enum": [
+        "short_text",
+        "long_text",
+        "attachment",
+        "multi_select",
+        "single_select",
+        "boolean",
+        "number",
+        "date"
+      ]
+    },
+    "source_value": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AtsCreateApplicationRequestDto",
+  "title": "AtsCreateApplicationRequestDto",
+  "type": "object",
+  "properties": {
+    "questionnaire": {
+      "$ref": "#/components/schemas/Questionnaire"
+    },
+    "candidate": {
+      "$ref": "#/components/schemas/ApplicationCandidate"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ApplicationAttachment"
+      }
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "location_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "application_status": {
+      "$ref": "#/components/schemas/ApplicationStatusEnum"
+    }
+  },
+  "required": [
+    "application_status",
+    "questionnaire",
+    "candidate"
+  ]
+}

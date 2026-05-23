@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/MarketingCreateTemplateRequestDto",
+  "title": "MarketingCreateTemplateRequestDto",
+  "type": "object",
+  "properties": {
+    "messages": {
+      "$ref": "#/components/schemas/Message"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

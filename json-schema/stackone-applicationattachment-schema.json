@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApplicationAttachment",
+  "title": "ApplicationAttachment",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "type": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AttachmentType"
+      }
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

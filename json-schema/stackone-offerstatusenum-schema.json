@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OfferStatusEnum",
+  "title": "OfferStatusEnum",
+  "type": "object",
+  "properties": {
+    "source_value": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "retracted",
+        "unmapped_value"
+      ]
+    }
+  },
+  "required": [
+    "value",
+    "source_value"
+  ]
+}

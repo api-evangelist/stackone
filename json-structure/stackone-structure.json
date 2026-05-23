@@ -1,0 +1,1914 @@
+{
+  "provider": "StackOne",
+  "providerId": "stackone",
+  "kind": "json-structure",
+  "description": "Structural overview of the StackOne API surface; extracted from openapi/.",
+  "schemaCount": 139,
+  "operationCount": 78,
+  "schemas": [
+    {
+      "name": "LinkedAccountMeta",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "provider",
+        "category",
+        "models"
+      ]
+    },
+    {
+      "name": "LinkedAccount",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "id",
+        "provider",
+        "active",
+        "origin_owner_id",
+        "origin_owner_name",
+        "origin_username",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "name": "ConnectSessionCreate",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "origin_owner_id",
+        "origin_owner_name"
+      ]
+    },
+    {
+      "name": "ProxyRequestBody",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "ConnectSessionAuthenticate",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "token"
+      ]
+    },
+    {
+      "name": "ConnectSession",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "id",
+        "organization_id",
+        "project_id",
+        "provider",
+        "origin_owner_id",
+        "origin_owner_name",
+        "created_at"
+      ]
+    },
+    {
+      "name": "ConnectSessionToken",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "id",
+        "organization_id",
+        "project_id",
+        "provider",
+        "origin_owner_id",
+        "origin_owner_name",
+        "created_at",
+        "token"
+      ]
+    },
+    {
+      "name": "AtsCreateNotesRequestDto",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "content",
+        "visibility"
+      ]
+    },
+    {
+      "name": "HRISLocation",
+      "type": "object",
+      "propertyCount": 13,
+      "required": []
+    },
+    {
+      "name": "UserResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data",
+        "raw"
+      ]
+    },
+    {
+      "name": "Note",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "content",
+        "visibility",
+        "created_at",
+        "updated_at",
+        "deleted_at"
+      ]
+    },
+    {
+      "name": "MaritalStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "EmploymentsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "InterviewStage",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "ApplicationCandidate",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "Compensation",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "EmploymentScheduleTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "InterviewStagesPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "DepartmentsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "CandidateEmail",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    {
+      "name": "Contact",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "ContactsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "User",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "email",
+        "first_name",
+        "last_name",
+        "name",
+        "phone"
+      ]
+    },
+    {
+      "name": "RejectedReasonResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "ISO3166_2SubDivisionEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "SocialLink",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "type",
+        "url"
+      ]
+    },
+    {
+      "name": "DepartmentResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "Department",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "Interview",
+      "type": "object",
+      "propertyCount": 13,
+      "required": [
+        "id",
+        "application_id",
+        "interview_stage_id",
+        "interview_status",
+        "interviewer_ids",
+        "start_at",
+        "end_at"
+      ]
+    },
+    {
+      "name": "InterviewStageResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "CreateTemplateResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "Answer",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "values"
+      ]
+    },
+    {
+      "name": "SmsMessageContents",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "body"
+      ]
+    },
+    {
+      "name": "EmployeesPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "EmploymentStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "HiringTeam",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "OffersPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "RejectedReasonTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "UpdateResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "CreateOfferResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "AnswerEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "CandidatesPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "NotesVisibilityEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "AccountResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "Location",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "AtsCreateCandidateRequestDto",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "name",
+        "first_name",
+        "last_name",
+        "emails",
+        "title"
+      ]
+    },
+    {
+      "name": "ATSLocation",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "AtsUpdateCandidatesRequestDto",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "ContactResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "JobPosting",
+      "type": "object",
+      "propertyCount": 15,
+      "required": [
+        "id"
+      ]
+    },
+    {
+      "name": "ListResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "CreateEmployeeResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "Application",
+      "type": "object",
+      "propertyCount": 16,
+      "required": [
+        "application_status",
+        "questionnaire",
+        "candidate"
+      ]
+    },
+    {
+      "name": "JobStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "ATSLocationResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "CandidateResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "EmailMessageContents",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "subject",
+        "body",
+        "from"
+      ]
+    },
+    {
+      "name": "MessageTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "Message",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "id",
+        "name",
+        "message_type"
+      ]
+    },
+    {
+      "name": "MarketingCreateEmailTemplateRequestDto",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "CreateTimeOffResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "JobPostingsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "Interviewer",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "id",
+        "first_name",
+        "last_name",
+        "name",
+        "email"
+      ]
+    },
+    {
+      "name": "EmailMessages",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "MarketingCreateTemplateRequestDto",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "EmployeeCustomFieldTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "JobPostingResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "InterviewsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "CrmCreateContactRequestDto",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "LocationTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "EmploymentResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "TimeOffTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "InterviewsResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "CampaignResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "GenderEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "CreateCandidateNoteResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "AtsCreateApplicationRequestDto",
+      "type": "object",
+      "propertyCount": 7,
+      "required": [
+        "application_status",
+        "questionnaire",
+        "candidate"
+      ]
+    },
+    {
+      "name": "Template",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "EmployeeResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "HRISLocationResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "HrisCreateEmployeeRequestDto",
+      "type": "object",
+      "propertyCount": 31,
+      "required": []
+    },
+    {
+      "name": "OfferStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "NoteResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "RejectedReason",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "id",
+        "label",
+        "rejected_reason_type"
+      ]
+    },
+    {
+      "name": "EthnicityEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "Offer",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "id",
+        "application_id",
+        "start_date",
+        "offer_status"
+      ]
+    },
+    {
+      "name": "Content",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "MarketingCreatePushTemplateRequestDto",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "PayFrequencyEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "EmploymentTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "PushMessages",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "CompaniesPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "ApplicationResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "CampaignsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "Campaign",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "HRISLocationsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Employee",
+      "type": "object",
+      "propertyCount": 34,
+      "required": []
+    },
+    {
+      "name": "JobResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "job"
+      ]
+    },
+    {
+      "name": "RejectedReasonsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "TimeOffStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "AtsUpdateApplicationRequestDto",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "AtsCreateOfferRequestDto",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "application_id",
+        "start_date",
+        "offer_status"
+      ]
+    },
+    {
+      "name": "AccountsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "TemplateResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "EmployeeCustomFields",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "OfferHistory",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "start_date"
+      ]
+    },
+    {
+      "name": "Questionnaire",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "answers"
+      ]
+    },
+    {
+      "name": "InterviewStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "NotesPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "Job",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "id",
+        "code",
+        "title",
+        "company_id",
+        "department_ids",
+        "location_ids",
+        "job_status",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "name": "TimeOff",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "InterviewPart",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "ATSLocationsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "AttachmentType",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ApplicationAttachment",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "PushMessageContents",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "body"
+      ]
+    },
+    {
+      "name": "HrisCreateTimeOffRequestDto",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "ApplicationsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "Account",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "id",
+        "owner_id",
+        "name"
+      ]
+    },
+    {
+      "name": "List",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "CreateResult",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "statusCode",
+        "message",
+        "timestamp"
+      ]
+    },
+    {
+      "name": "Candidate",
+      "type": "object",
+      "propertyCount": 14,
+      "required": [
+        "id",
+        "name",
+        "first_name",
+        "last_name",
+        "email",
+        "emails",
+        "social_links",
+        "title",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "name": "ListTypeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "Employment",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "employee_id"
+      ]
+    },
+    {
+      "name": "TimeOffPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "HrisLocationsCreateRequestDto",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "CompanyResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "TimeOffResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "CountryCodeEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "PayPeriodEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "ApplicationStatusEnum",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "value",
+        "source_value"
+      ]
+    },
+    {
+      "name": "ListsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "TemplatesPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "Company",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "OffersResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "data"
+      ]
+    },
+    {
+      "name": "JobsPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data"
+      ]
+    },
+    {
+      "name": "UsersPaginated",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "next_page",
+        "data",
+        "raw"
+      ]
+    },
+    {
+      "name": "AccountAddress",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "POST",
+      "path": "/connect_sessions/authenticate",
+      "operationId": "stackone_authenticate_connect_session",
+      "summary": "Authenticate Connect Session",
+      "tags": [
+        "Connect Sessions"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{id}/meta",
+      "operationId": "stackone_get_account_meta_info",
+      "summary": "Get meta information of the account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/proxy",
+      "operationId": "stackone_proxy_request",
+      "summary": "Proxy Request",
+      "tags": [
+        "Proxy"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/connect_sessions",
+      "operationId": "stackone_create_connect_session",
+      "summary": "Create Connect Session",
+      "tags": [
+        "Connect Sessions"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/accounts/{id}",
+      "operationId": "stackone_get_account",
+      "summary": "Get Account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts/{id}",
+      "operationId": "stackone_delete_account",
+      "summary": "Delete Account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/accounts",
+      "operationId": "stackone_list_linked_accounts",
+      "summary": "List Accounts",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/job_postings/{id}",
+      "operationId": "ats_get_job_posting",
+      "summary": "Get Job Posting",
+      "tags": [
+        "Job Postings"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/offers/{id}",
+      "operationId": "ats_get_offer",
+      "summary": "Get Offer",
+      "tags": [
+        "Offers"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/templates/omni_channel/{id}",
+      "operationId": "marketing_get_omni_channel_template",
+      "summary": "Get omni-channel template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/marketing/templates/omni_channel/{id}",
+      "operationId": "marketing_update_omni_channel_template",
+      "summary": "Update omni-channel template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/candidates",
+      "operationId": "ats_list_candidates",
+      "summary": "List Candidates",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/ats/candidates",
+      "operationId": "ats_create_candidate",
+      "summary": "Create Candidate (early access)",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/interviews/{id}",
+      "operationId": "ats_get_interview",
+      "summary": "Get Interview",
+      "tags": [
+        "Interviews"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/applications/{id}",
+      "operationId": "ats_get_application",
+      "summary": "Get Application",
+      "tags": [
+        "Applications"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/ats/applications/{id}",
+      "operationId": "ats_update_application",
+      "summary": "Update Application",
+      "tags": [
+        "Applications"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/rejected_reasons/{id}",
+      "operationId": "ats_get_rejected_reason",
+      "summary": "Get Rejected Reason",
+      "tags": [
+        "Rejected Reasons"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/templates/push/{id}",
+      "operationId": "marketing_get_push_template",
+      "summary": "Get push template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/marketing/templates/push/{id}",
+      "operationId": "marketing_update_push_template",
+      "summary": "Update push template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/employees/{id}/time_off",
+      "operationId": "hris_list_employee_time_off_requests",
+      "summary": "List Employee Time Off Requests",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/hris/employees/{id}/time_off",
+      "operationId": "hris_create_employee_time_off_request",
+      "summary": "Create Employee Time Off Request",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/time_off/{id}",
+      "operationId": "hris_get_time_off_request",
+      "summary": "Get time off request",
+      "tags": [
+        "Time Off"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/hris/time_off/{id}",
+      "operationId": "hris_update_time_off_request",
+      "summary": "Update time off request",
+      "tags": [
+        "Time Off"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/offers",
+      "operationId": "ats_list_offers",
+      "summary": "List Offers",
+      "tags": [
+        "Offers"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/ats/offers",
+      "operationId": "ats_create_offer",
+      "summary": "Creates an offer",
+      "tags": [
+        "Offers"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/crm/contacts/{id}",
+      "operationId": "crm_get_contact",
+      "summary": "Get Contact",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/crm/contacts/{id}",
+      "operationId": "crm_update_contact",
+      "summary": "Update Contact (early access)",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/campaigns/{id}",
+      "operationId": "marketing_get_campaign",
+      "summary": "Get campaign",
+      "tags": [
+        "Campaigns"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/companies",
+      "operationId": "hris_list_companies",
+      "summary": "List Companies",
+      "tags": [
+        "Companies"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/locations",
+      "operationId": "hris_list_locations",
+      "summary": "List locations",
+      "tags": [
+        "Locations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/rejected_reasons",
+      "operationId": "ats_list_rejected_reasons",
+      "summary": "List Rejected Reasons",
+      "tags": [
+        "Rejected Reasons"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/applications/{id}/offers/{subResourceId}",
+      "operationId": "ats_get_application_offer",
+      "summary": "Get Application Offer",
+      "tags": [
+        "Applications"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/users/{id}",
+      "operationId": "ats_get_user",
+      "summary": "Get User",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/locations/{id}",
+      "operationId": "ats_get_location",
+      "summary": "Get Location",
+      "tags": [
+        "Locations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/crm/lists",
+      "operationId": "crm_list_lists",
+      "summary": "Get all Lists",
+      "tags": [
+        "Lists"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/employees/{id}/time_off/{subResourceId}",
+      "operationId": "hris_get_employees_time_off_request",
+      "summary": "Get Employees Time Off Request",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/departments",
+      "operationId": "ats_list_departments",
+      "summary": "List Departments",
+      "tags": [
+        "Departments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/templates/push",
+      "operationId": "marketing_list_push_templates",
+      "summary": "List push templates",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/marketing/templates/push",
+      "operationId": "marketing_create_push_template",
+      "summary": "Create push template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/templates/email",
+      "operationId": "marketing_list_email_templates",
+      "summary": "List email templates",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/marketing/templates/email",
+      "operationId": "marketing_create_email_template",
+      "summary": "Create email template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/campaigns",
+      "operationId": "marketing_list_campaigns",
+      "summary": "List campaigns",
+      "tags": [
+        "Campaigns"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/crm/contacts",
+      "operationId": "crm_list_contacts",
+      "summary": "List Contacts",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/crm/contacts",
+      "operationId": "crm_create_contact",
+      "summary": "Creates a new Contact",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/departments/{id}",
+      "operationId": "ats_get_department",
+      "summary": "Get Department",
+      "tags": [
+        "Departments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/candidates/{id}",
+      "operationId": "ats_get_candidate",
+      "summary": "Get Candidate",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/ats/candidates/{id}",
+      "operationId": "ats_update_candidate",
+      "summary": "Update Candidate (early access)",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/jobs",
+      "operationId": "ats_list_jobs",
+      "summary": "List Jobs",
+      "tags": [
+        "Jobs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/time_off",
+      "operationId": "hris_list_time_off_requests",
+      "summary": "List time off requests",
+      "tags": [
+        "Time Off"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/hris/time_off",
+      "operationId": "hris_create_time_off_request",
+      "summary": "Creates a time off request",
+      "tags": [
+        "Time Off"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/companies/{id}",
+      "operationId": "hris_get_company",
+      "summary": "Get Company",
+      "tags": [
+        "Companies"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/crm/accounts",
+      "operationId": "crm_list_accounts",
+      "summary": "List Accounts",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/locations/{id}",
+      "operationId": "hris_get_location",
+      "summary": "Get Location",
+      "tags": [
+        "Locations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/jobs/{id}",
+      "operationId": "ats_get_job",
+      "summary": "Get Job",
+      "tags": [
+        "Jobs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/candidates/{id}/notes",
+      "operationId": "ats_list_candidate_notes",
+      "summary": "List Candidate Notes",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/ats/candidates/{id}/notes",
+      "operationId": "ats_create_candidate_note",
+      "summary": "Create Candidate Note",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/employments/{id}",
+      "operationId": "hris_get_employment",
+      "summary": "Get Employment",
+      "tags": [
+        "Employments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/interview_stages/{id}",
+      "operationId": "ats_get_interview_stage",
+      "summary": "Get Interview Stage",
+      "tags": [
+        "Interview Stages"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/crm/accounts/{id}",
+      "operationId": "crm_get_account",
+      "summary": "Get Account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/crm/lists/{id}",
+      "operationId": "crm_get_list",
+      "summary": "Get List",
+      "tags": [
+        "Lists"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/users",
+      "operationId": "ats_list_users",
+      "summary": "List Users",
+      "tags": [
+        "Users"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/employees/{id}",
+      "operationId": "hris_get_employee",
+      "summary": "Get Employee",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/hris/employees/{id}",
+      "operationId": "hris_update_employee",
+      "summary": "Updates an employee",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/employments",
+      "operationId": "hris_list_employments",
+      "summary": "List Employments",
+      "tags": [
+        "Employments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/interviews",
+      "operationId": "ats_list_interviews",
+      "summary": "List Interviews",
+      "tags": [
+        "Interviews"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/candidates/{id}/notes/{subResourceId}",
+      "operationId": "ats_get_candidate_note",
+      "summary": "Get Candidate Note",
+      "tags": [
+        "Candidates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/applications/{id}/offers",
+      "operationId": "ats_list_applications_offers",
+      "summary": "List Application Offers",
+      "tags": [
+        "Applications"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/templates/omni_channel",
+      "operationId": "marketing_list_omni_channel_templates",
+      "summary": "List omni-channel templates",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/marketing/templates/omni_channel",
+      "operationId": "marketing_create_omni_channel_template",
+      "summary": "Create omni-channel template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/locations",
+      "operationId": "ats_list_locations",
+      "summary": "List locations",
+      "tags": [
+        "Locations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/interview_stages",
+      "operationId": "ats_list_interview_stages",
+      "summary": "List Interview Stages",
+      "tags": [
+        "Interview Stages"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/job_postings",
+      "operationId": "ats_list_job_postings",
+      "summary": "List Job Postings",
+      "tags": [
+        "Job Postings"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/marketing/templates/email/{id}",
+      "operationId": "marketing_get_email_template",
+      "summary": "Get email template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/unified/marketing/templates/email/{id}",
+      "operationId": "marketing_update_email_template",
+      "summary": "Update email template",
+      "tags": [
+        "Templates"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/hris/employees",
+      "operationId": "hris_list_employees",
+      "summary": "List Employees",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/hris/employees",
+      "operationId": "hris_create_employee",
+      "summary": "Creates an employee",
+      "tags": [
+        "Employees"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/unified/ats/applications",
+      "operationId": "ats_list_applications",
+      "summary": "List Applications",
+      "tags": [
+        "Applications"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/unified/ats/applications",
+      "operationId": "ats_create_application",
+      "summary": "Create Application",
+      "tags": [
+        "Applications"
+      ]
+    }
+  ]
+}

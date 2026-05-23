@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Message",
+  "title": "Message",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "email",
+        "sms",
+        "web_push",
+        "ios_push",
+        "android_push",
+        "app_push",
+        "omni_channel",
+        "unknown",
+        "unmapped_value"
+      ]
+    },
+    "message_content": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/SmsMessageContents"
+        },
+        {
+          "$ref": "#/components/schemas/EmailMessageContents"
+        },
+        {
+          "$ref": "#/components/schemas/PushMessageContents"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "message_type"
+  ]
+}

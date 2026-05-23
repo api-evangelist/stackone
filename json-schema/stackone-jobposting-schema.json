@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JobPosting",
+  "title": "JobPosting",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "live",
+        "draft",
+        "closed",
+        "unmapped_value"
+      ],
+      "example": "live"
+    },
+    "external_url": {
+      "type": "string",
+      "example": "https://www.example.com/job-posting/abcd1234"
+    },
+    "job_id": {
+      "type": "string",
+      "example": "job001"
+    },
+    "external_apply_url": {
+      "type": "string",
+      "example": "https://www.example.com/job-posting/abcd1234/apply"
+    },
+    "internal": {
+      "type": "string",
+      "enum": [
+        "true",
+        "false"
+      ],
+      "example": "true"
+    },
+    "updated_at": {
+      "type": "string",
+      "example": "2023-08-24T12:00:00Z"
+    },
+    "compensation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Compensation"
+      },
+      "example": [
+        {
+          "currency": "USD",
+          "max_value": "55000",
+          "min_value": "45000",
+          "name": "Base Salary",
+          "pay_frequency": "yearly",
+          "pay_period": "month",
+          "type": "salary",
+          "value": "50000"
+        },
+        {
+          "currency": "USD",
+          "name": "Bonus",
+          "pay_frequency": "quarterly",
+          "type": "bonus",
+          "value": "10%"
+        }
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "example": "2023-01-01T12:00:00Z"
+    },
+    "id": {
+      "type": "string",
+      "example": "abcd1234"
+    },
+    "employment_type": {
+      "type": "string",
+      "enum": [
+        "permanent",
+        "contractor",
+        "intern",
+        "apprentice",
+        "freelance",
+        "temporary",
+        "seasonal",
+        "volunteer",
+        "unmapped_value"
+      ],
+      "example": "permanent"
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Location"
+      },
+      "example": [
+        {
+          "id": "12345",
+          "name": "New York"
+        },
+        {
+          "id": "67890",
+          "name": "Remote"
+        }
+      ]
+    },
+    "title": {
+      "type": "string",
+      "example": "Software Engineer"
+    },
+    "employment_contract_type": {
+      "type": "string",
+      "enum": [
+        "full_time",
+        "shifts",
+        "part_time",
+        "unmapped_value"
+      ],
+      "example": "full_time"
+    },
+    "content": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Content"
+        }
+      ],
+      "example": {
+        "plain": "This is a plain text description",
+        "html": "<p>This is an HTML description</p>"
+      }
+    },
+    "questionnaires": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Questionnaire"
+      },
+      "example": [
+        {
+          "id": "about001",
+          "name": "About",
+          "questions": [
+            {
+              "id": "question001",
+              "required": true,
+              "text": "What is your name?",
+              "type": "short_text"
+            },
+            {
+              "id": "question002",
+              "required": false,
+              "text": "What are your hobbies?",
+              "type": "long_text"
+            },
+            {
+              "id": "question003",
+              "multiple_choice_answers": [
+                {
+                  "id": "1",
+                  "text": "Dog"
+                },
+                {
+                  "id": "2",
+                  "text": "Cat"
+                },
+                {
+                  "id": "3",
+                  "text": "Bird"
+                },
+                {
+                  "id": "4",
+                  "text": "Other"
+                }
+              ],
+              "required": true,
+              "text": "What is your favorite animal?",
+              "type": "single_select"
+            }
+          ]
+        },
+        {
+          "id": "experience001",
+          "name": "Experience",
+          "questions": [
+            {
+              "id": "question004",
+              "required": true,
+              "text": "Please upload your resume.",
+              "type": "attachment"
+            },
+            {
+              "id": "question005",
+              "multiple_choice_answers": [
+                {
+                  "id": "1",
+                  "text": "JavaScript"
+                },
+                {
+                  "id": "2",
+                  "text": "Python"
+                },
+                {
+                  "id": "3",
+                  "text": "Java"
+                }
+              ],
+              "required": true,
+              "text": "Select the programming languages you are proficient in.",
+              "type": "multi_select"
+            },
+            {
+              "id": "question006",
+              "text": "Are you willing to relocate?",
+              "type": "boolean"
+            },
+            {
+              "id": "question007",
+              "text": "How many years of experience do you have?",
+              "type": "number"
+            },
+            {
+              "id": "question008",
+              "text": "When did you start your most recent position?",
+              "type": "date"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

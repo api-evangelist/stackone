@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Job",
+  "title": "Job",
+  "type": "object",
+  "properties": {
+    "department_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "job_status": {
+      "$ref": "#/components/schemas/JobStatusEnum"
+    },
+    "hiring_team": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HiringTeam"
+      }
+    },
+    "location_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "code": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "confidential": {
+      "type": "string",
+      "enum": [
+        "true",
+        "false"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "code",
+    "title",
+    "company_id",
+    "department_ids",
+    "location_ids",
+    "job_status",
+    "created_at",
+    "updated_at"
+  ]
+}

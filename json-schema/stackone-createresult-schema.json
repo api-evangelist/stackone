@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateResult",
+  "title": "CreateResult",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "example": "Record created successfully."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "statusCode": {
+      "type": "number",
+      "example": 200
+    }
+  },
+  "required": [
+    "statusCode",
+    "message",
+    "timestamp"
+  ]
+}

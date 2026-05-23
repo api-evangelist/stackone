@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Account",
+  "title": "Account",
+  "type": "object",
+  "properties": {
+    "industry": {
+      "type": "string"
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AccountAddress"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone_numbers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "annual_revenue": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "owner_id",
+    "name"
+  ]
+}
