@@ -241,7 +241,7 @@ common:
     description: 'null'
   - url: https://www.stackone.com/integrations
     name: Integrations - 200+ Integrations Through One API
-    type: IntegrationCatalog
+    type: Integrations
     description: 'null'
   - url: https://www.linkedin.com/company/stackonehq/
     name: StackOne on LinkedIn
@@ -321,7 +321,7 @@ common:
     description: 'null'
   - url: https://docs.stackone.com/llms.txt
     name: StackOne llms.txt
-    type: LLMsTxt
+    type: LlmsText
     description: 'null'
   - name: Features
     type: Features
