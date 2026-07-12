@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/stackone-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basic
+  type: http
+  scheme: basic
+  sources:
+  - openapi/stackone-openapi.yml
