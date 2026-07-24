@@ -1,0 +1,87 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Proxy API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Proxy
+paths:
+  /unified/proxy:
+    post:
+      tags:
+      - Proxy
+      summary: Proxy Request
+      operationId: stackone_proxy_request
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The request body
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProxyRequestBody'
+        required: true
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The proxy request was successful.
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-name-override: proxy_request
+components:
+  schemas:
+    ProxyRequestBody:
+      type: object
+      properties:
+        body:
+          type: object
+          description: The body of the request
+        url:
+          type: string
+          description: The base url of the request
+          default: ''
+          example: https://api.sample-integration.com/v1
+        method:
+          type: string
+          enum:
+          - get
+          - post
+          - put
+          - delete
+          - patch
+          - job
+          description: The method of the request
+          default: get
+        path:
+          type: string
+          description: The path of the request including any query paramters
+          default: ''
+          example: /employees/directory
+        headers:
+          type: object
+          description: The headers to send in the request
+          example:
+            Accept: application/json
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

@@ -1,0 +1,221 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Departments API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Departments
+paths:
+  /unified/ats/departments:
+    get:
+      tags:
+      - Departments
+      summary: List Departments
+      operationId: ats_list_departments
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of departments was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DepartmentsPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_departments
+  /unified/ats/departments/{id}:
+    get:
+      tags:
+      - Departments
+      summary: Get Department
+      operationId: ats_get_department
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The department with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DepartmentResult'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_department
+components:
+  schemas:
+    DepartmentResult:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Department'
+        raw:
+          type: string
+      required:
+      - data
+    Department:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+      required:
+      - id
+      - name
+    DepartmentsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Department'
+      required:
+      - next_page
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

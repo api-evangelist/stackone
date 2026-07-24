@@ -1,0 +1,824 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Applications API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Applications
+paths:
+  /unified/ats/applications/{id}:
+    get:
+      tags:
+      - Applications
+      summary: Get Application
+      operationId: ats_get_application
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The application with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationResult'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_application
+    patch:
+      tags:
+      - Applications
+      summary: Update Application
+      operationId: ats_update_application
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtsUpdateApplicationRequestDto'
+        required: true
+      responses:
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: Record updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateResult'
+        '400':
+          description: Invalid request.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: update_application
+  /unified/ats/applications/{id}/offers/{subResourceId}:
+    get:
+      tags:
+      - Applications
+      summary: Get Application Offer
+      operationId: ats_get_application_offer
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: subResourceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The offer related to the application with the given identifiers was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OffersResult'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_application_offer
+  /unified/ats/applications/{id}/offers:
+    get:
+      tags:
+      - Applications
+      summary: List Application Offers
+      operationId: ats_list_applications_offers
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The offers related to the application with the given identifier were retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OffersPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_applications_offers
+  /unified/ats/applications:
+    get:
+      tags:
+      - Applications
+      summary: List Applications
+      operationId: ats_list_applications
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of applications was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationsPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_applications
+    post:
+      tags:
+      - Applications
+      summary: Create Application
+      operationId: ats_create_application
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtsCreateApplicationRequestDto'
+        required: true
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: The application was created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: create_application
+components:
+  schemas:
+    OfferStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - pending
+          - retracted
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    Application:
+      type: object
+      properties:
+        candidate:
+          $ref: '#/components/schemas/ApplicationCandidate'
+        location_id:
+          type: string
+        interview_stage_id:
+          type: string
+        rejected_reason_ids:
+          type: array
+          items:
+            type: string
+        rejected_at:
+          type: string
+        interview_stage:
+          type: array
+          items:
+            $ref: '#/components/schemas/InterviewStage'
+        id:
+          type: string
+        rejected_reasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/RejectedReason'
+        questionnaire:
+          $ref: '#/components/schemas/Questionnaire'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationAttachment'
+        job_id:
+          type: string
+        location_ids:
+          type: array
+          items:
+            type: string
+        candidate_id:
+          type: string
+        updated_at:
+          type: string
+        application_status:
+          $ref: '#/components/schemas/ApplicationStatusEnum'
+        created_at:
+          type: string
+      required:
+      - application_status
+      - questionnaire
+      - candidate
+    ApplicationCandidate:
+      type: object
+      properties:
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+    AnswerEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - short_text
+          - long_text
+          - attachment
+          - multi_select
+          - single_select
+          - boolean
+          - number
+          - date
+        source_value:
+          type: string
+    AtsUpdateApplicationRequestDto:
+      type: object
+      properties:
+        location_ids:
+          type: array
+          items:
+            type: string
+        application_status:
+          $ref: '#/components/schemas/ApplicationStatusEnum'
+        questionnaire:
+          $ref: '#/components/schemas/Questionnaire'
+        candidate:
+          $ref: '#/components/schemas/ApplicationCandidate'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationAttachment'
+        candidate_id:
+          type: string
+        job_id:
+          type: string
+    AtsCreateApplicationRequestDto:
+      type: object
+      properties:
+        questionnaire:
+          $ref: '#/components/schemas/Questionnaire'
+        candidate:
+          $ref: '#/components/schemas/ApplicationCandidate'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationAttachment'
+        candidate_id:
+          type: string
+        job_id:
+          type: string
+        location_ids:
+          type: array
+          items:
+            type: string
+        application_status:
+          $ref: '#/components/schemas/ApplicationStatusEnum'
+      required:
+      - application_status
+      - questionnaire
+      - candidate
+    OffersPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offer'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    ApplicationResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Application'
+      required:
+      - data
+    RejectedReason:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        rejected_reason_type:
+          $ref: '#/components/schemas/RejectedReasonTypeEnum'
+      required:
+      - id
+      - label
+      - rejected_reason_type
+    ApplicationStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - active
+          - converted
+          - hired
+          - lead
+          - rejected
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    ApplicationsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Application'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    OffersResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Offer'
+      required:
+      - data
+    CreateResult:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Record created successfully.
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+          example: 200
+      required:
+      - statusCode
+      - message
+      - timestamp
+    InterviewStage:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - name
+    ApplicationAttachment:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttachmentType'
+        file_name:
+          type: string
+        content:
+          type: string
+    OfferHistory:
+      type: object
+      properties:
+        updated_at:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        salary:
+          type: number
+        currency:
+          type: string
+        created_at:
+          type: string
+      required:
+      - start_date
+    Answer:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/AnswerEnum'
+      required:
+      - values
+    AttachmentType:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - resume
+          - unmapped_value
+    RejectedReasonTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - rejected_by_candidate
+          - rejected_by_organization
+          - other
+          - unknown
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    UpdateResult:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Record updated successfully.
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+          example: 200
+      required:
+      - statusCode
+      - message
+      - timestamp
+    Offer:
+      type: object
+      properties:
+        offer_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfferHistory'
+        id:
+          type: string
+        offer_status:
+          $ref: '#/components/schemas/OfferStatusEnum'
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        salary:
+          type: number
+        application_id:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        currency:
+          type: string
+      required:
+      - id
+      - application_id
+      - start_date
+      - offer_status
+    Questionnaire:
+      type: object
+      properties:
+        id:
+          type: string
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+      required:
+      - answers
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

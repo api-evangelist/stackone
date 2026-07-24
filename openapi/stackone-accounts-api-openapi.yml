@@ -1,0 +1,447 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Accounts
+paths:
+  /accounts/{id}/meta:
+    get:
+      tags:
+      - Accounts
+      summary: Get meta information of the account
+      operationId: stackone_get_account_meta_info
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The meta information of the account was retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedAccountMeta'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '404':
+          description: The account with the given identifier does not exist
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-name-override: get_account_meta_info
+  /accounts/{id}:
+    get:
+      tags:
+      - Accounts
+      summary: Get Account
+      operationId: stackone_get_account
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The account with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedAccount'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-name-override: get_account
+    delete:
+      tags:
+      - Accounts
+      summary: Delete Account
+      operationId: stackone_delete_account
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '404':
+          description: The account with the given identifier does not exist
+        '429':
+          description: Too many requests.
+        '501':
+          description: This functionality is not implemented.
+        '500':
+          description: Server error while executing the request.
+        '200':
+          description: The account with the given identifier was deleted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedAccount'
+      security:
+      - basic: []
+      x-speakeasy-name-override: delete_account
+  /accounts:
+    get:
+      tags:
+      - Accounts
+      summary: List Accounts
+      operationId: stackone_list_linked_accounts
+      parameters:
+      - name: provider
+        in: query
+        description: The provider of the results to fetch
+        schema:
+          type: string
+      - name: origin_owner_id
+        in: query
+        description: The origin owner identifier of the results to fetch
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of accounts was retrieved.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LinkedAccount'
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-name-override: list_linked_accounts
+  /unified/crm/accounts:
+    get:
+      tags:
+      - Accounts
+      summary: List Accounts
+      operationId: crm_list_accounts
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,owner_id,name,description,industry,annual_revenue,website,addresses,phone_numbers,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of accounts was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountsPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: list_accounts
+  /unified/crm/accounts/{id}:
+    get:
+      tags:
+      - Accounts
+      summary: Get Account
+      operationId: crm_get_account
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,owner_id,name,description,industry,annual_revenue,website,addresses,phone_numbers,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The account with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountResult'
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: get_account
+components:
+  schemas:
+    AccountsPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    AccountAddress:
+      type: object
+      properties:
+        street_1:
+          type: string
+        street_2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip_code:
+          type: string
+        country:
+          type: string
+        location_type:
+          type: string
+    LinkedAccountMeta:
+      type: object
+      properties:
+        provider:
+          type: string
+        category:
+          type: string
+          enum:
+          - ats
+          - hris
+          - hris-legacy
+          - crm
+          - marketing
+          - stackone
+        models:
+          type: object
+      required:
+      - provider
+      - category
+      - models
+    Account:
+      type: object
+      properties:
+        industry:
+          type: string
+        addresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountAddress'
+        name:
+          type: string
+        phone_numbers:
+          type: array
+          items:
+            type: string
+        updated_at:
+          type: string
+        id:
+          type: string
+        owner_id:
+          type: string
+        annual_revenue:
+          type: string
+        website:
+          type: string
+        created_at:
+          type: string
+        description:
+          type: string
+      required:
+      - id
+      - owner_id
+      - name
+    LinkedAccount:
+      type: object
+      properties:
+        active:
+          type: boolean
+        origin_owner_name:
+          type: string
+        origin_username:
+          type: string
+        credentials:
+          type: object
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        provider:
+          type: string
+        origin_owner_id:
+          type: string
+        id:
+          type: string
+      required:
+      - id
+      - provider
+      - active
+      - origin_owner_id
+      - origin_owner_name
+      - origin_username
+      - created_at
+      - updated_at
+    AccountResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Account'
+      required:
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

@@ -1,0 +1,333 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Interviews API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Interviews
+paths:
+  /unified/ats/interviews/{id}:
+    get:
+      tags:
+      - Interviews
+      summary: Get Interview
+      operationId: ats_get_interview
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,application_id,interview_stage_id,interview_stage,status,interview_status,interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The interview with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterviewsResult'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_interview
+  /unified/ats/interviews:
+    get:
+      tags:
+      - Interviews
+      summary: List Interviews
+      operationId: ats_list_interviews
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,application_id,interview_stage_id,interview_stage,status,interview_status,interviewer_ids,interview_parts,interviewers,start_at,end_at,meeting_url,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The list of interviews was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterviewsPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_interviews
+components:
+  schemas:
+    InterviewStage:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - name
+    InterviewsResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Interview'
+      required:
+      - data
+    Interviewer:
+      type: object
+      properties:
+        email:
+          type: string
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - first_name
+      - last_name
+      - name
+      - email
+    InterviewsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interview'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    InterviewStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - unscheduled
+          - scheduled
+          - completed
+          - cancelled
+          - pending_feedback
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    InterviewPart:
+      type: object
+      properties:
+        meeting_provider:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        interviewer_ids:
+          type: array
+          items:
+            type: string
+        meeting_url:
+          type: string
+    Interview:
+      type: object
+      properties:
+        application_id:
+          type: string
+        end_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        interview_parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/InterviewPart'
+        interviewers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interviewer'
+        updated_at:
+          type: string
+          format: date-time
+        interview_stage:
+          type: array
+          items:
+            $ref: '#/components/schemas/InterviewStage'
+        start_at:
+          type: string
+          format: date-time
+        meeting_url:
+          type: string
+        id:
+          type: string
+        interview_stage_id:
+          type: string
+        interview_status:
+          $ref: '#/components/schemas/InterviewStatusEnum'
+        interviewer_ids:
+          type: array
+          items:
+            type: string
+      required:
+      - id
+      - application_id
+      - interview_stage_id
+      - interview_status
+      - interviewer_ids
+      - start_at
+      - end_at
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

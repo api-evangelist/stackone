@@ -1,0 +1,240 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Rejected Reasons API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Rejected Reasons
+paths:
+  /unified/ats/rejected_reasons/{id}:
+    get:
+      tags:
+      - Rejected Reasons
+      summary: Get Rejected Reason
+      operationId: ats_get_rejected_reason
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,label,type,rejected_reason_type
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The rejected reason with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RejectedReasonResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_rejected_reason
+  /unified/ats/rejected_reasons:
+    get:
+      tags:
+      - Rejected Reasons
+      summary: List Rejected Reasons
+      operationId: ats_list_rejected_reasons
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,label,type,rejected_reason_type
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of rejected reasons was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RejectedReasonsPaginated'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_rejected_reasons
+components:
+  schemas:
+    RejectedReason:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        rejected_reason_type:
+          $ref: '#/components/schemas/RejectedReasonTypeEnum'
+      required:
+      - id
+      - label
+      - rejected_reason_type
+    RejectedReasonTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - rejected_by_candidate
+          - rejected_by_organization
+          - other
+          - unknown
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    RejectedReasonsPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/RejectedReason'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    RejectedReasonResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/RejectedReason'
+      required:
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

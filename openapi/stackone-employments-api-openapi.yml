@@ -1,0 +1,356 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Employments API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Employments
+paths:
+  /unified/hris/employments/{id}:
+    get:
+      tags:
+      - Employments
+      summary: Get Employment
+      operationId: hris_get_employment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The Employment with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: get_employment
+  /unified/hris/employments:
+    get:
+      tags:
+      - Employments
+      summary: List Employments
+      operationId: hris_list_employments
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of Employments was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentsPaginated'
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: list_employments
+components:
+  schemas:
+    EmploymentTypeEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - intern
+          - permanent
+          - apprentice
+          - freelance
+          - terminated
+          - temporary
+          - seasonal
+          - volunteer
+          - probation
+          - internal
+          - external
+          - employer_of_record
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
+    Employment:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID of the employment
+          example: '123456'
+        employment_contract_type:
+          allOf:
+          - $ref: '#/components/schemas/EmploymentScheduleTypeEnum'
+          description: The employment work schedule type (e.g., full-time, part-time)
+          example: full_time
+        job_title:
+          type: string
+          description: The job title of the employee
+          example: Software Engineer
+        pay_rate:
+          type: string
+          description: The pay rate for the employee
+          example: '40.00'
+        pay_currency:
+          type: string
+          description: The currency used for pay
+          example: USD
+        created_at:
+          type: string
+          description: The created_at date
+          example: '2023-06-14T01:00:00Z'
+        pay_period:
+          allOf:
+          - $ref: '#/components/schemas/PayPeriodEnum'
+          description: The pay period
+          example: monthly
+        updated_at:
+          type: string
+          description: The updated_at date
+          example: '2023-06-14T01:00:00Z'
+        employee_id:
+          type: string
+          description: The employee ID associated with this employment
+          example: 1687-3
+        employment_type:
+          allOf:
+          - $ref: '#/components/schemas/EmploymentTypeEnum'
+          description: The type of employment (e.g., contractor, permanent)
+          example: permanent
+        effective_date:
+          type: string
+          format: date-time
+          description: The effective date of the employment contract
+          example: '2023-07-01'
+        pay_frequency:
+          allOf:
+          - $ref: '#/components/schemas/PayFrequencyEnum'
+          description: The pay frequency
+          example: hourly
+      required:
+      - employee_id
+    EmploymentScheduleTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - full_time
+          - shifts
+          - part_time
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    PayPeriodEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - hour
+          - day
+          - week
+          - every_two_weeks
+          - month
+          - quarter
+          - every_six_months
+          - year
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    PayFrequencyEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - hourly
+          - weekly
+          - bi_weekly
+          - four_weekly
+          - semi_monthly
+          - monthly
+          - bi_monthly
+          - quarterly
+          - semi_annually
+          - yearly
+          - thirteen_monthly
+          - pro_rata
+          - unmapped_value
+          - half_yearly
+      required:
+      - value
+      - source_value
+    EmploymentsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employment'
+      required:
+      - next_page
+      - data
+    EmploymentResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Employment'
+      required:
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

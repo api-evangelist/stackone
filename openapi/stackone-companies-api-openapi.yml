@@ -1,0 +1,228 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Companies API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Companies
+paths:
+  /unified/hris/companies:
+    get:
+      tags:
+      - Companies
+      summary: List Companies
+      operationId: hris_list_companies
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,full_name,display_name,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of Companies was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompaniesPaginated'
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: list_companies
+  /unified/hris/companies/{id}:
+    get:
+      tags:
+      - Companies
+      summary: Get Company
+      operationId: hris_get_company
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,full_name,display_name,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The Company with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: get_company
+components:
+  schemas:
+    CompanyResult:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Company'
+        raw:
+          type: string
+      required:
+      - data
+    Company:
+      type: object
+      properties:
+        name:
+          type: string
+        display_name:
+          type: string
+        created_at:
+          type: string
+          description: The created_at date
+          example: '2023-06-14T01:00:00Z'
+        updated_at:
+          type: string
+          description: The updated_at date
+          example: '2023-06-14T01:00:00Z'
+        id:
+          type: string
+    CompaniesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

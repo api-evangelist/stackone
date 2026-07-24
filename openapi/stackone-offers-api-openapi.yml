@@ -1,0 +1,347 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Offers API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Offers
+paths:
+  /unified/ats/offers/{id}:
+    get:
+      tags:
+      - Offers
+      summary: Get Offer
+      operationId: ats_get_offer
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The offer with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OffersResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_offer
+  /unified/ats/offers:
+    get:
+      tags:
+      - Offers
+      summary: List Offers
+      operationId: ats_list_offers
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of offers was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OffersPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_offers
+    post:
+      tags:
+      - Offers
+      summary: Creates an offer
+      operationId: ats_create_offer
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtsCreateOfferRequestDto'
+        required: true
+      responses:
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The offer was created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateOfferResult'
+        '400':
+          description: Invalid request.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: create_offer
+components:
+  schemas:
+    OfferStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - pending
+          - retracted
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    CreateOfferResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+        message:
+          type: string
+      required:
+      - statusCode
+      - message
+      - timestamp
+    OfferHistory:
+      type: object
+      properties:
+        updated_at:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        salary:
+          type: number
+        currency:
+          type: string
+        created_at:
+          type: string
+      required:
+      - start_date
+    Offer:
+      type: object
+      properties:
+        offer_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfferHistory'
+        id:
+          type: string
+        offer_status:
+          $ref: '#/components/schemas/OfferStatusEnum'
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        salary:
+          type: number
+        application_id:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        currency:
+          type: string
+      required:
+      - id
+      - application_id
+      - start_date
+      - offer_status
+    AtsCreateOfferRequestDto:
+      type: object
+      properties:
+        offer_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfferHistory'
+        application_id:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        offer_status:
+          $ref: '#/components/schemas/OfferStatusEnum'
+        salary:
+          type: number
+        currency:
+          type: string
+      required:
+      - application_id
+      - start_date
+      - offer_status
+    OffersPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offer'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    OffersResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Offer'
+      required:
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

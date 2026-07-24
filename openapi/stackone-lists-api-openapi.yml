@@ -1,0 +1,243 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Lists API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Lists
+paths:
+  /unified/crm/lists:
+    get:
+      tags:
+      - Lists
+      summary: Get all Lists
+      operationId: crm_list_lists
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,created_at,updated_at,items,type
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The collection of lists was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListsPaginated'
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: list_lists
+  /unified/crm/lists/{id}:
+    get:
+      tags:
+      - Lists
+      summary: Get List
+      operationId: crm_get_list
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,created_at,updated_at,items,type
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: get_list
+components:
+  schemas:
+    ListResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/List'
+      required:
+      - data
+    List:
+      type: object
+      properties:
+        updated_at:
+          type: string
+        location_type:
+          $ref: '#/components/schemas/ListTypeEnum'
+        id:
+          type: string
+        name:
+          type: string
+        items:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+      required:
+      - id
+      - name
+    ListsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/List'
+      required:
+      - next_page
+      - data
+    ListTypeEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - contacts
+          - companies
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

@@ -1,0 +1,343 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Campaigns API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Campaigns
+paths:
+  /unified/marketing/campaigns/{id}:
+    get:
+      tags:
+      - Campaigns
+      summary: Get campaign
+      operationId: marketing_get_campaign
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The campaign with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CampaignResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: get_campaign
+  /unified/marketing/campaigns:
+    get:
+      tags:
+      - Campaigns
+      summary: List campaigns
+      operationId: marketing_list_campaigns
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of campaigns was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CampaignsPaginated'
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: list_campaigns
+components:
+  schemas:
+    EmailMessageContents:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        from:
+          type: string
+        reply-to:
+          type: string
+        preheader:
+          type: string
+      required:
+      - subject
+      - body
+      - from
+    SmsMessageContents:
+      type: object
+      properties:
+        from:
+          type: string
+        body:
+          type: string
+      required:
+      - body
+    PushMessageContents:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
+    Campaign:
+      type: object
+      properties:
+        tags:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        updated_at:
+          type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+          example:
+          - id: message-id-1
+            message_content:
+              body: This is an example SMS body.
+              from: 1-555-123-4567
+            message_type:
+              sourceValue: sms-message
+              value: sms
+            name: SMS Message
+          - id: message-id-2
+            message_content:
+              body: "<h1>This is an example</h1>\n            <p>email body</p>"
+              from: Jane Smith
+              preheader: This is the preheader of the email.
+              reply-to: reply@example.com
+              subject: Example Email Subject
+            message_type:
+              sourceValue: email-message
+              value: email
+            name: Email Message
+          - id: message-id-3
+            message_content:
+              body: This is an example push notification body.
+            message_type:
+              sourceValue: ios-push
+              value: ios_push
+            name: iOS Push Message
+        name:
+          type: string
+        created_at:
+          type: string
+        channels:
+          type: array
+          items:
+            type: string
+            enum:
+            - email
+            - sms
+            - web_push
+            - ios_push
+            - android_push
+            - unknown
+            - unmapped_value
+          example:
+          - email
+          - sms
+          - ios_push
+          - android_push
+        first_sent_at:
+          type: string
+        last_sent_at:
+          type: string
+        archived:
+          type: boolean
+        description:
+          type: string
+        draft:
+          type: boolean
+      required:
+      - name
+    CampaignsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Campaign'
+      required:
+      - next_page
+      - data
+    CampaignResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Campaign'
+      required:
+      - data
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          type: string
+          enum:
+          - email
+          - sms
+          - web_push
+          - ios_push
+          - android_push
+          - app_push
+          - omni_channel
+          - unknown
+          - unmapped_value
+        message_content:
+          oneOf:
+          - $ref: '#/components/schemas/SmsMessageContents'
+          - $ref: '#/components/schemas/EmailMessageContents'
+          - $ref: '#/components/schemas/PushMessageContents'
+      required:
+      - id
+      - name
+      - message_type
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

@@ -1,0 +1,398 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Contacts API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Contacts
+paths:
+  /unified/crm/contacts/{id}:
+    get:
+      tags:
+      - Contacts
+      summary: Get Contact
+      operationId: crm_get_contact
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,account_ids,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The contact with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactResult'
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: get_contact
+    patch:
+      tags:
+      - Contacts
+      summary: Update Contact (early access)
+      operationId: crm_update_contact
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CrmCreateContactRequestDto'
+        required: true
+      responses:
+        '200':
+          description: The contact was successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: update_contact
+  /unified/crm/contacts:
+    get:
+      tags:
+      - Contacts
+      summary: List Contacts
+      operationId: crm_list_contacts
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,first_name,last_name,company_name,emails,phone_numbers,deal_ids,account_ids,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of contacts was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactsPaginated'
+        '400':
+          description: Invalid request.
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: list_contacts
+    post:
+      tags:
+      - Contacts
+      summary: Creates a new Contact
+      operationId: crm_create_contact
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CrmCreateContactRequestDto'
+        required: true
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The contact was successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-group: crm
+      x-speakeasy-name-override: create_contact
+components:
+  schemas:
+    ContactsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
+      required:
+      - next_page
+      - data
+    CrmCreateContactRequestDto:
+      type: object
+      properties:
+        phone_numbers:
+          type: array
+          items:
+            type: string
+          description: List of contact phone numbers
+          example:
+          - 123-456-7890
+        deal_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated deal IDs
+          example:
+          - deal-001
+          - deal-002
+        account_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated account IDs
+          example:
+          - account-123
+          - account-456
+        first_name:
+          type: string
+          description: The contact first name
+          example: Steve
+        last_name:
+          type: string
+          description: The contact last name
+          example: Wozniak
+        company_name:
+          type: string
+          description: The contact company name
+          example: Apple Inc.
+        emails:
+          type: array
+          items:
+            type: string
+          description: List of contact email addresses
+          example:
+          - steve@apple.com
+    Contact:
+      type: object
+      properties:
+        phone_numbers:
+          type: array
+          items:
+            type: string
+          description: List of contact phone numbers
+          example:
+          - 123-456-7890
+        id:
+          type: string
+          description: The contact ID
+          example: 1234-5678
+        last_name:
+          type: string
+          description: The contact last name
+          example: Wozniak
+        created_at:
+          type: string
+          description: Timestamp when the contact was created
+          example: '2023-08-24T10:00:00Z'
+        first_name:
+          type: string
+          description: The contact first name
+          example: Steve
+        emails:
+          type: array
+          items:
+            type: string
+          description: List of contact email addresses
+          example:
+          - steve@apple.com
+        deal_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated deal IDs
+          example:
+          - deal-001
+          - deal-002
+        account_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated account IDs
+          example:
+          - account-123
+          - account-456
+        company_name:
+          type: string
+          description: The contact company name
+          example: Apple Inc.
+        updated_at:
+          type: string
+          description: Timestamp when the contact was last updated
+          example: '2023-08-25T15:30:00Z'
+    ContactResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Contact'
+      required:
+      - data
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

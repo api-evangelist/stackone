@@ -1,0 +1,399 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Time Off API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Time Off
+paths:
+  /unified/hris/time_off/{id}:
+    get:
+      tags:
+      - Time Off
+      summary: Get time off request
+      operationId: hris_get_time_off_request
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The time off request with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: get_time_off_request
+    patch:
+      tags:
+      - Time Off
+      summary: Update time off request
+      operationId: hris_update_time_off_request
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HrisCreateTimeOffRequestDto'
+        required: true
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: Record updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTimeOffResult'
+      security:
+      - basic: []
+      x-speakeasy-name-override: update_time_off_request
+      x-speakeasy-group: hris
+  /unified/hris/time_off:
+    get:
+      tags:
+      - Time Off
+      summary: List time off requests
+      operationId: hris_list_time_off_requests
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,employee_id,name,phone_number,street_1,street_2,city,state,zip_code,country,location_type,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of time off requests was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeOffPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: list_time_off_requests
+    post:
+      tags:
+      - Time Off
+      summary: Creates a time off request
+      operationId: hris_create_time_off_request
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HrisCreateTimeOffRequestDto'
+        required: true
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: The time off request was created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTimeOffResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: hris
+      x-speakeasy-name-override: create_time_off_request
+components:
+  schemas:
+    TimeOffResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/TimeOff'
+      required:
+      - data
+    HrisCreateTimeOffRequestDto:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffStatusEnum'
+          description: The status of the time off request
+        type:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffTypeEnum'
+          description: The type of the time off request
+        start_date:
+          type: string
+          description: The start date of the time off request
+        end_date:
+          type: string
+          description: The end date of the time off request
+        employee_id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        approver_id:
+          type: string
+          description: The approver ID
+          example: 1687-4
+    TimeOffStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - approved
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    TimeOffTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - sick
+          - unmapped_value
+          - vacation
+      required:
+      - value
+      - source_value
+    TimeOffPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeOff'
+      required:
+      - next_page
+      - data
+    CreateTimeOffResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+        message:
+          type: string
+      required:
+      - statusCode
+      - message
+      - timestamp
+    TimeOff:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique ID of the time off request
+          example: '123456'
+        start_date:
+          type: string
+          description: The start date of the time off request
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffStatusEnum'
+          description: The status of the time off request
+        updated_date:
+          type: string
+          description: The updated date of the time off request
+        approver_id:
+          type: string
+          description: The approver ID
+          example: 1687-4
+        employee_id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        type:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffTypeEnum'
+          description: The type of the time off request
+        end_date:
+          type: string
+          description: The end date of the time off request
+        created_date:
+          type: string
+          description: The created date of the time off request
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

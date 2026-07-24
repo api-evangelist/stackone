@@ -1,0 +1,732 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Candidates API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Candidates
+paths:
+  /unified/ats/candidates:
+    get:
+      tags:
+      - Candidates
+      summary: List Candidates
+      operationId: ats_list_candidates
+      parameters:
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,title,application_ids,hired_at,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of candidates was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandidatesPaginated'
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_candidates
+    post:
+      tags:
+      - Candidates
+      summary: Create Candidate (early access)
+      operationId: ats_create_candidate
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtsCreateCandidateRequestDto'
+        required: true
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The candidate was successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandidateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: create_candidate
+  /unified/ats/candidates/{id}:
+    get:
+      tags:
+      - Candidates
+      summary: Get Candidate
+      operationId: ats_get_candidate
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,title,application_ids,hired_at,created_at,updated_at
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The candidate with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandidateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_candidate
+    patch:
+      tags:
+      - Candidates
+      summary: Update Candidate (early access)
+      operationId: ats_update_candidate
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtsUpdateCandidatesRequestDto'
+        required: true
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The candidate was successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandidateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: update_candidate
+  /unified/ats/candidates/{id}/notes:
+    get:
+      tags:
+      - Candidates
+      summary: List Candidate Notes
+      operationId: ats_list_candidate_notes
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,content,visibility,createdAt,updatedAt,deletedAt
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The notes related to the candidate with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotesPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: list_candidate_notes
+    post:
+      tags:
+      - Candidates
+      summary: Create Candidate Note
+      operationId: ats_create_candidate_note
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AtsCreateNotesRequestDto'
+        required: true
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: Record created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCandidateNoteResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+      security:
+      - basic: []
+      x-speakeasy-name-override: create_candidate_note
+      x-speakeasy-group: ats
+  /unified/ats/candidates/{id}/notes/{subResourceId}:
+    get:
+      tags:
+      - Candidates
+      summary: Get Candidate Note
+      operationId: ats_get_candidate_note
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: subResourceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,content,visibility,createdAt,updatedAt,deletedAt
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            filter[eq][name]: Luke
+            custom_filter_param: '123'
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The note with the given identifier related to the candidate with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: ats
+      x-speakeasy-name-override: get_candidate_note
+components:
+  schemas:
+    NotesVisibilityEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - private
+          - public
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
+    Note:
+      type: object
+      properties:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        deleted_at:
+          type: string
+        id:
+          type: string
+        content:
+          type: array
+          items:
+            type: string
+        updated_at:
+          type: string
+        created_at:
+          type: string
+      required:
+      - id
+      - content
+      - visibility
+      - created_at
+      - updated_at
+      - deleted_at
+    CandidateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Candidate'
+      required:
+      - data
+    NotesPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+      required:
+      - next_page
+      - data
+    SocialLink:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - url
+    CandidatesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Candidate'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    Candidate:
+      type: object
+      properties:
+        name:
+          type: string
+        hired_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        title:
+          type: string
+        social_links:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialLink'
+        phone:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+        last_name:
+          type: string
+        first_name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        company:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+        email:
+          type: string
+      required:
+      - id
+      - name
+      - first_name
+      - last_name
+      - email
+      - emails
+      - social_links
+      - title
+      - created_at
+      - updated_at
+    AtsCreateCandidateRequestDto:
+      type: object
+      properties:
+        last_name:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+        phone:
+          type: string
+        company:
+          type: string
+        title:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        first_name:
+          type: string
+      required:
+      - name
+      - first_name
+      - last_name
+      - emails
+      - title
+    NoteResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Note'
+      required:
+      - data
+    CandidateEmail:
+      type: object
+      properties:
+        value:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - value
+    AtsUpdateCandidatesRequestDto:
+      type: object
+      properties:
+        phone:
+          type: string
+        company:
+          type: string
+        title:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+    AtsCreateNotesRequestDto:
+      type: object
+      properties:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        content:
+          type: array
+          items:
+            type: string
+      required:
+      - content
+      - visibility
+    CreateCandidateNoteResult:
+      type: object
+      properties:
+        statusCode:
+          type: number
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+      required:
+      - statusCode
+      - message
+      - timestamp
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

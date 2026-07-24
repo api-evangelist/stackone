@@ -1,0 +1,991 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Templates API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Templates
+paths:
+  /unified/marketing/templates/omni_channel/{id}:
+    get:
+      tags:
+      - Templates
+      summary: Get omni-channel template
+      operationId: marketing_get_omni_channel_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,messages,created_at,updated_at,tags
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            filter[eq][name]: Luke
+            custom_filter_param: '123'
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The omni-channel template with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: get_omni_channel_template
+    patch:
+      tags:
+      - Templates
+      summary: Update omni-channel template
+      operationId: marketing_update_omni_channel_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketingCreateTemplateRequestDto'
+        required: true
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: Record updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: update_omni_channel_template
+  /unified/marketing/templates/push/{id}:
+    get:
+      tags:
+      - Templates
+      summary: Get push template
+      operationId: marketing_get_push_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,messages,created_at,updated_at,tags
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The push template with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: get_push_template
+    patch:
+      tags:
+      - Templates
+      summary: Update push template
+      operationId: marketing_update_push_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketingCreatePushTemplateRequestDto'
+        required: true
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: Record updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: update_push_template
+  /unified/marketing/templates/push:
+    get:
+      tags:
+      - Templates
+      summary: List push templates
+      operationId: marketing_list_push_templates
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,messages,created_at,updated_at,tags
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of push templates was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplatesPaginated'
+        '400':
+          description: Invalid request.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: list_push_templates
+    post:
+      tags:
+      - Templates
+      summary: Create push template
+      operationId: marketing_create_push_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketingCreatePushTemplateRequestDto'
+        required: true
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: Record created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: create_push_template
+  /unified/marketing/templates/email:
+    get:
+      tags:
+      - Templates
+      summary: List email templates
+      operationId: marketing_list_email_templates
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,messages,created_at,updated_at,tags
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of email templates was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplatesPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: list_email_templates
+    post:
+      tags:
+      - Templates
+      summary: Create email template
+      operationId: marketing_create_email_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketingCreateEmailTemplateRequestDto'
+        required: true
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: Record created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: create_email_template
+  /unified/marketing/templates/omni_channel:
+    get:
+      tags:
+      - Templates
+      summary: List omni-channel templates
+      operationId: marketing_list_omni_channel_templates
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,messages,created_at,updated_at,tags
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The list of omni-channel templates was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplatesPaginated'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: list_omni_channel_templates
+    post:
+      tags:
+      - Templates
+      summary: Create omni-channel template
+      operationId: marketing_create_omni_channel_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketingCreateTemplateRequestDto'
+        required: true
+      responses:
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: Record created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: create_omni_channel_template
+  /unified/marketing/templates/email/{id}:
+    get:
+      tags:
+      - Templates
+      summary: Get email template
+      operationId: marketing_get_email_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: The page number of the results to fetch
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: The number of results per page
+        schema:
+          type: string
+          default: '25'
+      - name: raw
+        in: query
+        description: Indicates that the raw request result is returned
+        schema:
+          type: boolean
+          default: false
+      - name: fields
+        in: query
+        description: The comma separated list of fields to return in the response (if empty, all fields are returned)
+        schema:
+          type: string
+          default: ''
+        example: id,name,messages,created_at,updated_at,tags
+      - name: sync_token
+        in: query
+        description: The sync token to select the only updated results
+        schema:
+          type: string
+      - name: updated_after
+        in: query
+        description: Use a string with a date to only select results updated after that given date
+        schema:
+          type: string
+        example: '2020-01-01T00:00:00.000Z'
+      - name: proxy
+        in: query
+        description: Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with "proxy" key
+        style: deepObject
+        explode: true
+        schema:
+          type: object
+          additionalProperties: true
+        example:
+          proxy:
+            custom_filter_param: '123'
+            filter[eq][name]: Luke
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: The email template with the given identifier was retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemplateResult'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: get_email_template
+    patch:
+      tags:
+      - Templates
+      summary: Update email template
+      operationId: marketing_update_email_template
+      parameters:
+      - name: x-account-id
+        in: header
+        description: The account identifier
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketingCreateEmailTemplateRequestDto'
+        required: true
+      responses:
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '412':
+          description: 'Precondition failed: linked account belongs to a disabled integration.'
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '200':
+          description: Record updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateTemplateResult'
+      security:
+      - basic: []
+      x-speakeasy-group: marketing
+      x-speakeasy-name-override: update_email_template
+components:
+  schemas:
+    MarketingCreateEmailTemplateRequestDto:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailMessages'
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    TemplatesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Template'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    EmailMessageContents:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        from:
+          type: string
+        reply-to:
+          type: string
+        preheader:
+          type: string
+      required:
+      - subject
+      - body
+      - from
+    Template:
+      type: object
+      properties:
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+    MessageTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - email
+          - sms
+          - web_push
+          - ios_push
+          - android_push
+          - app_push
+          - omni_channel
+          - unknown
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    SmsMessageContents:
+      type: object
+      properties:
+        from:
+          type: string
+        body:
+          type: string
+      required:
+      - body
+    PushMessageContents:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
+    TemplateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Template'
+      required:
+      - data
+    CreateTemplateResult:
+      type: object
+      properties:
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+      required:
+      - statusCode
+      - message
+      - timestamp
+    EmailMessages:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          $ref: '#/components/schemas/MessageTypeEnum'
+        message_content:
+          $ref: '#/components/schemas/EmailMessageContents'
+    MarketingCreatePushTemplateRequestDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PushMessages'
+    PushMessages:
+      type: object
+      properties:
+        message_content:
+          $ref: '#/components/schemas/PushMessageContents'
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          $ref: '#/components/schemas/MessageTypeEnum'
+    MarketingCreateTemplateRequestDto:
+      type: object
+      properties:
+        messages:
+          $ref: '#/components/schemas/Message'
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          type: string
+          enum:
+          - email
+          - sms
+          - web_push
+          - ios_push
+          - android_push
+          - app_push
+          - omni_channel
+          - unknown
+          - unmapped_value
+        message_content:
+          oneOf:
+          - $ref: '#/components/schemas/SmsMessageContents'
+          - $ref: '#/components/schemas/EmailMessageContents'
+          - $ref: '#/components/schemas/PushMessageContents'
+      required:
+      - id
+      - name
+      - message_type
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic

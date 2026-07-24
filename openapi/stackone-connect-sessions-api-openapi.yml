@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  title: Marketing Accounts Connect Sessions API
+  description: The documentation for the StackOne Unified API - MARKETING
+  contact: {}
+  version: 1.0.0
+servers:
+- url: https://api.stackone.com
+tags:
+- name: Connect Sessions
+paths:
+  /connect_sessions/authenticate:
+    post:
+      tags:
+      - Connect Sessions
+      summary: Authenticate Connect Session
+      operationId: stackone_authenticate_connect_session
+      requestBody:
+        description: The parameters to authenticate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectSessionAuthenticate'
+        required: true
+      responses:
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: The details of the authenticated connect session.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectSession'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+      security:
+      - basic: []
+      x-speakeasy-name-override: authenticate_connect_session
+  /connect_sessions:
+    post:
+      tags:
+      - Connect Sessions
+      summary: Create Connect Session
+      operationId: stackone_create_connect_session
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectSessionCreate'
+        required: true
+      responses:
+        '501':
+          description: This functionality is not implemented.
+        '201':
+          description: The details of the connect session created with token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectSessionToken'
+        '400':
+          description: Invalid request.
+        '403':
+          description: Forbidden.
+        '429':
+          description: Too many requests.
+        '500':
+          description: Server error while executing the request.
+      security:
+      - basic: []
+      x-speakeasy-name-override: create_connect_session
+components:
+  schemas:
+    ConnectSessionToken:
+      type: object
+      properties:
+        token:
+          type: string
+        organization_id:
+          type: string
+        provider:
+          type: string
+        origin_owner_id:
+          type: string
+        project_id:
+          type: string
+        origin_owner_name:
+          type: string
+        id:
+          type: string
+        categories:
+          type: array
+          items:
+            type: string
+            enum:
+            - ats
+            - hris
+            - hris-legacy
+            - crm
+            - marketing
+            - stackone
+          example:
+          - ats
+          - hris
+          - hrisLegacy
+          - crm
+          - marketing
+          - stackOne
+        origin_username:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+      required:
+      - id
+      - organization_id
+      - project_id
+      - provider
+      - origin_owner_id
+      - origin_owner_name
+      - created_at
+      - token
+    ConnectSessionCreate:
+      type: object
+      properties:
+        expires_in:
+          type: number
+          description: How long the session should be valid for in seconds
+          default: 1800
+        metadata:
+          type: object
+          description: The metadata for the connection
+        categories:
+          type: array
+          items:
+            type: string
+            enum:
+            - ats
+            - hris
+            - hris-legacy
+            - crm
+            - marketing
+            - stackone
+          description: The categories of the provider to connect to
+          example:
+          - ats
+          - hris
+          - hrisLegacy
+          - crm
+          - marketing
+          - stackOne
+        provider:
+          type: string
+          description: The provider to connect to
+        origin_owner_id:
+          type: string
+          description: The origin owner identifier
+        origin_owner_name:
+          type: string
+          description: The origin owner name
+        origin_username:
+          type: string
+          description: The origin username
+      required:
+      - origin_owner_id
+      - origin_owner_name
+    ConnectSessionAuthenticate:
+      type: object
+      properties:
+        token:
+          type: string
+          description: The token to authenticate with
+      required:
+      - token
+    ConnectSession:
+      type: object
+      properties:
+        provider:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        categories:
+          type: array
+          items:
+            type: string
+            enum:
+            - ats
+            - hris
+            - hris-legacy
+            - crm
+            - marketing
+            - stackone
+          example:
+          - ats
+          - hris
+          - hrisLegacy
+          - crm
+          - marketing
+          - stackOne
+        id:
+          type: string
+        organization_id:
+          type: string
+        origin_owner_name:
+          type: string
+        origin_owner_id:
+          type: string
+        project_id:
+          type: string
+        origin_username:
+          type: string
+      required:
+      - id
+      - organization_id
+      - project_id
+      - provider
+      - origin_owner_id
+      - origin_owner_name
+      - created_at
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
