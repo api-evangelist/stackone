@@ -1,193 +1,438 @@
 aid: stackone
 url: https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml
 apis:
-  - aid: stackone:stackone
-    name: StackOne
-    tags:
-      - Integrations
-      - iPaaS
-    humanURL: https://www.stackone.com/
-    properties:
-      - url: https://www.stackone.com/
-        type: Documentation
-      - url: https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/openapi/stackone-openapi.yml
-        type: OpenAPI
-    description: >-
-      One integration platform, two powerful interfaces: Unified APIs for SaaS products, and AI Agent Actions. Ship
-      hundreds of integrations in days.
-  - aid: stackone:hris-api
-    name: StackOne Unified HRIS API
-    tags:
-      - Employees
-      - HRIS
-      - Human Resources
-      - Unified API
-    humanURL: https://docs.stackone.com/hris/introduction
-    properties:
-      - url: https://docs.stackone.com/hris/introduction
-        type: Documentation
-      - url: https://docs.stackone.com/hris/api-reference/employees/list-employees
-        type: APIReference
-    description: >-
-      StackOne Unified HRIS API provides a single, standardized interface to interact with multiple HR information
-      system providers, normalizing data models for employee data, shifts, time-off, documents, and benefits across
-      platforms.
-  - aid: stackone:ats-api
-    name: StackOne Unified ATS API
-    tags:
-      - Applicant Tracking
-      - ATS
-      - Recruitment
-      - Unified API
-    humanURL: https://docs.stackone.com/ats/introduction
-    properties:
-      - url: https://docs.stackone.com/ats/introduction
-        type: Documentation
-      - url: https://docs.stackone.com/ats/api-reference/jobs/list-jobs
-        type: APIReference
-    description: >-
-      StackOne Unified ATS API standardizes recruitment workflows across applicant tracking system providers, providing
-      consistent data models for candidates, job postings, applications, and hiring pipeline management.
-  - aid: stackone:crm-api
-    name: StackOne Unified CRM API
-    tags:
-      - Contacts
-      - CRM
-      - Customer Relationship Management
-      - Unified API
-    humanURL: https://docs.stackone.com/crm/introduction
-    properties:
-      - url: https://docs.stackone.com/crm/introduction
-        type: Documentation
-      - url: https://docs.stackone.com/crm/api-reference/contacts/creates-a-new-contact
-        type: APIReference
-    description: >-
-      StackOne Unified CRM API provides a standardized interface for managing customer contacts, accounts, and
-      opportunities across multiple CRM platforms, ensuring a consistent view of customer data.
-  - aid: stackone:lms-api
-    name: StackOne Unified LMS API
-    tags:
-      - Courses
-      - Learning Management
-      - LMS
-      - Unified API
-    humanURL: https://docs.stackone.com/lms/introduction
-    properties:
-      - url: https://docs.stackone.com/lms/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified LMS API standardizes learning management across platforms, streamlining course delivery, user
-      progress tracking, content management, and assignments with consistent data models across LMS and learning content
-      providers.
-  - aid: stackone:iam-api
-    name: StackOne Unified IAM API
-    tags:
-      - Access Management
-      - IAM
-      - Identity
-      - Unified API
-    humanURL: https://docs.stackone.com/iam/introduction
-    properties:
-      - url: https://docs.stackone.com/iam/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified IAM API provides a standardized interface for identity and access management across providers,
-      with comprehensive user management, role and permission mapping, group management, and resource access control.
-  - aid: stackone:documents-api
-    name: StackOne Unified Documents API
-    tags:
-      - Documents
-      - Files
-      - Knowledge Management
-      - Unified API
-    humanURL: https://docs.stackone.com/documents/introduction
-    properties:
-      - url: https://docs.stackone.com/documents/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified Documents API provides a standardized interface for file and knowledge management across
-      platforms like Google Drive, SharePoint, Dropbox, and Box, with consistent data models for drives, folders, and
-      documents.
-  - aid: stackone:marketing-api
-    name: StackOne Unified Marketing API
-    tags:
-      - Campaigns
-      - Email
-      - Marketing
-      - SMS
-      - Unified API
-    humanURL: https://docs.stackone.com/marketing/introduction
-    properties:
-      - url: https://docs.stackone.com/marketing/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified Marketing API standardizes campaign management across platforms, streamlining messages (SMS,
-      Email, Push), campaigns, templates, and more with consistent endpoints across marketing automation providers.
-  - aid: stackone:ticketing-api
-    name: StackOne Unified Ticketing API
-    tags:
-      - Helpdesk
-      - Support
-      - Ticketing
-      - Unified API
-    humanURL: https://docs.stackone.com/ticketing/introduction
-    properties:
-      - url: https://docs.stackone.com/ticketing/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified Ticketing API standardizes support workflows across helpdesk platforms, with consistent data
-      models for ticket management, comments, and status tracking.
-  - aid: stackone:messaging-api
-    name: StackOne Unified Messaging API
-    tags:
-      - Chat
-      - Communication
-      - Messaging
-      - Unified API
-    humanURL: https://docs.stackone.com/messaging/introduction
-    properties:
-      - url: https://docs.stackone.com/messaging/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified Messaging API standardizes communication workflows across platforms, with consistent data models
-      for conversations, message delivery, and participant management.
-  - aid: stackone:screening-api
-    name: StackOne Unified Screening API
-    tags:
-      - Assessments
-      - Background Checks
-      - Screening
-      - Unified API
-    humanURL: https://docs.stackone.com/screening/introduction
-    properties:
-      - url: https://docs.stackone.com/screening/introduction
-        type: Documentation
-    description: >-
-      StackOne Unified Screening API standardizes candidate verification across platforms, streamlining background
-      checks, assessments, and screening workflows with consistent data models.
-  - aid: stackone:platform-api
-    name: StackOne Platform API
-    tags:
-      - Accounts
-      - Actions
-      - Administration
-      - Platform
-    humanURL: https://docs.stackone.com/reference/getting-started-with-your-api
-    properties:
-      - url: https://docs.stackone.com/reference/getting-started-with-your-api
-        type: Documentation
-    description: >-
-      StackOne Platform API serves as the control plane for managing accounts, executing actions, controlling
-      integrations, discovering connectors, monitoring and debugging via logs, and proxy requests across StackOne
-      projects and AI agents.
+- aid: stackone:hris-api
+  name: StackOne Unified HRIS API
+  tags:
+  - Employees
+  - HRIS
+  - Human Resources
+  - Unified API
+  humanURL: https://docs.stackone.com/hris/introduction
+  properties:
+  - url: https://docs.stackone.com/hris/introduction
+    type: Documentation
+  - url: https://docs.stackone.com/hris/api-reference/employees/list-employees
+    type: APIReference
+  description: >-
+    StackOne Unified HRIS API provides a single, standardized interface to interact with multiple HR information
+    system providers, normalizing data models for employee data, shifts, time-off, documents, and benefits
+    across platforms.
+- aid: stackone:ats-api
+  name: StackOne Unified ATS API
+  tags:
+  - Applicant Tracking
+  - ATS
+  - Recruitment
+  - Unified API
+  humanURL: https://docs.stackone.com/ats/introduction
+  properties:
+  - url: https://docs.stackone.com/ats/introduction
+    type: Documentation
+  - url: https://docs.stackone.com/ats/api-reference/jobs/list-jobs
+    type: APIReference
+  description: >-
+    StackOne Unified ATS API standardizes recruitment workflows across applicant tracking system providers,
+    providing consistent data models for candidates, job postings, applications, and hiring pipeline management.
+- aid: stackone:crm-api
+  name: StackOne Unified CRM API
+  tags:
+  - Contacts
+  - CRM
+  - Customer Relationship Management
+  - Unified API
+  humanURL: https://docs.stackone.com/crm/introduction
+  properties:
+  - url: https://docs.stackone.com/crm/introduction
+    type: Documentation
+  - url: https://docs.stackone.com/crm/api-reference/contacts/creates-a-new-contact
+    type: APIReference
+  description: >-
+    StackOne Unified CRM API provides a standardized interface for managing customer contacts, accounts,
+    and opportunities across multiple CRM platforms, ensuring a consistent view of customer data.
+- aid: stackone:lms-api
+  name: StackOne Unified LMS API
+  tags:
+  - Courses
+  - Learning Management
+  - LMS
+  - Unified API
+  humanURL: https://docs.stackone.com/lms/introduction
+  properties:
+  - url: https://docs.stackone.com/lms/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified LMS API standardizes learning management across platforms, streamlining course delivery,
+    user progress tracking, content management, and assignments with consistent data models across LMS
+    and learning content providers.
+- aid: stackone:iam-api
+  name: StackOne Unified IAM API
+  tags:
+  - Access Management
+  - IAM
+  - Identity
+  - Unified API
+  humanURL: https://docs.stackone.com/iam/introduction
+  properties:
+  - url: https://docs.stackone.com/iam/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified IAM API provides a standardized interface for identity and access management across
+    providers, with comprehensive user management, role and permission mapping, group management, and
+    resource access control.
+- aid: stackone:documents-api
+  name: StackOne Unified Documents API
+  tags:
+  - Documents
+  - Files
+  - Knowledge Management
+  - Unified API
+  humanURL: https://docs.stackone.com/documents/introduction
+  properties:
+  - url: https://docs.stackone.com/documents/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified Documents API provides a standardized interface for file and knowledge management
+    across platforms like Google Drive, SharePoint, Dropbox, and Box, with consistent data models for
+    drives, folders, and documents.
+- aid: stackone:marketing-api
+  name: StackOne Unified Marketing API
+  tags:
+  - Campaigns
+  - Email
+  - Marketing
+  - SMS
+  - Unified API
+  humanURL: https://docs.stackone.com/marketing/introduction
+  properties:
+  - url: https://docs.stackone.com/marketing/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified Marketing API standardizes campaign management across platforms, streamlining messages
+    (SMS, Email, Push), campaigns, templates, and more with consistent endpoints across marketing automation
+    providers.
+- aid: stackone:ticketing-api
+  name: StackOne Unified Ticketing API
+  tags:
+  - Helpdesk
+  - Support
+  - Ticketing
+  - Unified API
+  humanURL: https://docs.stackone.com/ticketing/introduction
+  properties:
+  - url: https://docs.stackone.com/ticketing/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified Ticketing API standardizes support workflows across helpdesk platforms, with consistent
+    data models for ticket management, comments, and status tracking.
+- aid: stackone:messaging-api
+  name: StackOne Unified Messaging API
+  tags:
+  - Chat
+  - Communication
+  - Messaging
+  - Unified API
+  humanURL: https://docs.stackone.com/messaging/introduction
+  properties:
+  - url: https://docs.stackone.com/messaging/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified Messaging API standardizes communication workflows across platforms, with consistent
+    data models for conversations, message delivery, and participant management.
+- aid: stackone:screening-api
+  name: StackOne Unified Screening API
+  tags:
+  - Assessments
+  - Background Checks
+  - Screening
+  - Unified API
+  humanURL: https://docs.stackone.com/screening/introduction
+  properties:
+  - url: https://docs.stackone.com/screening/introduction
+    type: Documentation
+  description: >-
+    StackOne Unified Screening API standardizes candidate verification across platforms, streamlining
+    background checks, assessments, and screening workflows with consistent data models.
+- aid: stackone:platform-api
+  name: StackOne Platform API
+  tags:
+  - Accounts
+  - Actions
+  - Administration
+  - Platform
+  humanURL: https://docs.stackone.com/reference/getting-started-with-your-api
+  properties:
+  - url: https://docs.stackone.com/reference/getting-started-with-your-api
+    type: Documentation
+  description: >-
+    StackOne Platform API serves as the control plane for managing accounts, executing actions, controlling
+    integrations, discovering connectors, monitoring and debugging via logs, and proxy requests across
+    StackOne projects and AI agents.
+- aid: stackone:stackone-accounts-api
+  name: StackOne Accounts API
+  description: The Accounts API from StackOne — 5 operation(s) for accounts.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-applications-api
+  name: StackOne Applications API
+  description: The Applications API from StackOne — 4 operation(s) for applications.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-applications-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-campaigns-api
+  name: StackOne Campaigns API
+  description: The Campaigns API from StackOne — 2 operation(s) for campaigns.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Campaigns
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-campaigns-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-candidates-api
+  name: StackOne Candidates API
+  description: The Candidates API from StackOne — 4 operation(s) for candidates.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Candidates
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-candidates-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-companies-api
+  name: StackOne Companies API
+  description: The Companies API from StackOne — 2 operation(s) for companies.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-companies-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-connect-sessions-api
+  name: StackOne Connect Sessions API
+  description: The Connect Sessions API from StackOne — 2 operation(s) for connect sessions.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Connect Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-connect-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-contacts-api
+  name: StackOne Contacts API
+  description: The Contacts API from StackOne — 2 operation(s) for contacts.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-departments-api
+  name: StackOne Departments API
+  description: The Departments API from StackOne — 2 operation(s) for departments.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Departments
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-departments-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-employees-api
+  name: StackOne Employees API
+  description: The Employees API from StackOne — 4 operation(s) for employees.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-employees-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-employments-api
+  name: StackOne Employments API
+  description: The Employments API from StackOne — 2 operation(s) for employments.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Employments
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-employments-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-interview-stages-api
+  name: StackOne Interview Stages API
+  description: The Interview Stages API from StackOne — 2 operation(s) for interview stages.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Interview Stages
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-interview-stages-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-interviews-api
+  name: StackOne Interviews API
+  description: The Interviews API from StackOne — 2 operation(s) for interviews.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Interviews
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-interviews-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-job-postings-api
+  name: StackOne Job Postings API
+  description: The Job Postings API from StackOne — 2 operation(s) for job postings.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Job Postings
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-job-postings-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-jobs-api
+  name: StackOne Jobs API
+  description: The Jobs API from StackOne — 2 operation(s) for jobs.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-lists-api
+  name: StackOne Lists API
+  description: The Lists API from StackOne — 2 operation(s) for lists.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-lists-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-locations-api
+  name: StackOne Locations API
+  description: The Locations API from StackOne — 4 operation(s) for locations.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-locations-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-offers-api
+  name: StackOne Offers API
+  description: The Offers API from StackOne — 2 operation(s) for offers.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-offers-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-proxy-api
+  name: StackOne Proxy API
+  description: The Proxy API from StackOne — 1 operation(s) for proxy.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Proxy
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-proxy-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-rejected-reasons-api
+  name: StackOne Rejected Reasons API
+  description: The Rejected Reasons API from StackOne — 2 operation(s) for rejected reasons.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Rejected Reasons
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-rejected-reasons-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-templates-api
+  name: StackOne Templates API
+  description: The Templates API from StackOne — 6 operation(s) for templates.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-templates-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-time-off-api
+  name: StackOne Time Off API
+  description: The Time Off API from StackOne — 2 operation(s) for time off.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Time Off
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-time-off-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
+- aid: stackone:stackone-users-api
+  name: StackOne Users API
+  description: The Users API from StackOne — 2 operation(s) for users.
+  humanURL: https://www.stackone.com/
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/stackone-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.stackone.com/
 name: StackOne
 tags:
   - Integrations
   - iPaaS
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stackone.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/stackone/overview
   - type: AgenticAccess
     url: agentic-access/stackone-agentic-access.yml
   - type: TrustCenter
