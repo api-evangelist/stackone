@@ -1,0 +1,1381 @@
+{
+  "info": {
+    "_postman_id": "3ae74abb-d79d-40a0-a16f-2589b5b04a1d",
+    "name": "Marketing Accounts Interview Stages API",
+    "description": "The documentation for the StackOne Unified API - MARKETING",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:05:18.000Z",
+    "updatedAt": "2026-07-28T03:05:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3ae74abb-d79d-40a0-a16f-2589b5b04a1d"
+  },
+  "item": [
+    {
+      "name": "unified",
+      "item": [
+        {
+          "name": "ats",
+          "item": [
+            {
+              "name": "interview_stages",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get Interview Stage",
+                      "id": "ead5dca1-e5d5-4791-9a5f-5b2cc0f1d83d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "basic",
+                          "basic": [
+                            {
+                              "key": "username",
+                              "value": "{{basicAuthUsername}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "password",
+                              "value": "{{basicAuthPassword}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "09c5ec3e-457a-47a2-9f27-82bca99d83fe",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "6c5f7cd9-bf97-418f-a3c5-14322e03a5d9",
+                          "name": "The interview-stage with the given identifier was retrieved.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"order\": \"<number>\"\n  },\n  \"raw\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-6c5f7cd9-bf97-418f-a3c5-14322e03a5d9"
+                        },
+                        {
+                          "id": "87d1d3fc-a721-4269-b8d7-0a4de33f410d",
+                          "name": "Invalid request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-87d1d3fc-a721-4269-b8d7-0a4de33f410d"
+                        },
+                        {
+                          "id": "72ad664c-4607-4316-8297-53ec0c4d06cb",
+                          "name": "Forbidden.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-72ad664c-4607-4316-8297-53ec0c4d06cb"
+                        },
+                        {
+                          "id": "7592e68b-b8ee-4610-9b95-2221861e4edb",
+                          "name": "Precondition failed: linked account belongs to a disabled integration.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Precondition Failed",
+                          "code": 412,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-7592e68b-b8ee-4610-9b95-2221861e4edb"
+                        },
+                        {
+                          "id": "54c91ef7-18e7-4a9a-872e-867645e37dfa",
+                          "name": "Too many requests.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-54c91ef7-18e7-4a9a-872e-867645e37dfa"
+                        },
+                        {
+                          "id": "5ebc3937-8160-4631-a145-688c486b7beb",
+                          "name": "Server error while executing the request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-5ebc3937-8160-4631-a145-688c486b7beb"
+                        },
+                        {
+                          "id": "c28bcf0b-ed12-4135-9c3b-1b3169dc38f6",
+                          "name": "This functionality is not implemented.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/interview_stages/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "interview_stages",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[officia5]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Implemented",
+                          "code": 501,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:19.000Z",
+                          "updatedAt": "2026-07-28T03:05:19.000Z",
+                          "uid": "35240-c28bcf0b-ed12-4135-9c3b-1b3169dc38f6"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-ead5dca1-e5d5-4791-9a5f-5b2cc0f1d83d"
+                    }
+                  ],
+                  "id": "8026140b-fce1-472e-b2b1-49af9de73765",
+                  "createdAt": "2026-07-28T03:05:19.000Z",
+                  "updatedAt": "2026-07-28T03:05:19.000Z",
+                  "uid": "35240-8026140b-fce1-472e-b2b1-49af9de73765"
+                },
+                {
+                  "name": "List Interview Stages",
+                  "id": "dc3ec1cb-e4b0-4f48-bcb5-5b8489d5bcf2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "key": "username",
+                          "value": "{{basicAuthUsername}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "password",
+                          "value": "{{basicAuthPassword}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "ats",
+                        "interview_stages"
+                      ],
+                      "query": [
+                        {
+                          "description": "The page number of the results to fetch",
+                          "key": "page",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The number of results per page",
+                          "key": "page_size",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Indicates that the raw request result is returned",
+                          "key": "raw",
+                          "value": "false"
+                        },
+                        {
+                          "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                          "key": "fields",
+                          "value": ""
+                        },
+                        {
+                          "description": "The sync token to select the only updated results",
+                          "key": "sync_token",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Use a string with a date to only select results updated after that given date",
+                          "key": "updated_after",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[officia5]",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "ffd4aef4-e8ca-46e3-ba78-f8c35b716574",
+                      "name": "The list of interview-stages was retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"next_page\": \"<string>\",\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\",\n      \"order\": \"<number>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\",\n      \"order\": \"<number>\"\n    }\n  ],\n  \"raw\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-ffd4aef4-e8ca-46e3-ba78-f8c35b716574"
+                    },
+                    {
+                      "id": "fcc773eb-a4ef-4a73-b7c0-2e3586a18590",
+                      "name": "Invalid request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-fcc773eb-a4ef-4a73-b7c0-2e3586a18590"
+                    },
+                    {
+                      "id": "9434bd5a-9b26-4d4a-a221-9ee9141b5a9a",
+                      "name": "Forbidden.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-9434bd5a-9b26-4d4a-a221-9ee9141b5a9a"
+                    },
+                    {
+                      "id": "b09ae99f-d3f2-479c-96b6-475469b42c3e",
+                      "name": "Precondition failed: linked account belongs to a disabled integration.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-b09ae99f-d3f2-479c-96b6-475469b42c3e"
+                    },
+                    {
+                      "id": "e5966fdf-a7cd-4798-8e5a-62b3f729f532",
+                      "name": "Too many requests.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-e5966fdf-a7cd-4798-8e5a-62b3f729f532"
+                    },
+                    {
+                      "id": "a49816f3-4cdd-4a3b-b58e-57352a0d8c0b",
+                      "name": "Server error while executing the request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-a49816f3-4cdd-4a3b-b58e-57352a0d8c0b"
+                    },
+                    {
+                      "id": "c323a5ac-f0b7-4830-a7ca-a314699ef7fa",
+                      "name": "This functionality is not implemented.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/interview_stages?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[officia5]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "interview_stages"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[officia5]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Implemented",
+                      "code": 501,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:19.000Z",
+                      "updatedAt": "2026-07-28T03:05:19.000Z",
+                      "uid": "35240-c323a5ac-f0b7-4830-a7ca-a314699ef7fa"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:05:19.000Z",
+                  "updatedAt": "2026-07-28T03:05:19.000Z",
+                  "uid": "35240-dc3ec1cb-e4b0-4f48-bcb5-5b8489d5bcf2"
+                }
+              ],
+              "id": "7da61839-dfd9-47a4-9b37-00a664ce0745",
+              "createdAt": "2026-07-28T03:05:19.000Z",
+              "updatedAt": "2026-07-28T03:05:19.000Z",
+              "uid": "35240-7da61839-dfd9-47a4-9b37-00a664ce0745"
+            }
+          ],
+          "id": "d59d70c6-9f0c-428a-b04a-330e985964a3",
+          "createdAt": "2026-07-28T03:05:19.000Z",
+          "updatedAt": "2026-07-28T03:05:19.000Z",
+          "uid": "35240-d59d70c6-9f0c-428a-b04a-330e985964a3"
+        }
+      ],
+      "id": "1808bd0e-7932-4cba-9790-002722ddf3bb",
+      "createdAt": "2026-07-28T03:05:19.000Z",
+      "updatedAt": "2026-07-28T03:05:19.000Z",
+      "uid": "35240-1808bd0e-7932-4cba-9790-002722ddf3bb"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.stackone.com"
+    }
+  ]
+}

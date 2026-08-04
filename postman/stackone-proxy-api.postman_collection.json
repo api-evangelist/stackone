@@ -1,0 +1,470 @@
+{
+  "info": {
+    "_postman_id": "d7aaeb39-39ad-4bf8-9ea0-e43839f9ca7f",
+    "name": "Marketing Accounts Proxy API",
+    "description": "The documentation for the StackOne Unified API - MARKETING",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:05:32.000Z",
+    "updatedAt": "2026-07-28T03:05:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d7aaeb39-39ad-4bf8-9ea0-e43839f9ca7f"
+  },
+  "item": [
+    {
+      "name": "unified",
+      "item": [
+        {
+          "name": "proxy",
+          "item": [
+            {
+              "name": "Proxy Request",
+              "id": "b902dd58-9944-4653-8054-ab10aff954fb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{basicAuthUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{basicAuthPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/unified/proxy",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "unified",
+                    "proxy"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "f1b095f0-9bd3-4ce0-ba36-949d96f754b8",
+                  "name": "The proxy request was successful.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-f1b095f0-9bd3-4ce0-ba36-949d96f754b8"
+                },
+                {
+                  "id": "6511ab17-db58-4b45-b9fb-210e00f473e6",
+                  "name": "Invalid request.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-6511ab17-db58-4b45-b9fb-210e00f473e6"
+                },
+                {
+                  "id": "e6617604-6140-4a74-9caf-2dd16fcf6708",
+                  "name": "Forbidden.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-e6617604-6140-4a74-9caf-2dd16fcf6708"
+                },
+                {
+                  "id": "c914e502-bc45-48a2-970e-4327f53f0b08",
+                  "name": "Precondition failed: linked account belongs to a disabled integration.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "Precondition Failed",
+                  "code": 412,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-c914e502-bc45-48a2-970e-4327f53f0b08"
+                },
+                {
+                  "id": "8eac5dd4-09c9-42eb-ae84-1e3fe63680fd",
+                  "name": "Too many requests.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-8eac5dd4-09c9-42eb-ae84-1e3fe63680fd"
+                },
+                {
+                  "id": "024126f5-3f95-46f7-ab7e-20207e73cf3b",
+                  "name": "Server error while executing the request.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-024126f5-3f95-46f7-ab7e-20207e73cf3b"
+                },
+                {
+                  "id": "03e55bf2-8f4f-41dc-880d-eab78f7ca616",
+                  "name": "This functionality is not implemented.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"body\": {},\n  \"url\": \"\",\n  \"method\": \"get\",\n  \"path\": \"\",\n  \"headers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/proxy",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "proxy"
+                      ]
+                    }
+                  },
+                  "status": "Not Implemented",
+                  "code": 501,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:33.000Z",
+                  "updatedAt": "2026-07-28T03:05:33.000Z",
+                  "uid": "35240-03e55bf2-8f4f-41dc-880d-eab78f7ca616"
+                }
+              ],
+              "createdAt": "2026-07-28T03:05:33.000Z",
+              "updatedAt": "2026-07-28T03:05:33.000Z",
+              "uid": "35240-b902dd58-9944-4653-8054-ab10aff954fb"
+            }
+          ],
+          "id": "15820652-9e99-4d8a-9880-69ac353fb3c4",
+          "createdAt": "2026-07-28T03:05:33.000Z",
+          "updatedAt": "2026-07-28T03:05:33.000Z",
+          "uid": "35240-15820652-9e99-4d8a-9880-69ac353fb3c4"
+        }
+      ],
+      "id": "e6ebec83-6b48-4b1b-9bf3-8364c0675f21",
+      "createdAt": "2026-07-28T03:05:33.000Z",
+      "updatedAt": "2026-07-28T03:05:33.000Z",
+      "uid": "35240-e6ebec83-6b48-4b1b-9bf3-8364c0675f21"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.stackone.com"
+    }
+  ]
+}

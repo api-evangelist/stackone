@@ -1,0 +1,2893 @@
+{
+  "info": {
+    "_postman_id": "62ddc371-214a-464e-8d26-168e5b1099b3",
+    "name": "Marketing Accounts Locations API",
+    "description": "The documentation for the StackOne Unified API - MARKETING",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:05:26.000Z",
+    "updatedAt": "2026-07-28T03:05:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-62ddc371-214a-464e-8d26-168e5b1099b3"
+  },
+  "item": [
+    {
+      "name": "unified",
+      "item": [
+        {
+          "name": "hris",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get Location",
+                      "id": "48616b77-e030-40b7-badc-a8a28adb77bb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "basic",
+                          "basic": [
+                            {
+                              "key": "username",
+                              "value": "{{basicAuthUsername}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "password",
+                              "value": "{{basicAuthPassword}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "172a5f7b-9742-4911-b286-80a0e8fa227d",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "01cb8fe7-b468-4f5f-b9f3-183ff9d20450",
+                          "name": "The Location with the given identifier was retrieved.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"zip_code\": \"<string>\",\n    \"street_1\": \"<string>\",\n    \"street_2\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"id\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"employee_id\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": {\n      \"value\": \"HT\",\n      \"source_value\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"state\": \"<string>\",\n    \"location_type\": {\n      \"value\": \"unmapped_value\",\n      \"source_value\": \"<string>\"\n    }\n  },\n  \"raw\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-01cb8fe7-b468-4f5f-b9f3-183ff9d20450"
+                        },
+                        {
+                          "id": "884375fa-d335-4f5a-9aff-17cde070363c",
+                          "name": "Invalid request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-884375fa-d335-4f5a-9aff-17cde070363c"
+                        },
+                        {
+                          "id": "042f0b15-61fd-4445-b498-dccab18c4881",
+                          "name": "Forbidden.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-042f0b15-61fd-4445-b498-dccab18c4881"
+                        },
+                        {
+                          "id": "4da4a220-dc31-420b-96d7-0b81a0c7c9e3",
+                          "name": "Precondition failed: linked account belongs to a disabled integration.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Precondition Failed",
+                          "code": 412,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-4da4a220-dc31-420b-96d7-0b81a0c7c9e3"
+                        },
+                        {
+                          "id": "79862ca1-4473-463f-a20f-a047d51288d2",
+                          "name": "Too many requests.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-79862ca1-4473-463f-a20f-a047d51288d2"
+                        },
+                        {
+                          "id": "ec055dbf-b193-42ee-a501-dcc08d1f5b0e",
+                          "name": "Server error while executing the request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-ec055dbf-b193-42ee-a501-dcc08d1f5b0e"
+                        },
+                        {
+                          "id": "acff4418-c676-4a7c-b8fa-6afc172410ee",
+                          "name": "This functionality is not implemented.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/hris/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "hris",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Implemented",
+                          "code": 501,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-acff4418-c676-4a7c-b8fa-6afc172410ee"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-48616b77-e030-40b7-badc-a8a28adb77bb"
+                    }
+                  ],
+                  "id": "cd0aca3a-5027-4a56-915c-fefe084ea702",
+                  "createdAt": "2026-07-28T03:05:26.000Z",
+                  "updatedAt": "2026-07-28T03:05:26.000Z",
+                  "uid": "35240-cd0aca3a-5027-4a56-915c-fefe084ea702"
+                },
+                {
+                  "name": "List locations",
+                  "id": "7b596957-f0ee-416f-994a-942fd55ad0ea",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "key": "username",
+                          "value": "{{basicAuthUsername}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "password",
+                          "value": "{{basicAuthPassword}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "hris",
+                        "locations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The page number of the results to fetch",
+                          "key": "page",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The number of results per page",
+                          "key": "page_size",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Indicates that the raw request result is returned",
+                          "key": "raw",
+                          "value": "false"
+                        },
+                        {
+                          "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                          "key": "fields",
+                          "value": ""
+                        },
+                        {
+                          "description": "The sync token to select the only updated results",
+                          "key": "sync_token",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Use a string with a date to only select results updated after that given date",
+                          "key": "updated_after",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[sit_]",
+                          "value": "44145054"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[Excepteurb]",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "1c9413e3-884d-48f8-a5e5-c5b39f22a9c3",
+                      "name": "The list of Locations was retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"next_page\": \"<string>\",\n  \"data\": [\n    {\n      \"zip_code\": \"<string>\",\n      \"street_1\": \"<string>\",\n      \"street_2\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"id\": \"<string>\",\n      \"phone_number\": \"<string>\",\n      \"employee_id\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": {\n        \"value\": \"BQ\",\n        \"source_value\": \"<string>\"\n      },\n      \"name\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"state\": \"<string>\",\n      \"location_type\": {\n        \"value\": \"work\",\n        \"source_value\": \"<string>\"\n      }\n    },\n    {\n      \"zip_code\": \"<string>\",\n      \"street_1\": \"<string>\",\n      \"street_2\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"id\": \"<string>\",\n      \"phone_number\": \"<string>\",\n      \"employee_id\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": {\n        \"value\": \"HN\",\n        \"source_value\": \"<string>\"\n      },\n      \"name\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"state\": \"<string>\",\n      \"location_type\": {\n        \"value\": \"unmapped_value\",\n        \"source_value\": \"<string>\"\n      }\n    }\n  ],\n  \"raw\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-1c9413e3-884d-48f8-a5e5-c5b39f22a9c3"
+                    },
+                    {
+                      "id": "d96a1af6-530e-4c1d-a1e1-263d1bb45dd2",
+                      "name": "Invalid request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-d96a1af6-530e-4c1d-a1e1-263d1bb45dd2"
+                    },
+                    {
+                      "id": "ed55c5b2-3b38-47d9-939b-dc8056b5ad01",
+                      "name": "Forbidden.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-ed55c5b2-3b38-47d9-939b-dc8056b5ad01"
+                    },
+                    {
+                      "id": "fafc2d00-f9bc-42b4-a2db-fcbd098ce04a",
+                      "name": "Precondition failed: linked account belongs to a disabled integration.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-fafc2d00-f9bc-42b4-a2db-fcbd098ce04a"
+                    },
+                    {
+                      "id": "55a319e6-eb2f-44c1-9026-57dcedf625b3",
+                      "name": "Too many requests.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-55a319e6-eb2f-44c1-9026-57dcedf625b3"
+                    },
+                    {
+                      "id": "7d7193f5-facb-4d2e-b7b6-c912cec2d708",
+                      "name": "Server error while executing the request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-7d7193f5-facb-4d2e-b7b6-c912cec2d708"
+                    },
+                    {
+                      "id": "1a637405-cea7-415a-9a85-2c1eb01e6171",
+                      "name": "This functionality is not implemented.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/hris/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "hris",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Implemented",
+                      "code": 501,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-1a637405-cea7-415a-9a85-2c1eb01e6171"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:05:26.000Z",
+                  "updatedAt": "2026-07-28T03:05:26.000Z",
+                  "uid": "35240-7b596957-f0ee-416f-994a-942fd55ad0ea"
+                }
+              ],
+              "id": "293df4e0-4ae8-42c0-bacf-6f1474c01e93",
+              "createdAt": "2026-07-28T03:05:26.000Z",
+              "updatedAt": "2026-07-28T03:05:26.000Z",
+              "uid": "35240-293df4e0-4ae8-42c0-bacf-6f1474c01e93"
+            }
+          ],
+          "id": "5a4e32d5-82d7-4bc3-bc4a-8f28f5e8bed7",
+          "createdAt": "2026-07-28T03:05:26.000Z",
+          "updatedAt": "2026-07-28T03:05:26.000Z",
+          "uid": "35240-5a4e32d5-82d7-4bc3-bc4a-8f28f5e8bed7"
+        },
+        {
+          "name": "ats",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get Location",
+                      "id": "daa30e44-23f4-4c27-a1d7-548d2328dfd7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "basic",
+                          "basic": [
+                            {
+                              "key": "username",
+                              "value": "{{basicAuthUsername}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "password",
+                              "value": "{{basicAuthPassword}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "68fb3800-2c40-42d9-a8b4-6aa82ef7aa80",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "0b407ce8-18f0-45c4-8f40-b1f68f12097d",
+                          "name": "The location with the given identifier was retrieved.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"raw\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-0b407ce8-18f0-45c4-8f40-b1f68f12097d"
+                        },
+                        {
+                          "id": "cba35710-4e82-4e28-bdb7-51085b823bcf",
+                          "name": "Invalid request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-cba35710-4e82-4e28-bdb7-51085b823bcf"
+                        },
+                        {
+                          "id": "e6a46ae9-44a2-4fee-9c1b-fe5c9633a2db",
+                          "name": "Forbidden.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-e6a46ae9-44a2-4fee-9c1b-fe5c9633a2db"
+                        },
+                        {
+                          "id": "a9e560d1-e17e-478c-bcc5-fcbd0747b3e8",
+                          "name": "Precondition failed: linked account belongs to a disabled integration.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Precondition Failed",
+                          "code": 412,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-a9e560d1-e17e-478c-bcc5-fcbd0747b3e8"
+                        },
+                        {
+                          "id": "08012b57-04b1-4a5a-9c2e-bd4f3c4231c9",
+                          "name": "Too many requests.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-08012b57-04b1-4a5a-9c2e-bd4f3c4231c9"
+                        },
+                        {
+                          "id": "aedab367-bd22-4775-83a0-adb9e19caf67",
+                          "name": "Server error while executing the request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-aedab367-bd22-4775-83a0-adb9e19caf67"
+                        },
+                        {
+                          "id": "864e551f-5e0a-431b-acd0-b3e5a6f7e9f4",
+                          "name": "This functionality is not implemented.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/locations/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "locations",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[sit_]",
+                                  "value": "44145054"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[Excepteurb]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Implemented",
+                          "code": 501,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:26.000Z",
+                          "updatedAt": "2026-07-28T03:05:26.000Z",
+                          "uid": "35240-864e551f-5e0a-431b-acd0-b3e5a6f7e9f4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-daa30e44-23f4-4c27-a1d7-548d2328dfd7"
+                    }
+                  ],
+                  "id": "7e5fe64c-9de5-4007-89ea-bd875c135012",
+                  "createdAt": "2026-07-28T03:05:26.000Z",
+                  "updatedAt": "2026-07-28T03:05:26.000Z",
+                  "uid": "35240-7e5fe64c-9de5-4007-89ea-bd875c135012"
+                },
+                {
+                  "name": "List locations",
+                  "id": "668590d3-0dbd-499b-9992-936601f19a0a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "key": "username",
+                          "value": "{{basicAuthUsername}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "password",
+                          "value": "{{basicAuthPassword}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "ats",
+                        "locations"
+                      ],
+                      "query": [
+                        {
+                          "description": "The page number of the results to fetch",
+                          "key": "page",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The number of results per page",
+                          "key": "page_size",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Indicates that the raw request result is returned",
+                          "key": "raw",
+                          "value": "false"
+                        },
+                        {
+                          "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                          "key": "fields",
+                          "value": ""
+                        },
+                        {
+                          "description": "The sync token to select the only updated results",
+                          "key": "sync_token",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Use a string with a date to only select results updated after that given date",
+                          "key": "updated_after",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[sit_]",
+                          "value": "44145054"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[Excepteurb]",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "bdac0e71-b098-4b68-aa71-6999ad654476",
+                      "name": "The list of locations was retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"next_page\": \"<string>\",\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"raw\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-bdac0e71-b098-4b68-aa71-6999ad654476"
+                    },
+                    {
+                      "id": "941c3978-b5ad-44c0-890c-85d5901e4a02",
+                      "name": "Invalid request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-941c3978-b5ad-44c0-890c-85d5901e4a02"
+                    },
+                    {
+                      "id": "d2e62013-b6c4-4f7a-9a8d-b7d9792140ef",
+                      "name": "Forbidden.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-d2e62013-b6c4-4f7a-9a8d-b7d9792140ef"
+                    },
+                    {
+                      "id": "701ab8e9-cd72-40ab-9ac1-5aec060f177e",
+                      "name": "Precondition failed: linked account belongs to a disabled integration.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-701ab8e9-cd72-40ab-9ac1-5aec060f177e"
+                    },
+                    {
+                      "id": "2af0ccba-b6e6-4606-bcc8-4b68a9c1523c",
+                      "name": "Too many requests.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-2af0ccba-b6e6-4606-bcc8-4b68a9c1523c"
+                    },
+                    {
+                      "id": "8a1b52d9-53b1-4c14-a11c-9f425032c0a1",
+                      "name": "Server error while executing the request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-8a1b52d9-53b1-4c14-a11c-9f425032c0a1"
+                    },
+                    {
+                      "id": "a7ec819b-aa23-4805-9276-7a41557e72ab",
+                      "name": "This functionality is not implemented.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/locations?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[sit_]=44145054&proxy[Excepteurb]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[sit_]",
+                              "value": "44145054"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[Excepteurb]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Implemented",
+                      "code": 501,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:26.000Z",
+                      "updatedAt": "2026-07-28T03:05:26.000Z",
+                      "uid": "35240-a7ec819b-aa23-4805-9276-7a41557e72ab"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:05:26.000Z",
+                  "updatedAt": "2026-07-28T03:05:26.000Z",
+                  "uid": "35240-668590d3-0dbd-499b-9992-936601f19a0a"
+                }
+              ],
+              "id": "1ce2c09f-4cb9-49ea-bd70-a6e7834db0a1",
+              "createdAt": "2026-07-28T03:05:26.000Z",
+              "updatedAt": "2026-07-28T03:05:26.000Z",
+              "uid": "35240-1ce2c09f-4cb9-49ea-bd70-a6e7834db0a1"
+            }
+          ],
+          "id": "ca4dd146-c056-4e9a-a3da-772c2198340b",
+          "createdAt": "2026-07-28T03:05:26.000Z",
+          "updatedAt": "2026-07-28T03:05:26.000Z",
+          "uid": "35240-ca4dd146-c056-4e9a-a3da-772c2198340b"
+        }
+      ],
+      "id": "ccd5d200-937c-44e4-aa79-295b47067281",
+      "createdAt": "2026-07-28T03:05:26.000Z",
+      "updatedAt": "2026-07-28T03:05:26.000Z",
+      "uid": "35240-ccd5d200-937c-44e4-aa79-295b47067281"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.stackone.com"
+    }
+  ]
+}

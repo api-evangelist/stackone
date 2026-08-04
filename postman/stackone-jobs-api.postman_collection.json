@@ -1,0 +1,1541 @@
+{
+  "info": {
+    "_postman_id": "74bceac4-7409-4d69-8361-1f3b467ade3e",
+    "name": "Marketing Accounts Jobs API",
+    "description": "The documentation for the StackOne Unified API - MARKETING",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:05:24.000Z",
+    "updatedAt": "2026-07-28T03:05:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-74bceac4-7409-4d69-8361-1f3b467ade3e"
+  },
+  "item": [
+    {
+      "name": "unified",
+      "item": [
+        {
+          "name": "ats",
+          "item": [
+            {
+              "name": "jobs",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get Job",
+                      "id": "1ae5cee6-a33b-4e83-8cf0-2c06d7bdcdc7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "basic",
+                          "basic": [
+                            {
+                              "key": "username",
+                              "value": "{{basicAuthUsername}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "password",
+                              "value": "{{basicAuthPassword}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "707ff3dd-de55-4d4e-9182-2b5f8fb1b68c",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "bb4a7652-2167-47d8-bd43-3f47ded12c65",
+                          "name": "The job with the given identifier was retrieved.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"job\": {\n    \"id\": \"<string>\",\n    \"code\": \"<string>\",\n    \"title\": \"<string>\",\n    \"company_id\": \"<string>\",\n    \"department_ids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"location_ids\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"job_status\": {\n      \"value\": \"draft\",\n      \"source_value\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"hiring_team\": [\n      {\n        \"email\": \"<string>\",\n        \"role\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"role\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\"\n      }\n    ],\n    \"confidential\": \"false\"\n  },\n  \"raw\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-bb4a7652-2167-47d8-bd43-3f47ded12c65"
+                        },
+                        {
+                          "id": "ae40f9f2-36d4-4f34-9073-2f3e109cc24f",
+                          "name": "Invalid request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-ae40f9f2-36d4-4f34-9073-2f3e109cc24f"
+                        },
+                        {
+                          "id": "7d807d23-d75e-4116-8c31-43acc24a7e73",
+                          "name": "Forbidden.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-7d807d23-d75e-4116-8c31-43acc24a7e73"
+                        },
+                        {
+                          "id": "75d2cb23-65c7-4d4c-a5fe-19b0002b060b",
+                          "name": "Precondition failed: linked account belongs to a disabled integration.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Precondition Failed",
+                          "code": 412,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-75d2cb23-65c7-4d4c-a5fe-19b0002b060b"
+                        },
+                        {
+                          "id": "87a7320d-0e16-4a9c-8614-e30fca93c39c",
+                          "name": "Too many requests.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-87a7320d-0e16-4a9c-8614-e30fca93c39c"
+                        },
+                        {
+                          "id": "4d6e49eb-84e5-4396-ac32-eefe614a28f2",
+                          "name": "Server error while executing the request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-4d6e49eb-84e5-4396-ac32-eefe614a28f2"
+                        },
+                        {
+                          "id": "dbf8205b-1e07-421c-a367-19cf2581da45",
+                          "name": "This functionality is not implemented.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/jobs/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "jobs",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[proident_7]",
+                                  "value": "-69734652"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[voluptate__c]",
+                                  "value": "true"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[elit9c3]",
+                                  "value": "-59778888.62542651"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Implemented",
+                          "code": 501,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:24.000Z",
+                          "updatedAt": "2026-07-28T03:05:24.000Z",
+                          "uid": "35240-dbf8205b-1e07-421c-a367-19cf2581da45"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-1ae5cee6-a33b-4e83-8cf0-2c06d7bdcdc7"
+                    }
+                  ],
+                  "id": "ce10ebaf-9330-457d-a0fb-e34bcca560f6",
+                  "createdAt": "2026-07-28T03:05:24.000Z",
+                  "updatedAt": "2026-07-28T03:05:24.000Z",
+                  "uid": "35240-ce10ebaf-9330-457d-a0fb-e34bcca560f6"
+                },
+                {
+                  "name": "List Jobs",
+                  "id": "9bcc0e4e-0d8c-4cba-878f-822b72cad5db",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "key": "username",
+                          "value": "{{basicAuthUsername}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "password",
+                          "value": "{{basicAuthPassword}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "ats",
+                        "jobs"
+                      ],
+                      "query": [
+                        {
+                          "description": "The page number of the results to fetch",
+                          "key": "page",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The number of results per page",
+                          "key": "page_size",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Indicates that the raw request result is returned",
+                          "key": "raw",
+                          "value": "false"
+                        },
+                        {
+                          "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                          "key": "fields",
+                          "value": ""
+                        },
+                        {
+                          "description": "The sync token to select the only updated results",
+                          "key": "sync_token",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Use a string with a date to only select results updated after that given date",
+                          "key": "updated_after",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[proident_7]",
+                          "value": "-69734652"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[voluptate__c]",
+                          "value": "true"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[elit9c3]",
+                          "value": "-59778888.62542651"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "e1a7b3c1-aa56-4dda-b2cb-d949f8a6346b",
+                      "name": "The list of jobs was retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"next_page\": \"<string>\",\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"title\": \"<string>\",\n      \"company_id\": \"<string>\",\n      \"department_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"location_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"job_status\": {\n        \"value\": \"pending\",\n        \"source_value\": \"<string>\"\n      },\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"hiring_team\": [\n        {\n          \"email\": \"<string>\",\n          \"role\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"role\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\"\n        }\n      ],\n      \"confidential\": \"true\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"title\": \"<string>\",\n      \"company_id\": \"<string>\",\n      \"department_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"location_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"job_status\": {\n        \"value\": \"pending\",\n        \"source_value\": \"<string>\"\n      },\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"hiring_team\": [\n        {\n          \"email\": \"<string>\",\n          \"role\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"role\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\"\n        }\n      ],\n      \"confidential\": \"false\"\n    }\n  ],\n  \"raw\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-e1a7b3c1-aa56-4dda-b2cb-d949f8a6346b"
+                    },
+                    {
+                      "id": "0d3a6fae-4c50-4194-81c5-1848d7b72d64",
+                      "name": "Invalid request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-0d3a6fae-4c50-4194-81c5-1848d7b72d64"
+                    },
+                    {
+                      "id": "a6fa5167-188c-41e8-bd17-37abc11bbe31",
+                      "name": "Forbidden.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-a6fa5167-188c-41e8-bd17-37abc11bbe31"
+                    },
+                    {
+                      "id": "ef4ee831-5135-46d4-a080-b569911bdda3",
+                      "name": "Precondition failed: linked account belongs to a disabled integration.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-ef4ee831-5135-46d4-a080-b569911bdda3"
+                    },
+                    {
+                      "id": "a9ef0455-193d-4479-89a3-36c444cdfd4f",
+                      "name": "Too many requests.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-a9ef0455-193d-4479-89a3-36c444cdfd4f"
+                    },
+                    {
+                      "id": "5b87d5fa-c188-40f3-a341-f3567fc841d0",
+                      "name": "Server error while executing the request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-5b87d5fa-c188-40f3-a341-f3567fc841d0"
+                    },
+                    {
+                      "id": "ed793abe-56e8-4b56-a4d3-49264f8ad5d4",
+                      "name": "This functionality is not implemented.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/jobs?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[proident_7]=-69734652&proxy[voluptate__c]=true&proxy[elit9c3]=-59778888.62542651",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "jobs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[proident_7]",
+                              "value": "-69734652"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[voluptate__c]",
+                              "value": "true"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[elit9c3]",
+                              "value": "-59778888.62542651"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Implemented",
+                      "code": 501,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:24.000Z",
+                      "updatedAt": "2026-07-28T03:05:24.000Z",
+                      "uid": "35240-ed793abe-56e8-4b56-a4d3-49264f8ad5d4"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:05:24.000Z",
+                  "updatedAt": "2026-07-28T03:05:24.000Z",
+                  "uid": "35240-9bcc0e4e-0d8c-4cba-878f-822b72cad5db"
+                }
+              ],
+              "id": "49b67c5a-e550-4b56-828f-85dcd86ba13f",
+              "createdAt": "2026-07-28T03:05:24.000Z",
+              "updatedAt": "2026-07-28T03:05:24.000Z",
+              "uid": "35240-49b67c5a-e550-4b56-828f-85dcd86ba13f"
+            }
+          ],
+          "id": "4112ee36-49fd-4625-bdfd-fdd109d72d81",
+          "createdAt": "2026-07-28T03:05:24.000Z",
+          "updatedAt": "2026-07-28T03:05:24.000Z",
+          "uid": "35240-4112ee36-49fd-4625-bdfd-fdd109d72d81"
+        }
+      ],
+      "id": "9a19e1f0-ff00-4fa8-87a3-d37dbfb079f7",
+      "createdAt": "2026-07-28T03:05:24.000Z",
+      "updatedAt": "2026-07-28T03:05:24.000Z",
+      "uid": "35240-9a19e1f0-ff00-4fa8-87a3-d37dbfb079f7"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.stackone.com"
+    }
+  ]
+}

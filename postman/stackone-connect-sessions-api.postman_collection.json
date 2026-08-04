@@ -1,0 +1,745 @@
+{
+  "info": {
+    "_postman_id": "b3a87974-1eb8-4825-a024-8cab3eaf2b88",
+    "name": "Marketing Accounts Connect Sessions API",
+    "description": "The documentation for the StackOne Unified API - MARKETING",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:05:04.000Z",
+    "updatedAt": "2026-07-28T03:05:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b3a87974-1eb8-4825-a024-8cab3eaf2b88"
+  },
+  "item": [
+    {
+      "name": "connect_sessions",
+      "item": [
+        {
+          "name": "authenticate",
+          "item": [
+            {
+              "name": "Authenticate Connect Session",
+              "id": "d8da6710-a866-4c00-b33f-bab2c9eaa6d8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{basicAuthUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{basicAuthPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions",
+                    "authenticate"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "85ace70f-b55b-4914-a655-2cfd4baf0fec",
+                  "name": "The details of the authenticated connect session.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"token\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connect_sessions",
+                        "authenticate"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"organization_id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"categories\": [\n    \"marketing\",\n    \"hris\"\n  ],\n  \"origin_username\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T03:05:05.000Z",
+                  "updatedAt": "2026-07-28T03:05:05.000Z",
+                  "uid": "35240-85ace70f-b55b-4914-a655-2cfd4baf0fec"
+                },
+                {
+                  "id": "bf5b07ca-c9cf-438a-94a8-61705e5a9298",
+                  "name": "Invalid request.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"token\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connect_sessions",
+                        "authenticate"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:05.000Z",
+                  "updatedAt": "2026-07-28T03:05:05.000Z",
+                  "uid": "35240-bf5b07ca-c9cf-438a-94a8-61705e5a9298"
+                },
+                {
+                  "id": "fa1ede51-5940-4813-9dd8-ab82535e8a78",
+                  "name": "Forbidden.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"token\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connect_sessions",
+                        "authenticate"
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:05.000Z",
+                  "updatedAt": "2026-07-28T03:05:05.000Z",
+                  "uid": "35240-fa1ede51-5940-4813-9dd8-ab82535e8a78"
+                },
+                {
+                  "id": "2c9a6ede-76d3-4c32-aeb4-735b723c1a1c",
+                  "name": "Too many requests.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"token\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connect_sessions",
+                        "authenticate"
+                      ]
+                    }
+                  },
+                  "status": "Too Many Requests",
+                  "code": 429,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:05.000Z",
+                  "updatedAt": "2026-07-28T03:05:05.000Z",
+                  "uid": "35240-2c9a6ede-76d3-4c32-aeb4-735b723c1a1c"
+                },
+                {
+                  "id": "540fb9a9-7652-4391-b418-39861731859e",
+                  "name": "Server error while executing the request.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"token\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connect_sessions",
+                        "authenticate"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:05.000Z",
+                  "updatedAt": "2026-07-28T03:05:05.000Z",
+                  "uid": "35240-540fb9a9-7652-4391-b418-39861731859e"
+                },
+                {
+                  "id": "868c3e37-3571-423d-b2f6-1b0802bcffbd",
+                  "name": "This functionality is not implemented.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"token\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/connect_sessions/authenticate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "connect_sessions",
+                        "authenticate"
+                      ]
+                    }
+                  },
+                  "status": "Not Implemented",
+                  "code": 501,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T03:05:05.000Z",
+                  "updatedAt": "2026-07-28T03:05:05.000Z",
+                  "uid": "35240-868c3e37-3571-423d-b2f6-1b0802bcffbd"
+                }
+              ],
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-d8da6710-a866-4c00-b33f-bab2c9eaa6d8"
+            }
+          ],
+          "id": "4755eee1-305a-4603-becc-eb2eb4e89335",
+          "createdAt": "2026-07-28T03:05:05.000Z",
+          "updatedAt": "2026-07-28T03:05:05.000Z",
+          "uid": "35240-4755eee1-305a-4603-becc-eb2eb4e89335"
+        },
+        {
+          "name": "Create Connect Session",
+          "id": "441ae527-3554-4d73-a387-c1adba8da3f5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/connect_sessions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connect_sessions"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "139b1b34-47b7-4459-a195-158565281ffb",
+              "name": "The details of the connect session created with token.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"organization_id\": \"<string>\",\n  \"project_id\": \"<string>\",\n  \"provider\": \"<string>\",\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"token\": \"<string>\",\n  \"categories\": [\n    \"stackone\",\n    \"marketing\"\n  ],\n  \"origin_username\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-139b1b34-47b7-4459-a195-158565281ffb"
+            },
+            {
+              "id": "0e069069-6124-4136-af0a-52e694ffb4ca",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-0e069069-6124-4136-af0a-52e694ffb4ca"
+            },
+            {
+              "id": "43468d9c-58e0-416d-ba5f-faa036c0fa40",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-43468d9c-58e0-416d-ba5f-faa036c0fa40"
+            },
+            {
+              "id": "3b8bc205-d1e3-4d9a-bc82-493a9dcd36b3",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-3b8bc205-d1e3-4d9a-bc82-493a9dcd36b3"
+            },
+            {
+              "id": "6c81f349-e6d7-4e25-b9fc-3a0face6becd",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-6c81f349-e6d7-4e25-b9fc-3a0face6becd"
+            },
+            {
+              "id": "49c40d8e-b88f-4776-a46b-3f5dc4a28767",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin_owner_id\": \"<string>\",\n  \"origin_owner_name\": \"<string>\",\n  \"expires_in\": 1800,\n  \"metadata\": {},\n  \"categories\": [\n    \"marketing\",\n    \"crm\"\n  ],\n  \"provider\": \"<string>\",\n  \"origin_username\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/connect_sessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connect_sessions"
+                  ]
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T03:05:05.000Z",
+              "updatedAt": "2026-07-28T03:05:05.000Z",
+              "uid": "35240-49c40d8e-b88f-4776-a46b-3f5dc4a28767"
+            }
+          ],
+          "createdAt": "2026-07-28T03:05:05.000Z",
+          "updatedAt": "2026-07-28T03:05:05.000Z",
+          "uid": "35240-441ae527-3554-4d73-a387-c1adba8da3f5"
+        }
+      ],
+      "id": "4952d2c8-3d57-4b77-a9d5-d8a02bc6a85f",
+      "createdAt": "2026-07-28T03:05:05.000Z",
+      "updatedAt": "2026-07-28T03:05:05.000Z",
+      "uid": "35240-4952d2c8-3d57-4b77-a9d5-d8a02bc6a85f"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.stackone.com"
+    }
+  ]
+}

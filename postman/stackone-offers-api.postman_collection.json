@@ -1,0 +1,1994 @@
+{
+  "info": {
+    "_postman_id": "84529e55-d088-43d1-ba9a-e7b098c81bf1",
+    "name": "Marketing Accounts Offers API",
+    "description": "The documentation for the StackOne Unified API - MARKETING",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:05:30.000Z",
+    "updatedAt": "2026-07-28T03:05:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-84529e55-d088-43d1-ba9a-e7b098c81bf1"
+  },
+  "item": [
+    {
+      "name": "unified",
+      "item": [
+        {
+          "name": "ats",
+          "item": [
+            {
+              "name": "offers",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get Offer",
+                      "id": "2c193bc2-85f5-4366-ad23-b99ba7bc13cc",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "basic",
+                          "basic": [
+                            {
+                              "key": "username",
+                              "value": "{{basicAuthUsername}}",
+                              "type": "string"
+                            },
+                            {
+                              "key": "password",
+                              "value": "{{basicAuthPassword}}",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "1b8295b3-0e4c-49e6-b345-198d6634da48",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "3971b2cc-88bf-4591-a164-d6bbc19c5332",
+                          "name": "The offer with the given identifier was retrieved.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": {\n    \"id\": \"<string>\",\n    \"application_id\": \"<string>\",\n    \"start_date\": \"<dateTime>\",\n    \"offer_status\": {\n      \"value\": \"unmapped_value\",\n      \"source_value\": \"<string>\"\n    },\n    \"offer_history\": [\n      {\n        \"start_date\": \"<dateTime>\",\n        \"updated_at\": \"<string>\",\n        \"salary\": \"<number>\",\n        \"currency\": \"<string>\",\n        \"created_at\": \"<string>\"\n      },\n      {\n        \"start_date\": \"<dateTime>\",\n        \"updated_at\": \"<string>\",\n        \"salary\": \"<number>\",\n        \"currency\": \"<string>\",\n        \"created_at\": \"<string>\"\n      }\n    ],\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"salary\": \"<number>\",\n    \"currency\": \"<string>\"\n  },\n  \"raw\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-3971b2cc-88bf-4591-a164-d6bbc19c5332"
+                        },
+                        {
+                          "id": "6febc8b7-453f-4f9a-b837-69f6c78129c9",
+                          "name": "Invalid request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-6febc8b7-453f-4f9a-b837-69f6c78129c9"
+                        },
+                        {
+                          "id": "60726a4d-868b-45cd-80ec-fda954dcc50d",
+                          "name": "Forbidden.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-60726a4d-868b-45cd-80ec-fda954dcc50d"
+                        },
+                        {
+                          "id": "3a45d8a2-68bd-41c7-9d47-fe98e96ee944",
+                          "name": "Precondition failed: linked account belongs to a disabled integration.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Precondition Failed",
+                          "code": 412,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-3a45d8a2-68bd-41c7-9d47-fe98e96ee944"
+                        },
+                        {
+                          "id": "b198ae49-6fc2-4178-9814-25b02887ca54",
+                          "name": "Too many requests.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Too Many Requests",
+                          "code": 429,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-b198ae49-6fc2-4178-9814-25b02887ca54"
+                        },
+                        {
+                          "id": "20d1fac0-a9a9-4f9b-99ed-cdf869a9d09a",
+                          "name": "Server error while executing the request.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-20d1fac0-a9a9-4f9b-99ed-cdf869a9d09a"
+                        },
+                        {
+                          "id": "a0bc287f-78e2-436a-891c-c14603bd5734",
+                          "name": "This functionality is not implemented.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) The account identifier",
+                                "key": "x-account-id",
+                                "value": "<string>"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/unified/ats/offers/:id?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "unified",
+                                "ats",
+                                "offers",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The page number of the results to fetch",
+                                  "key": "page",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of results per page",
+                                  "key": "page_size",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Indicates that the raw request result is returned",
+                                  "key": "raw",
+                                  "value": "false"
+                                },
+                                {
+                                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                                  "key": "fields",
+                                  "value": ""
+                                },
+                                {
+                                  "description": "The sync token to select the only updated results",
+                                  "key": "sync_token",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Use a string with a date to only select results updated after that given date",
+                                  "key": "updated_after",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[velit_12f]",
+                                  "value": "60465917"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[este23]",
+                                  "value": "enim voluptate ea"
+                                },
+                                {
+                                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                                  "key": "proxy[adipisicing_7c9]",
+                                  "value": "true"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Implemented",
+                          "code": 501,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T03:05:31.000Z",
+                          "updatedAt": "2026-07-28T03:05:31.000Z",
+                          "uid": "35240-a0bc287f-78e2-436a-891c-c14603bd5734"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-2c193bc2-85f5-4366-ad23-b99ba7bc13cc"
+                    }
+                  ],
+                  "id": "cb73e8c0-dfbc-4b2c-8d84-93b219edd985",
+                  "createdAt": "2026-07-28T03:05:31.000Z",
+                  "updatedAt": "2026-07-28T03:05:31.000Z",
+                  "uid": "35240-cb73e8c0-dfbc-4b2c-8d84-93b219edd985"
+                },
+                {
+                  "name": "List Offers",
+                  "id": "7fa2aa1f-1c4c-4b9e-9d09-c0971d7d099b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "key": "username",
+                          "value": "{{basicAuthUsername}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "password",
+                          "value": "{{basicAuthPassword}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "ats",
+                        "offers"
+                      ],
+                      "query": [
+                        {
+                          "description": "The page number of the results to fetch",
+                          "key": "page",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The number of results per page",
+                          "key": "page_size",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Indicates that the raw request result is returned",
+                          "key": "raw",
+                          "value": "false"
+                        },
+                        {
+                          "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                          "key": "fields",
+                          "value": ""
+                        },
+                        {
+                          "description": "The sync token to select the only updated results",
+                          "key": "sync_token",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Use a string with a date to only select results updated after that given date",
+                          "key": "updated_after",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[velit_12f]",
+                          "value": "60465917"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[este23]",
+                          "value": "enim voluptate ea"
+                        },
+                        {
+                          "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                          "key": "proxy[adipisicing_7c9]",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "70781448-301b-49af-839a-99e9a43ca3ef",
+                      "name": "The list of offers was retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"next_page\": \"<string>\",\n  \"data\": [\n    {\n      \"id\": \"<string>\",\n      \"application_id\": \"<string>\",\n      \"start_date\": \"<dateTime>\",\n      \"offer_status\": {\n        \"value\": \"unmapped_value\",\n        \"source_value\": \"<string>\"\n      },\n      \"offer_history\": [\n        {\n          \"start_date\": \"<dateTime>\",\n          \"updated_at\": \"<string>\",\n          \"salary\": \"<number>\",\n          \"currency\": \"<string>\",\n          \"created_at\": \"<string>\"\n        },\n        {\n          \"start_date\": \"<dateTime>\",\n          \"updated_at\": \"<string>\",\n          \"salary\": \"<number>\",\n          \"currency\": \"<string>\",\n          \"created_at\": \"<string>\"\n        }\n      ],\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"application_id\": \"<string>\",\n      \"start_date\": \"<dateTime>\",\n      \"offer_status\": {\n        \"value\": \"pending\",\n        \"source_value\": \"<string>\"\n      },\n      \"offer_history\": [\n        {\n          \"start_date\": \"<dateTime>\",\n          \"updated_at\": \"<string>\",\n          \"salary\": \"<number>\",\n          \"currency\": \"<string>\",\n          \"created_at\": \"<string>\"\n        },\n        {\n          \"start_date\": \"<dateTime>\",\n          \"updated_at\": \"<string>\",\n          \"salary\": \"<number>\",\n          \"currency\": \"<string>\",\n          \"created_at\": \"<string>\"\n        }\n      ],\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\"\n    }\n  ],\n  \"raw\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-70781448-301b-49af-839a-99e9a43ca3ef"
+                    },
+                    {
+                      "id": "df8a72e6-33b9-4e3e-9e7a-1aed09f0c866",
+                      "name": "Invalid request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-df8a72e6-33b9-4e3e-9e7a-1aed09f0c866"
+                    },
+                    {
+                      "id": "fde0d2ab-e33e-400d-9807-a27f249ee732",
+                      "name": "Forbidden.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-fde0d2ab-e33e-400d-9807-a27f249ee732"
+                    },
+                    {
+                      "id": "fb354ec3-300d-4f48-947c-5f7cdb291cd0",
+                      "name": "Precondition failed: linked account belongs to a disabled integration.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-fb354ec3-300d-4f48-947c-5f7cdb291cd0"
+                    },
+                    {
+                      "id": "ecd2bccf-0822-42e9-abb7-bca9ac184670",
+                      "name": "Too many requests.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-ecd2bccf-0822-42e9-abb7-bca9ac184670"
+                    },
+                    {
+                      "id": "7581cd7b-c47a-49ed-9e8a-0d7c8e3509e8",
+                      "name": "Server error while executing the request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-7581cd7b-c47a-49ed-9e8a-0d7c8e3509e8"
+                    },
+                    {
+                      "id": "7ca2365f-0887-4a77-99fc-e0154546ceb9",
+                      "name": "This functionality is not implemented.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers?page=<string>&page_size=25&raw=false&fields=&sync_token=<string>&updated_after=<string>&proxy[velit_12f]=60465917&proxy[este23]=enim voluptate ea&proxy[adipisicing_7c9]=true",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ],
+                          "query": [
+                            {
+                              "description": "The page number of the results to fetch",
+                              "key": "page",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of results per page",
+                              "key": "page_size",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Indicates that the raw request result is returned",
+                              "key": "raw",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)",
+                              "key": "fields",
+                              "value": ""
+                            },
+                            {
+                              "description": "The sync token to select the only updated results",
+                              "key": "sync_token",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Use a string with a date to only select results updated after that given date",
+                              "key": "updated_after",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[velit_12f]",
+                              "value": "60465917"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[este23]",
+                              "value": "enim voluptate ea"
+                            },
+                            {
+                              "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key",
+                              "key": "proxy[adipisicing_7c9]",
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Implemented",
+                      "code": 501,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-7ca2365f-0887-4a77-99fc-e0154546ceb9"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:05:31.000Z",
+                  "updatedAt": "2026-07-28T03:05:31.000Z",
+                  "uid": "35240-7fa2aa1f-1c4c-4b9e-9d09-c0971d7d099b"
+                },
+                {
+                  "name": "Creates an offer",
+                  "id": "69bba026-7378-4afd-b3d6-86328c7318b1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "basic",
+                      "basic": [
+                        {
+                          "key": "username",
+                          "value": "{{basicAuthUsername}}",
+                          "type": "string"
+                        },
+                        {
+                          "key": "password",
+                          "value": "{{basicAuthPassword}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) The account identifier",
+                        "key": "x-account-id",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/unified/ats/offers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "unified",
+                        "ats",
+                        "offers"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "89f3a575-e884-4640-b3e5-7227a28f8e20",
+                      "name": "The offer was created successfully.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"statusCode\": \"<number>\",\n  \"message\": \"<string>\",\n  \"timestamp\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-89f3a575-e884-4640-b3e5-7227a28f8e20"
+                    },
+                    {
+                      "id": "325ca328-1276-42e7-ba70-b4c0cf6a0348",
+                      "name": "Invalid request.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-325ca328-1276-42e7-ba70-b4c0cf6a0348"
+                    },
+                    {
+                      "id": "be9cfd99-a502-4c98-ba72-f6578649665d",
+                      "name": "Forbidden.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-be9cfd99-a502-4c98-ba72-f6578649665d"
+                    },
+                    {
+                      "id": "653d1c4f-c134-44ca-a2f0-25375fd6e6dd",
+                      "name": "Precondition failed: linked account belongs to a disabled integration.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-653d1c4f-c134-44ca-a2f0-25375fd6e6dd"
+                    },
+                    {
+                      "id": "4a12a542-9e11-435a-aed9-e108b2c9e158",
+                      "name": "Too many requests.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-4a12a542-9e11-435a-aed9-e108b2c9e158"
+                    },
+                    {
+                      "id": "2186c14c-3f8f-42a4-948f-60a60747b45e",
+                      "name": "Server error while executing the request.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-2186c14c-3f8f-42a4-948f-60a60747b45e"
+                    },
+                    {
+                      "id": "392d8770-ae3f-4932-8667-01a5ac8379a5",
+                      "name": "This functionality is not implemented.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) The account identifier",
+                            "key": "x-account-id",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"application_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"offer_status\": {\n    \"value\": \"retracted\",\n    \"source_value\": \"<string>\"\n  },\n  \"offer_history\": [\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    },\n    {\n      \"start_date\": \"<dateTime>\",\n      \"updated_at\": \"<string>\",\n      \"salary\": \"<number>\",\n      \"currency\": \"<string>\",\n      \"created_at\": \"<string>\"\n    }\n  ],\n  \"salary\": \"<number>\",\n  \"currency\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/unified/ats/offers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "unified",
+                            "ats",
+                            "offers"
+                          ]
+                        }
+                      },
+                      "status": "Not Implemented",
+                      "code": 501,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T03:05:31.000Z",
+                      "updatedAt": "2026-07-28T03:05:31.000Z",
+                      "uid": "35240-392d8770-ae3f-4932-8667-01a5ac8379a5"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:05:31.000Z",
+                  "updatedAt": "2026-07-28T03:05:31.000Z",
+                  "uid": "35240-69bba026-7378-4afd-b3d6-86328c7318b1"
+                }
+              ],
+              "id": "625f7d5f-d253-4b0f-bb4a-1c5bef96f11e",
+              "createdAt": "2026-07-28T03:05:31.000Z",
+              "updatedAt": "2026-07-28T03:05:31.000Z",
+              "uid": "35240-625f7d5f-d253-4b0f-bb4a-1c5bef96f11e"
+            }
+          ],
+          "id": "efe863fd-96d7-48a5-9ee7-fdbdea6e7085",
+          "createdAt": "2026-07-28T03:05:31.000Z",
+          "updatedAt": "2026-07-28T03:05:31.000Z",
+          "uid": "35240-efe863fd-96d7-48a5-9ee7-fdbdea6e7085"
+        }
+      ],
+      "id": "0928b6eb-84ad-4be4-a574-8ed09659cddd",
+      "createdAt": "2026-07-28T03:05:31.000Z",
+      "updatedAt": "2026-07-28T03:05:31.000Z",
+      "uid": "35240-0928b6eb-84ad-4be4-a574-8ed09659cddd"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.stackone.com"
+    }
+  ]
+}
