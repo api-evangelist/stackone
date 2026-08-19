@@ -1,0 +1,254 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Marketing Accounts API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get meta information of the account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/accounts/:id/meta",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get meta information of the account"
+        },
+        {
+          "info": {
+            "name": "Get Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get Account"
+        },
+        {
+          "info": {
+            "name": "Delete Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.stackone.com/accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Delete Account"
+        },
+        {
+          "info": {
+            "name": "List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/accounts",
+            "params": [
+              {
+                "name": "provider",
+                "value": "",
+                "type": "query",
+                "description": "The provider of the results to fetch"
+              },
+              {
+                "name": "origin_owner_id",
+                "value": "",
+                "type": "query",
+                "description": "The origin owner identifier of the results to fetch"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List Accounts"
+        },
+        {
+          "info": {
+            "name": "List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/crm/accounts",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,owner_id,name,description,industry,annual_revenue,website,addresses,phone_numbers,created_at,updated_at",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List Accounts"
+        },
+        {
+          "info": {
+            "name": "Get Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/crm/accounts/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,owner_id,name,description,industry,annual_revenue,website,addresses,phone_numbers,created_at,updated_at",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get Account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

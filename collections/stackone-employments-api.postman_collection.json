@@ -1,0 +1,1422 @@
+{
+  "item": [
+    {
+      "id": "14856a9e-b5a2-45b1-ae1f-282637fff16a",
+      "name": "Employments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d2ddbd5f-afa7-4f38-a91a-c4dc237b4c0c",
+          "name": "Get Employment",
+          "request": {
+            "name": "Get Employment",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "hris",
+                "employments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "string",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "40c83727-e398-4e5d-898b-12897d40d0e6",
+              "name": "The Employment with the given identifier was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"employee_id\": \"1687-3\",\n    \"id\": \"123456\",\n    \"employment_contract_type\": {\n      \"value\": \"shifts\",\n      \"source_value\": \"string\"\n    },\n    \"job_title\": \"Software Engineer\",\n    \"pay_rate\": \"40.00\",\n    \"pay_currency\": \"USD\",\n    \"created_at\": \"2023-06-14T01:00:00Z\",\n    \"pay_period\": {\n      \"value\": \"month\",\n      \"source_value\": \"string\"\n    },\n    \"updated_at\": \"2023-06-14T01:00:00Z\",\n    \"employment_type\": {\n      \"value\": \"employer_of_record\",\n      \"source_value\": \"string\"\n    },\n    \"effective_date\": \"1991-10-25T04:12:19.539Z\",\n    \"pay_frequency\": {\n      \"value\": \"bi_weekly\",\n      \"source_value\": \"string\"\n    }\n  },\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79bc3252-9acb-4083-afdd-b562eb58f8fe",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8c9c7bed-f37a-4766-abb8-f3021e0550e9",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0888f0e1-3fa8-4787-b3e5-304fe6dd0462",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1dab21fa-b12b-40dd-b243-d23fd1b5ea6b",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8f79d1d6-24f7-4719-be75-dc42edf6dd87",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf718fd2-ba6c-400a-aa24-f68408c1e088",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "629b3ea1-6c40-4f67-8dc2-7dfc1210df9b",
+          "name": "List Employments",
+          "request": {
+            "name": "List Employments",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "hris",
+                "employments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "string",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "56400c9f-1b0b-4082-8463-f32cf475b228",
+              "name": "The list of Employments was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next_page\": \"string\",\n  \"data\": [\n    {\n      \"employee_id\": \"1687-3\",\n      \"id\": \"123456\",\n      \"employment_contract_type\": {\n        \"value\": \"shifts\",\n        \"source_value\": \"string\"\n      },\n      \"job_title\": \"Software Engineer\",\n      \"pay_rate\": \"40.00\",\n      \"pay_currency\": \"USD\",\n      \"created_at\": \"2023-06-14T01:00:00Z\",\n      \"pay_period\": {\n        \"value\": \"year\",\n        \"source_value\": \"string\"\n      },\n      \"updated_at\": \"2023-06-14T01:00:00Z\",\n      \"employment_type\": {\n        \"value\": \"terminated\",\n        \"source_value\": \"string\"\n      },\n      \"effective_date\": \"1981-11-11T06:45:01.166Z\",\n      \"pay_frequency\": {\n        \"value\": \"bi_weekly\",\n        \"source_value\": \"string\"\n      }\n    },\n    {\n      \"employee_id\": \"1687-3\",\n      \"id\": \"123456\",\n      \"employment_contract_type\": {\n        \"value\": \"full_time\",\n        \"source_value\": \"string\"\n      },\n      \"job_title\": \"Software Engineer\",\n      \"pay_rate\": \"40.00\",\n      \"pay_currency\": \"USD\",\n      \"created_at\": \"2023-06-14T01:00:00Z\",\n      \"pay_period\": {\n        \"value\": \"day\",\n        \"source_value\": \"string\"\n      },\n      \"updated_at\": \"2023-06-14T01:00:00Z\",\n      \"employment_type\": {\n        \"value\": \"terminated\",\n        \"source_value\": \"string\"\n      },\n      \"effective_date\": \"2004-02-05T09:52:39.069Z\",\n      \"pay_frequency\": {\n        \"value\": \"unmapped_value\",\n        \"source_value\": \"string\"\n      }\n    }\n  ],\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80e50cc3-98f8-439a-8717-a3c9a1a1b15b",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "739670d0-a8de-493e-916a-4cc04c7b8d6b",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "92b79124-0f08-4076-98cb-8c599ee49c0f",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2c08b26-4756-43a6-b4ff-843f0fc49091",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2c7d918-ca7c-40b0-83e9-7a3c521cf38d",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4ebf6815-26fb-46cb-b367-339bbaa2010d",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "hris",
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,employee_id,job_title,pay_rate,pay_period,pay_frequency,pay_currency,effective_date,employment_type,employment_contract_type,created_at,updated_at"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stackone.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1ab3ad61-0fc4-4ed0-b038-f7a800ff20b6",
+    "name": "Marketing Accounts Employments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The documentation for the StackOne Unified API - MARKETING",
+      "type": "text/plain"
+    }
+  }
+}

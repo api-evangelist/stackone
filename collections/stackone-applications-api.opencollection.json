@@ -1,0 +1,361 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Marketing Accounts Applications API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/applications/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get Application"
+        },
+        {
+          "info": {
+            "name": "Update Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stackone.com/unified/ats/applications/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update Application"
+        },
+        {
+          "info": {
+            "name": "Get Application Offer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/applications/:id/offers/:subResourceId",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "subResourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get Application Offer"
+        },
+        {
+          "info": {
+            "name": "List Application Offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/applications/:id/offers",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List Application Offers"
+        },
+        {
+          "info": {
+            "name": "List Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/applications",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List Applications"
+        },
+        {
+          "info": {
+            "name": "Create Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/ats/applications",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create Application"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

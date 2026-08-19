@@ -1,0 +1,394 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Marketing Accounts Candidates API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Candidates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/candidates",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,title,application_ids,hired_at,created_at,updated_at",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List Candidates"
+        },
+        {
+          "info": {
+            "name": "Create Candidate (early access)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/ats/candidates",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create Candidate (early access)"
+        },
+        {
+          "info": {
+            "name": "Get Candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/candidates/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,first_name,last_name,email,emails,social_links,phone,phone_numbers,company,title,application_ids,hired_at,created_at,updated_at",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get Candidate"
+        },
+        {
+          "info": {
+            "name": "Update Candidate (early access)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stackone.com/unified/ats/candidates/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update Candidate (early access)"
+        },
+        {
+          "info": {
+            "name": "List Candidate Notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/candidates/:id/notes",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,content,visibility,createdAt,updatedAt,deletedAt",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List Candidate Notes"
+        },
+        {
+          "info": {
+            "name": "Create Candidate Note",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/ats/candidates/:id/notes",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create Candidate Note"
+        },
+        {
+          "info": {
+            "name": "Get Candidate Note",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/ats/candidates/:id/notes/:subResourceId",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "subResourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,content,visibility,createdAt,updatedAt,deletedAt",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get Candidate Note"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

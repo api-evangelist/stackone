@@ -1,0 +1,3968 @@
+{
+  "item": [
+    {
+      "id": "89b4559b-03b8-4e55-870a-7caba0a49aaa",
+      "name": "Applications",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ed737105-7a52-4f30-90e3-bede21e908f4",
+          "name": "Get Application",
+          "request": {
+            "name": "Get Application",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "applications",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_1]",
+                  "value": "4230",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1bb020fb-6fbc-4225-8aa3-39a19a05565d",
+              "name": "The application with the given identifier was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"application_status\": {\n      \"value\": \"hired\",\n      \"source_value\": \"string\"\n    },\n    \"questionnaire\": {\n      \"answers\": [\n        {\n          \"values\": [\n            \"string\",\n            \"string\"\n          ],\n          \"id\": \"string\",\n          \"type\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"values\": [\n            \"string\",\n            \"string\"\n          ],\n          \"id\": \"string\",\n          \"type\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"id\": \"string\"\n    },\n    \"candidate\": {\n      \"email\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\"\n    },\n    \"location_id\": \"string\",\n    \"interview_stage_id\": \"string\",\n    \"rejected_reason_ids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"rejected_at\": \"string\",\n    \"interview_stage\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"created_at\": \"1975-12-22T10:58:29.528Z\",\n        \"updated_at\": \"1955-03-30T13:33:07.279Z\",\n        \"order\": 6075.745248505681\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"created_at\": \"1999-08-07T05:41:54.392Z\",\n        \"updated_at\": \"2011-04-18T21:23:05.478Z\",\n        \"order\": 1256.3965730326677\n      }\n    ],\n    \"id\": \"string\",\n    \"rejected_reasons\": [\n      {\n        \"id\": \"string\",\n        \"label\": \"string\",\n        \"rejected_reason_type\": {\n          \"value\": \"unmapped_value\",\n          \"source_value\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"label\": \"string\",\n        \"rejected_reason_type\": {\n          \"value\": \"other\",\n          \"source_value\": \"string\"\n        }\n      }\n    ],\n    \"attachments\": [\n      {\n        \"url\": \"string\",\n        \"type\": [\n          {\n            \"source_value\": \"string\",\n            \"value\": \"resume\"\n          },\n          {\n            \"source_value\": \"string\",\n            \"value\": \"resume\"\n          }\n        ],\n        \"file_name\": \"string\",\n        \"content\": \"string\"\n      },\n      {\n        \"url\": \"string\",\n        \"type\": [\n          {\n            \"source_value\": \"string\",\n            \"value\": \"unmapped_value\"\n          },\n          {\n            \"source_value\": \"string\",\n            \"value\": \"resume\"\n          }\n        ],\n        \"file_name\": \"string\",\n        \"content\": \"string\"\n      }\n    ],\n    \"job_id\": \"string\",\n    \"location_ids\": [\n      \"string\",\n      \"string\"\n    ],\n    \"candidate_id\": \"string\",\n    \"updated_at\": \"string\",\n    \"created_at\": \"string\"\n  },\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12dbe5ee-2072-4902-931c-717164e0db39",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2c3c8b4f-4c4b-4f42-9fe9-a2731b26857c",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "14dcbf3b-6529-4252-b8f0-adcd92482e84",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7ef0453-c629-4618-80a1-15c0eecfcc69",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1274b12b-a79e-4028-808b-a2e0c31c91bf",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eaf4e1fb-33a2-4e35-a939-3f2d8481a5ea",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0907934-ceaa-4111-85ff-7731d6f5eb76",
+          "name": "Update Application",
+          "request": {
+            "name": "Update Application",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "applications",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a269bd3-1977-4846-abd3-6c26009f605a",
+              "name": "Record updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 200,\n  \"message\": \"Record updated successfully.\",\n  \"timestamp\": \"1971-08-10T14:09:26.411Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3bee4b0d-3990-4bca-9003-00c96449fdbb",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "878aee2c-0cba-4797-9046-f7ab48dd8593",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fcb113f5-f23c-44e7-90e1-e24d5916298f",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90cccd7d-7c84-4a46-bbf5-563014551a8f",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "040af6c4-90ed-4bf3-a4fc-a4ccc64d5602",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a1d35c5f-214b-4611-9289-ff35d85da203",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f6324edb-fe15-4654-b43e-bdc656eb23f6",
+          "name": "Get Application Offer",
+          "request": {
+            "name": "Get Application Offer",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "applications",
+                ":id",
+                "offers",
+                ":subResourceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_1]",
+                  "value": "4230",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subResourceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d7262a60-944a-4853-8b90-f67fe9926585",
+              "name": "The offer related to the application with the given identifiers was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"application_id\": \"string\",\n    \"start_date\": \"1973-12-01T12:56:36.301Z\",\n    \"offer_status\": {\n      \"value\": \"unmapped_value\",\n      \"source_value\": \"string\"\n    },\n    \"offer_history\": [\n      {\n        \"start_date\": \"1982-07-19T04:29:30.593Z\",\n        \"updated_at\": \"string\",\n        \"salary\": 8687.668902190486,\n        \"currency\": \"string\",\n        \"created_at\": \"string\"\n      },\n      {\n        \"start_date\": \"1994-07-13T10:53:43.164Z\",\n        \"updated_at\": \"string\",\n        \"salary\": 318.97890562788353,\n        \"currency\": \"string\",\n        \"created_at\": \"string\"\n      }\n    ],\n    \"created_at\": \"string\",\n    \"updated_at\": \"string\",\n    \"salary\": 5011.708570590654,\n    \"currency\": \"string\"\n  },\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "510154a1-f16d-4339-988f-5d82e3c6d113",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8582b285-8c27-4a15-931e-6b242936a466",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a0ebc42c-6720-4920-aae7-65e923efe56d",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b86b0f07-d19d-41bc-99a9-cab8e25c8785",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3624a7a-eb87-4de5-9dc8-c35e9ca26abd",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4d73c8d9-1413-46b0-9240-14a73c04e7d7",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers",
+                    ":subResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70810948-5c79-4e84-8e86-9ea00e2e8788",
+          "name": "List Application Offers",
+          "request": {
+            "name": "List Application Offers",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "applications",
+                ":id",
+                "offers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_1]",
+                  "value": "4230",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cd565640-4f69-421a-a844-88c8f61ada9a",
+              "name": "The offers related to the application with the given identifier were retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next_page\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"application_id\": \"string\",\n      \"start_date\": \"1973-01-16T15:40:06.362Z\",\n      \"offer_status\": {\n        \"value\": \"unmapped_value\",\n        \"source_value\": \"string\"\n      },\n      \"offer_history\": [\n        {\n          \"start_date\": \"2007-07-16T14:29:13.336Z\",\n          \"updated_at\": \"string\",\n          \"salary\": 4407.152376373955,\n          \"currency\": \"string\",\n          \"created_at\": \"string\"\n        },\n        {\n          \"start_date\": \"1999-12-22T02:55:04.335Z\",\n          \"updated_at\": \"string\",\n          \"salary\": 8942.125755514995,\n          \"currency\": \"string\",\n          \"created_at\": \"string\"\n        }\n      ],\n      \"created_at\": \"string\",\n      \"updated_at\": \"string\",\n      \"salary\": 5313.589837820608,\n      \"currency\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"application_id\": \"string\",\n      \"start_date\": \"1958-09-08T14:17:36.057Z\",\n      \"offer_status\": {\n        \"value\": \"pending\",\n        \"source_value\": \"string\"\n      },\n      \"offer_history\": [\n        {\n          \"start_date\": \"1946-11-18T12:22:26.856Z\",\n          \"updated_at\": \"string\",\n          \"salary\": 9507.346649662466,\n          \"currency\": \"string\",\n          \"created_at\": \"string\"\n        },\n        {\n          \"start_date\": \"1962-08-13T20:18:32.627Z\",\n          \"updated_at\": \"string\",\n          \"salary\": 4495.383228455565,\n          \"currency\": \"string\",\n          \"created_at\": \"string\"\n        }\n      ],\n      \"created_at\": \"string\",\n      \"updated_at\": \"string\",\n      \"salary\": 6948.053827117075,\n      \"currency\": \"string\"\n    }\n  ],\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c8259fd6-c5ce-4614-8ab1-a9e92f71472e",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fac21afc-d51b-449c-9368-108e879e1624",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5f8116ea-0038-4c72-980c-e267dc148222",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "73579014-fca7-43ad-ab76-f1fb56759b23",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71e5b86a-b337-45f7-ac22-bd4f69187a22",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7cd0afbd-f020-404a-b6b8-7fa7e452cd3c",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications",
+                    ":id",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,application_id,start_date,status,offer_status,salary,currency,created_at,updated_at,offer_history"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0eb9ab84-9caf-43a6-8bae-40e3e06f5b50",
+          "name": "List Applications",
+          "request": {
+            "name": "List Applications",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_1]",
+                  "value": "4230",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c50d15ad-46f9-4659-9995-a7a527c8909f",
+              "name": "The list of applications was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next_page\": \"string\",\n  \"data\": [\n    {\n      \"application_status\": {\n        \"value\": \"<string>\",\n        \"source_value\": \"<string>\"\n      },\n      \"questionnaire\": {\n        \"answers\": [\n          {\n            \"values\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"id\": \"<string>\",\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"values\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"id\": \"<string>\",\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"id\": \"<string>\"\n      },\n      \"candidate\": {\n        \"email\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\"\n      },\n      \"location_id\": \"string\",\n      \"interview_stage_id\": \"string\",\n      \"rejected_reason_ids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"rejected_at\": \"string\",\n      \"interview_stage\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"created_at\": \"1985-07-20T09:55:04.332Z\",\n          \"updated_at\": \"1980-12-15T04:28:29.962Z\",\n          \"order\": 3311.2453949159635\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"created_at\": \"1980-09-16T16:52:58.366Z\",\n          \"updated_at\": \"1963-07-07T17:49:06.983Z\",\n          \"order\": 9439.26414950725\n        }\n      ],\n      \"id\": \"string\",\n      \"rejected_reasons\": [\n        {\n          \"id\": \"string\",\n          \"label\": \"string\",\n          \"rejected_reason_type\": {\n            \"value\": \"unknown\",\n            \"source_value\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"label\": \"string\",\n          \"rejected_reason_type\": {\n            \"value\": \"rejected_by_organization\",\n            \"source_value\": \"string\"\n          }\n        }\n      ],\n      \"attachments\": [\n        {\n          \"url\": \"<string>\",\n          \"type\": [\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"file_name\": \"<string>\",\n          \"content\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"type\": [\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"file_name\": \"<string>\",\n          \"content\": \"<string>\"\n        }\n      ],\n      \"job_id\": \"string\",\n      \"location_ids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"candidate_id\": \"string\",\n      \"updated_at\": \"string\",\n      \"created_at\": \"string\"\n    },\n    {\n      \"application_status\": {\n        \"value\": \"<string>\",\n        \"source_value\": \"<string>\"\n      },\n      \"questionnaire\": {\n        \"answers\": [\n          {\n            \"values\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"id\": \"<string>\",\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"values\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"id\": \"<string>\",\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"id\": \"<string>\"\n      },\n      \"candidate\": {\n        \"email\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\"\n      },\n      \"location_id\": \"string\",\n      \"interview_stage_id\": \"string\",\n      \"rejected_reason_ids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"rejected_at\": \"string\",\n      \"interview_stage\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"created_at\": \"1966-01-19T17:36:20.045Z\",\n          \"updated_at\": \"2003-08-12T23:05:24.000Z\",\n          \"order\": 5788.872209441441\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"created_at\": \"2016-04-08T19:18:46.566Z\",\n          \"updated_at\": \"1990-03-22T07:55:38.219Z\",\n          \"order\": 9029.231884146733\n        }\n      ],\n      \"id\": \"string\",\n      \"rejected_reasons\": [\n        {\n          \"id\": \"string\",\n          \"label\": \"string\",\n          \"rejected_reason_type\": {\n            \"value\": \"rejected_by_organization\",\n            \"source_value\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"label\": \"string\",\n          \"rejected_reason_type\": {\n            \"value\": \"rejected_by_candidate\",\n            \"source_value\": \"string\"\n          }\n        }\n      ],\n      \"attachments\": [\n        {\n          \"url\": \"<string>\",\n          \"type\": [\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"file_name\": \"<string>\",\n          \"content\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"type\": [\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"source_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"file_name\": \"<string>\",\n          \"content\": \"<string>\"\n        }\n      ],\n      \"job_id\": \"string\",\n      \"location_ids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"candidate_id\": \"string\",\n      \"updated_at\": \"string\",\n      \"created_at\": \"string\"\n    }\n  ],\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f26f338-6860-4fbc-8d6f-bb03fb0b4589",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "724e0d0c-106d-4644-be93-ed8997b9cced",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a5130f29-2a0c-4bfd-9d00-4d1afeac56f4",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "277a1189-9799-44d7-9020-4a8369226b87",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "88dd4aef-b42d-482e-9b83-598fc5e70b77",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8df8c632-079e-4d50-b986-adaab396e381",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,candidate_id,job_id,interview_stage,interview_stage_id,rejected_reason,rejected_reason_id,rejected_reason,rejected_reason_ids,rejected_reasons,rejected_at,location_id,location_ids,status,application_status,questionnaire,attachments,created_at,updated_at,candidate"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af68920e-677b-4030-a2c7-b876547e4c49",
+          "name": "Create Application",
+          "request": {
+            "name": "Create Application",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "babf7a65-b84d-4420-b400-16af9c1a89d8",
+              "name": "The application was created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 200,\n  \"message\": \"Record created successfully.\",\n  \"timestamp\": \"2013-05-07T18:45:05.132Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "411da47d-3153-4a71-a54b-756aeb169293",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ebfe5e1f-85fc-46f3-9795-13a01718e377",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8aad6086-e5eb-4383-aa3f-03bbdfedc519",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f5fea577-5631-4838-af36-815e85a8dd67",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "313bf5c1-a907-43b2-928c-2418f2326ce9",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5425d8bd-eaa7-48c7-9ee2-8ae7f0ca1493",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"application_status\": {\n    \"value\": \"<string>\",\n    \"source_value\": \"<string>\"\n  },\n  \"questionnaire\": {\n    \"answers\": [\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      },\n      {\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"type\": {\n          \"value\": \"<string>\",\n          \"source_value\": \"<string>\"\n        }\n      }\n    ],\n    \"id\": \"<string>\"\n  },\n  \"candidate\": {\n    \"email\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\"\n  },\n  \"attachments\": [\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"type\": [\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"source_value\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"file_name\": \"<string>\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"candidate_id\": \"<string>\",\n  \"job_id\": \"<string>\",\n  \"location_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stackone.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a82ff802-d421-4c2f-bc3f-f1a93ef6b13b",
+    "name": "Marketing Accounts Applications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The documentation for the StackOne Unified API - MARKETING",
+      "type": "text/plain"
+    }
+  }
+}

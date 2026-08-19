@@ -1,0 +1,1422 @@
+{
+  "item": [
+    {
+      "id": "813315f9-33e1-478d-8629-199bb7d0e98b",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d570b94a-6b1e-4d40-974c-c7fe9dd2deed",
+          "name": "Get User",
+          "request": {
+            "name": "Get User",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "3884.6781466769207",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4b8a7d98-bfab-45c8-9d71-bfabd4abbd70",
+              "name": "The user with the given identifier was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\",\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"name\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb9ef87c-a657-404d-8606-c43eee2a82f0",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3913436e-06e1-4e71-bf41-8add344f5bdd",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e8ac7be4-31c6-4ab1-93db-f9378112327b",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b2c041a9-fb86-47ad-883e-bab2104ce693",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4362a88d-3f54-43c4-b19e-9520868a94b6",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "530fc62d-e117-41d1-b11c-e846aae79b83",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36a6996d-8292-4665-8950-fef951a7bc07",
+          "name": "List Users",
+          "request": {
+            "name": "List Users",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "ats",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "true",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8b6c4b99-b8c6-459d-bea2-f00589dce538",
+              "name": "The list of users was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next_page\": \"string\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\"\n    }\n  ],\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45ce7981-f1ec-4ed3-9c8e-aae76bdb2def",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8ab716a2-b13d-4f51-a2c1-7f31a7177a19",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54f885e9-1592-4b61-87d4-c404a20abfb3",
+              "name": "Precondition failed: linked account belongs to a disabled integration.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3ed68747-792c-4c5c-9ac1-386085a396f4",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4da3a242-78f4-43f7-9097-a864f480c9e1",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "24007d70-c2d0-4848-ba2c-863b897efb36",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "ats",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,first_name,last_name,name,email"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stackone.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c9b1b69f-b123-4470-abd0-e3ee182e465a",
+    "name": "Marketing Accounts Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The documentation for the StackOne Unified API - MARKETING",
+      "type": "text/plain"
+    }
+  }
+}

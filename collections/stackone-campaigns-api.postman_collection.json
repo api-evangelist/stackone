@@ -1,0 +1,1265 @@
+{
+  "item": [
+    {
+      "id": "ef024278-674e-4c4a-91fc-58e067ad1ee5",
+      "name": "Campaigns",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74ce4199-d37c-4e94-a57f-c677f51f3531",
+          "name": "Get campaign",
+          "request": {
+            "name": "Get campaign",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "marketing",
+                "campaigns",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_1]",
+                  "value": "9722.36990799142",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d207d3be-282f-4941-b52d-89b1545ee8b2",
+              "name": "The campaign with the given identifier was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"name\": \"string\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"id\": \"string\",\n    \"updated_at\": \"string\",\n    \"messages\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"message_type\": \"app_push\",\n        \"message_content\": {\n          \"body\": \"string\",\n          \"from\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"message_type\": \"sms\",\n        \"message_content\": {\n          \"body\": \"string\",\n          \"from\": \"string\"\n        }\n      }\n    ],\n    \"created_at\": \"string\",\n    \"channels\": [\n      \"email\",\n      \"sms\",\n      \"ios_push\",\n      \"android_push\"\n    ],\n    \"first_sent_at\": \"string\",\n    \"last_sent_at\": \"string\",\n    \"archived\": false,\n    \"description\": \"string\",\n    \"draft\": true\n  },\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "249ad154-e731-47e7-b0aa-b05326a743fd",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc37094f-6963-4c48-8d19-0060649a4a9d",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4914001c-f58c-44ef-a71f-05af4a8ae173",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8a616fe-a5ac-4bed-a34a-412c890ea82e",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "68c82a16-3df5-4041-9fda-1b8e9dbe54ea",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96070284-4383-45d8-bd2b-ae90e1958da2",
+          "name": "List campaigns",
+          "request": {
+            "name": "List campaigns",
+            "description": {},
+            "url": {
+              "path": [
+                "unified",
+                "marketing",
+                "campaigns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<string>",
+                  "description": "The page number of the results to fetch"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "The number of results per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "raw",
+                  "value": "false",
+                  "description": "Indicates that the raw request result is returned"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "",
+                  "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sync_token",
+                  "value": "<string>",
+                  "description": "The sync token to select the only updated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_after",
+                  "value": "<string>",
+                  "description": "Use a string with a date to only select results updated after that given date"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_0]",
+                  "value": "",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy[key_1]",
+                  "value": "9722.36990799142",
+                  "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) The account identifier",
+                "key": "x-account-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "443f223c-dac3-4208-97b1-93db2c2f6954",
+              "name": "The list of campaigns was retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next_page\": \"string\",\n  \"data\": [\n    {\n      \"name\": \"string\",\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"id\": \"string\",\n      \"updated_at\": \"string\",\n      \"messages\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"message_type\": \"unknown\",\n          \"message_content\": {\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"message_type\": \"omni_channel\",\n          \"message_content\": {\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"created_at\": \"string\",\n      \"channels\": [\n        \"email\",\n        \"sms\",\n        \"ios_push\",\n        \"android_push\"\n      ],\n      \"first_sent_at\": \"string\",\n      \"last_sent_at\": \"string\",\n      \"archived\": false,\n      \"description\": \"string\",\n      \"draft\": true\n    },\n    {\n      \"name\": \"string\",\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"id\": \"string\",\n      \"updated_at\": \"string\",\n      \"messages\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"message_type\": \"ios_push\",\n          \"message_content\": {\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"message_type\": \"ios_push\",\n          \"message_content\": {\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"from\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"created_at\": \"string\",\n      \"channels\": [\n        \"email\",\n        \"sms\",\n        \"ios_push\",\n        \"android_push\"\n      ],\n      \"first_sent_at\": \"string\",\n      \"last_sent_at\": \"string\",\n      \"archived\": false,\n      \"description\": \"string\",\n      \"draft\": true\n    }\n  ],\n  \"raw\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "560df4d4-b594-49c5-ae8a-bfc2723479a3",
+              "name": "Invalid request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a123867b-def1-45b5-b6ff-780fdb0b616a",
+              "name": "Forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8547fac4-6e65-41a2-9b0c-8cae5b9d7e00",
+              "name": "Too many requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5829dcfe-b308-4167-a513-ce64db57419d",
+              "name": "Server error while executing the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f64acd71-0a95-4517-8c58-632ef9ca7875",
+              "name": "This functionality is not implemented.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unified",
+                    "marketing",
+                    "campaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "raw",
+                      "value": "false"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,created_at,updated_at,description,schedule_type,status,channels,first_sent_at,last_sent_at,tags,messages"
+                    },
+                    {
+                      "key": "sync_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_after",
+                      "value": "2020-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "key": "proxy[proxy][custom_filter_param]",
+                      "value": "123"
+                    },
+                    {
+                      "key": "proxy[proxy][filter[eq][name]]",
+                      "value": "Luke"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) The account identifier",
+                    "key": "x-account-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stackone.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "37c3f43f-c4b8-4693-a8dc-4ab0e977031a",
+    "name": "Marketing Accounts Campaigns API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The documentation for the StackOne Unified API - MARKETING",
+      "type": "text/plain"
+    }
+  }
+}

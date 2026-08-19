@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Marketing Accounts Proxy API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Proxy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Proxy Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/proxy",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Proxy Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

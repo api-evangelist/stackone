@@ -1,0 +1,606 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Marketing Accounts Templates API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get omni-channel template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/marketing/templates/omni_channel/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,messages,created_at,updated_at,tags",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get omni-channel template"
+        },
+        {
+          "info": {
+            "name": "Update omni-channel template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stackone.com/unified/marketing/templates/omni_channel/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update omni-channel template"
+        },
+        {
+          "info": {
+            "name": "Get push template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/marketing/templates/push/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,messages,created_at,updated_at,tags",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get push template"
+        },
+        {
+          "info": {
+            "name": "Update push template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stackone.com/unified/marketing/templates/push/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update push template"
+        },
+        {
+          "info": {
+            "name": "List push templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/marketing/templates/push",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,messages,created_at,updated_at,tags",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List push templates"
+        },
+        {
+          "info": {
+            "name": "Create push template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/marketing/templates/push",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create push template"
+        },
+        {
+          "info": {
+            "name": "List email templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/marketing/templates/email",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,messages,created_at,updated_at,tags",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List email templates"
+        },
+        {
+          "info": {
+            "name": "Create email template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/marketing/templates/email",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create email template"
+        },
+        {
+          "info": {
+            "name": "List omni-channel templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/marketing/templates/omni_channel",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,messages,created_at,updated_at,tags",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "List omni-channel templates"
+        },
+        {
+          "info": {
+            "name": "Create omni-channel template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/unified/marketing/templates/omni_channel",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create omni-channel template"
+        },
+        {
+          "info": {
+            "name": "Get email template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stackone.com/unified/marketing/templates/email/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number of the results to fetch"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results per page"
+              },
+              {
+                "name": "raw",
+                "value": "",
+                "type": "query",
+                "description": "Indicates that the raw request result is returned"
+              },
+              {
+                "name": "fields",
+                "value": "id,name,messages,created_at,updated_at,tags",
+                "type": "query",
+                "description": "The comma separated list of fields to return in the response (if empty, all fields are returned)"
+              },
+              {
+                "name": "sync_token",
+                "value": "",
+                "type": "query",
+                "description": "The sync token to select the only updated results"
+              },
+              {
+                "name": "updated_after",
+                "value": "2020-01-01T00:00:00.000Z",
+                "type": "query",
+                "description": "Use a string with a date to only select results updated after that given date"
+              },
+              {
+                "name": "proxy",
+                "value": "[object Object]",
+                "type": "query",
+                "description": "Query parameters that can be used to pass through parameters to the underlying provider request by surrounding them with \"proxy\" key"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get email template"
+        },
+        {
+          "info": {
+            "name": "Update email template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.stackone.com/unified/marketing/templates/email/:id",
+            "headers": [
+              {
+                "name": "x-account-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update email template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

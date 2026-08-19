@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Marketing Accounts Connect Sessions API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connect Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Authenticate Connect Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/connect_sessions/authenticate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Authenticate Connect Session"
+        },
+        {
+          "info": {
+            "name": "Create Connect Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stackone.com/connect_sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create Connect Session"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
