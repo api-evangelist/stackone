@@ -7,6 +7,11 @@ apis:
   - Employees
   - HRIS
   - Human Resources
+  - Unified-API
+  tags_raw:
+  - Employees
+  - HRIS
+  - Human Resources
   - Unified API
   humanURL: https://docs.stackone.com/hris/introduction
   properties:
@@ -24,6 +29,11 @@ apis:
   - Applicant Tracking
   - ATS
   - Recruitment
+  - Unified-API
+  tags_raw:
+  - Applicant Tracking
+  - ATS
+  - Recruitment
   - Unified API
   humanURL: https://docs.stackone.com/ats/introduction
   properties:
@@ -37,6 +47,10 @@ apis:
 - aid: stackone:crm-api
   name: StackOne Unified CRM API
   tags:
+  - Contacts
+  - CRM
+  - Unified-API
+  tags_raw:
   - Contacts
   - CRM
   - Customer Relationship Management
@@ -56,6 +70,11 @@ apis:
   - Courses
   - Learning Management
   - LMS
+  - Unified-API
+  tags_raw:
+  - Courses
+  - Learning Management
+  - LMS
   - Unified API
   humanURL: https://docs.stackone.com/lms/introduction
   properties:
@@ -71,6 +90,11 @@ apis:
   - Access Management
   - IAM
   - Identity
+  - Unified-API
+  tags_raw:
+  - Access Management
+  - IAM
+  - Identity
   - Unified API
   humanURL: https://docs.stackone.com/iam/introduction
   properties:
@@ -83,6 +107,11 @@ apis:
 - aid: stackone:documents-api
   name: StackOne Unified Documents API
   tags:
+  - Documents
+  - File
+  - Knowledge-Management
+  - Unified-API
+  tags_raw:
   - Documents
   - Files
   - Knowledge Management
@@ -102,6 +131,12 @@ apis:
   - Email
   - Marketing
   - SMS
+  - Unified-API
+  tags_raw:
+  - Campaigns
+  - Email
+  - Marketing
+  - SMS
   - Unified API
   humanURL: https://docs.stackone.com/marketing/introduction
   properties:
@@ -114,6 +149,11 @@ apis:
 - aid: stackone:ticketing-api
   name: StackOne Unified Ticketing API
   tags:
+  - Help Desk
+  - Support
+  - Ticketing
+  - Unified-API
+  tags_raw:
   - Helpdesk
   - Support
   - Ticketing
@@ -128,6 +168,11 @@ apis:
 - aid: stackone:messaging-api
   name: StackOne Unified Messaging API
   tags:
+  - Chat
+  - Communications
+  - Messaging
+  - Unified-API
+  tags_raw:
   - Chat
   - Communication
   - Messaging
@@ -145,6 +190,11 @@ apis:
   - Assessments
   - Background Checks
   - Screening
+  - Unified-API
+  tags_raw:
+  - Assessments
+  - Background Checks
+  - Screening
   - Unified API
   humanURL: https://docs.stackone.com/screening/introduction
   properties:
@@ -156,6 +206,11 @@ apis:
 - aid: stackone:platform-api
   name: StackOne Platform API
   tags:
+  - Account
+  - Actions
+  - Administration
+  - Platform
+  tags_raw:
   - Accounts
   - Actions
   - Administration
@@ -173,6 +228,8 @@ apis:
   description: The Accounts API from StackOne — 5 operation(s) for accounts.
   humanURL: https://www.stackone.com/
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -184,6 +241,8 @@ apis:
   description: The Applications API from StackOne — 4 operation(s) for applications.
   humanURL: https://www.stackone.com/
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -316,6 +375,8 @@ apis:
   description: The Jobs API from StackOne — 2 operation(s) for jobs.
   humanURL: https://www.stackone.com/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -327,6 +388,8 @@ apis:
   description: The Lists API from StackOne — 2 operation(s) for lists.
   humanURL: https://www.stackone.com/
   tags:
+  - List
+  tags_raw:
   - Lists
   properties:
   - type: OpenAPI
@@ -404,6 +467,8 @@ apis:
   description: The Users API from StackOne — 2 operation(s) for users.
   humanURL: https://www.stackone.com/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -412,6 +477,9 @@ apis:
     url: https://www.stackone.com/
 name: StackOne
 tags:
+  - Integration
+  - iPaaS
+tags_raw:
   - Integrations
   - iPaaS
 kind: contract
