@@ -49,7 +49,6 @@ apis:
   tags:
   - Contacts
   - CRM
-  - Customer Relationship Management
   - Unified-API
   tags_raw:
   - Contacts
@@ -150,7 +149,7 @@ apis:
 - aid: stackone:ticketing-api
   name: StackOne Unified Ticketing API
   tags:
-  - Helpdesk
+  - Help Desk
   - Support
   - Ticketing
   - Unified-API
