@@ -88,7 +88,7 @@ apis:
   name: StackOne Unified IAM API
   tags:
   - Access Management
-  - IAM
+  - Identity and Access Management
   - Identity
   - Unified-API
   tags_raw:
@@ -187,7 +187,7 @@ apis:
 - aid: stackone:screening-api
   name: StackOne Unified Screening API
   tags:
-  - Assessments
+  - Assessment
   - Background Checks
   - Screening
   - Unified-API
@@ -401,6 +401,8 @@ apis:
   description: The Locations API from StackOne — 4 operation(s) for locations.
   humanURL: https://www.stackone.com/
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
