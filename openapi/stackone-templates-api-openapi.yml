@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Marketing Accounts Templates API
+  title: Marketing Templates API
   description: The documentation for the StackOne Unified API - MARKETING
   contact: {}
   version: 1.0.0
@@ -785,21 +785,17 @@ paths:
       x-speakeasy-name-override: update_email_template
 components:
   schemas:
-    MarketingCreateEmailTemplateRequestDto:
+    PushMessages:
       type: object
       properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmailMessages'
+        message_content:
+          $ref: '#/components/schemas/PushMessageContents'
         id:
           type: string
         name:
           type: string
-        tags:
-          type: array
-          items:
-            type: string
+        message_type:
+          $ref: '#/components/schemas/MessageTypeEnum'
     TemplatesPaginated:
       type: object
       properties:
@@ -814,60 +810,6 @@ components:
       required:
       - next_page
       - data
-    EmailMessageContents:
-      type: object
-      properties:
-        subject:
-          type: string
-        body:
-          type: string
-        from:
-          type: string
-        reply-to:
-          type: string
-        preheader:
-          type: string
-      required:
-      - subject
-      - body
-      - from
-    Template:
-      type: object
-      properties:
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        created_at:
-          type: string
-          format: date-time
-    MessageTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - email
-          - sms
-          - web_push
-          - ios_push
-          - android_push
-          - app_push
-          - omni_channel
-          - unknown
-          - unmapped_value
-      required:
-      - value
-      - source_value
     SmsMessageContents:
       type: object
       properties:
@@ -877,86 +819,6 @@ components:
           type: string
       required:
       - body
-    PushMessageContents:
-      type: object
-      properties:
-        body:
-          type: string
-      required:
-      - body
-    TemplateResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Template'
-      required:
-      - data
-    CreateTemplateResult:
-      type: object
-      properties:
-        message:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-      required:
-      - statusCode
-      - message
-      - timestamp
-    EmailMessages:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        message_type:
-          $ref: '#/components/schemas/MessageTypeEnum'
-        message_content:
-          $ref: '#/components/schemas/EmailMessageContents'
-    MarketingCreatePushTemplateRequestDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/PushMessages'
-    PushMessages:
-      type: object
-      properties:
-        message_content:
-          $ref: '#/components/schemas/PushMessageContents'
-        id:
-          type: string
-        name:
-          type: string
-        message_type:
-          $ref: '#/components/schemas/MessageTypeEnum'
-    MarketingCreateTemplateRequestDto:
-      type: object
-      properties:
-        messages:
-          $ref: '#/components/schemas/Message'
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
     Message:
       type: object
       properties:
@@ -985,6 +847,144 @@ components:
       - id
       - name
       - message_type
+    EmailMessages:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          $ref: '#/components/schemas/MessageTypeEnum'
+        message_content:
+          $ref: '#/components/schemas/EmailMessageContents'
+    MarketingCreateEmailTemplateRequestDto:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailMessages'
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    PushMessageContents:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
+    CreateTemplateResult:
+      type: object
+      properties:
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+      required:
+      - statusCode
+      - message
+      - timestamp
+    MarketingCreateTemplateRequestDto:
+      type: object
+      properties:
+        messages:
+          $ref: '#/components/schemas/Message'
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    MessageTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - email
+          - sms
+          - web_push
+          - ios_push
+          - android_push
+          - app_push
+          - omni_channel
+          - unknown
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    TemplateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Template'
+      required:
+      - data
+    Template:
+      type: object
+      properties:
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+    EmailMessageContents:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        from:
+          type: string
+        reply-to:
+          type: string
+        preheader:
+          type: string
+      required:
+      - subject
+      - body
+      - from
+    MarketingCreatePushTemplateRequestDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PushMessages'
   securitySchemes:
     basic:
       type: http

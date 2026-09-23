@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Marketing Accounts Candidates API
+  title: Marketing Candidates API
   description: The documentation for the StackOne Unified API - MARKETING
   contact: {}
   version: 1.0.0
@@ -494,66 +494,6 @@ paths:
       x-speakeasy-name-override: get_candidate_note
 components:
   schemas:
-    NotesVisibilityEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - private
-          - public
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
-    Note:
-      type: object
-      properties:
-        visibility:
-          $ref: '#/components/schemas/NotesVisibilityEnum'
-        deleted_at:
-          type: string
-        id:
-          type: string
-        content:
-          type: array
-          items:
-            type: string
-        updated_at:
-          type: string
-        created_at:
-          type: string
-      required:
-      - id
-      - content
-      - visibility
-      - created_at
-      - updated_at
-      - deleted_at
-    CandidateResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Candidate'
-      required:
-      - data
-    NotesPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Note'
-      required:
-      - next_page
-      - data
     SocialLink:
       type: object
       properties:
@@ -564,20 +504,18 @@ components:
       required:
       - type
       - url
-    CandidatesPaginated:
+    AtsCreateNotesRequestDto:
       type: object
       properties:
-        next_page:
-          type: string
-        data:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        content:
           type: array
           items:
-            $ref: '#/components/schemas/Candidate'
-        raw:
-          type: string
+            type: string
       required:
-      - next_page
-      - data
+      - content
+      - visibility
     Candidate:
       type: object
       properties:
@@ -629,6 +567,123 @@ components:
       - title
       - created_at
       - updated_at
+    CreateCandidateNoteResult:
+      type: object
+      properties:
+        statusCode:
+          type: number
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+      required:
+      - statusCode
+      - message
+      - timestamp
+    CandidateEmail:
+      type: object
+      properties:
+        value:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - value
+    Note:
+      type: object
+      properties:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        deleted_at:
+          type: string
+        id:
+          type: string
+        content:
+          type: array
+          items:
+            type: string
+        updated_at:
+          type: string
+        created_at:
+          type: string
+      required:
+      - id
+      - content
+      - visibility
+      - created_at
+      - updated_at
+      - deleted_at
+    CandidateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Candidate'
+      required:
+      - data
+    NotesPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+      required:
+      - next_page
+      - data
+    CandidatesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Candidate'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    AtsUpdateCandidatesRequestDto:
+      type: object
+      properties:
+        phone:
+          type: string
+        company:
+          type: string
+        title:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+    NoteResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Note'
+      required:
+      - data
     AtsCreateCandidateRequestDto:
       type: object
       properties:
@@ -658,74 +713,19 @@ components:
       - last_name
       - emails
       - title
-    NoteResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Note'
-      required:
-      - data
-    CandidateEmail:
+    NotesVisibilityEnum:
       type: object
       properties:
         value:
           type: string
-        type:
+          enum:
+          - private
+          - public
+        source_value:
           type: string
       required:
-      - type
       - value
-    AtsUpdateCandidatesRequestDto:
-      type: object
-      properties:
-        phone:
-          type: string
-        company:
-          type: string
-        title:
-          type: string
-        application_ids:
-          type: array
-          items:
-            type: string
-        name:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        emails:
-          type: array
-          items:
-            $ref: '#/components/schemas/CandidateEmail'
-    AtsCreateNotesRequestDto:
-      type: object
-      properties:
-        visibility:
-          $ref: '#/components/schemas/NotesVisibilityEnum'
-        content:
-          type: array
-          items:
-            type: string
-      required:
-      - content
-      - visibility
-    CreateCandidateNoteResult:
-      type: object
-      properties:
-        statusCode:
-          type: number
-        message:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-      required:
-      - statusCode
-      - message
-      - timestamp
+      - source_value
   securitySchemes:
     basic:
       type: http

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Marketing Accounts Job Postings API
+  title: Marketing Job Postings API
   description: The documentation for the StackOne Unified API - MARKETING
   contact: {}
   version: 1.0.0
@@ -196,83 +196,6 @@ paths:
       x-speakeasy-name-override: list_job_postings
 components:
   schemas:
-    JobPostingsPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobPosting'
-      required:
-      - next_page
-      - data
-    Content:
-      type: object
-      properties:
-        html:
-          type: string
-        plain:
-          type: string
-    AnswerEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - short_text
-          - long_text
-          - attachment
-          - multi_select
-          - single_select
-          - boolean
-          - number
-          - date
-        source_value:
-          type: string
-    Answer:
-      type: object
-      properties:
-        values:
-          type: array
-          items:
-            type: string
-        id:
-          type: string
-        type:
-          $ref: '#/components/schemas/AnswerEnum'
-      required:
-      - values
-    Questionnaire:
-      type: object
-      properties:
-        id:
-          type: string
-        answers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Answer'
-      required:
-      - answers
-    Location:
-      type: object
-      properties:
-        name:
-          type: string
-        id:
-          type: string
-    JobPostingResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/JobPosting'
-      required:
-      - data
     Compensation:
       type: object
       properties:
@@ -326,6 +249,72 @@ components:
           type: string
         max_value:
           type: string
+    Answer:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/AnswerEnum'
+      required:
+      - values
+    AnswerEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - short_text
+          - long_text
+          - attachment
+          - multi_select
+          - single_select
+          - boolean
+          - number
+          - date
+        source_value:
+          type: string
+    JobPostingResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/JobPosting'
+      required:
+      - data
+    Location:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+    Content:
+      type: object
+      properties:
+        html:
+          type: string
+        plain:
+          type: string
+    JobPostingsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobPosting'
+      required:
+      - next_page
+      - data
     JobPosting:
       type: object
       properties:
@@ -476,6 +465,17 @@ components:
               type: date
       required:
       - id
+    Questionnaire:
+      type: object
+      properties:
+        id:
+          type: string
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+      required:
+      - answers
   securitySchemes:
     basic:
       type: http

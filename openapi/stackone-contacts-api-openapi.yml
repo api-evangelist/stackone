@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Marketing Accounts Contacts API
+  title: Marketing Contacts API
   description: The documentation for the StackOne Unified API - MARKETING
   contact: {}
   version: 1.0.0
@@ -267,6 +267,72 @@ paths:
       x-speakeasy-name-override: create_contact
 components:
   schemas:
+    ContactResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Contact'
+      required:
+      - data
+    Contact:
+      type: object
+      properties:
+        phone_numbers:
+          type: array
+          items:
+            type: string
+          description: List of contact phone numbers
+          example:
+          - 123-456-7890
+        id:
+          type: string
+          description: The contact ID
+          example: 1234-5678
+        last_name:
+          type: string
+          description: The contact last name
+          example: Wozniak
+        created_at:
+          type: string
+          description: Timestamp when the contact was created
+          example: '2023-08-24T10:00:00Z'
+        first_name:
+          type: string
+          description: The contact first name
+          example: Steve
+        emails:
+          type: array
+          items:
+            type: string
+          description: List of contact email addresses
+          example:
+          - steve@apple.com
+        deal_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated deal IDs
+          example:
+          - deal-001
+          - deal-002
+        account_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated account IDs
+          example:
+          - account-123
+          - account-456
+        company_name:
+          type: string
+          description: The contact company name
+          example: Apple Inc.
+        updated_at:
+          type: string
+          description: Timestamp when the contact was last updated
+          example: '2023-08-25T15:30:00Z'
     ContactsPaginated:
       type: object
       properties:
@@ -326,72 +392,6 @@ components:
           description: List of contact email addresses
           example:
           - steve@apple.com
-    Contact:
-      type: object
-      properties:
-        phone_numbers:
-          type: array
-          items:
-            type: string
-          description: List of contact phone numbers
-          example:
-          - 123-456-7890
-        id:
-          type: string
-          description: The contact ID
-          example: 1234-5678
-        last_name:
-          type: string
-          description: The contact last name
-          example: Wozniak
-        created_at:
-          type: string
-          description: Timestamp when the contact was created
-          example: '2023-08-24T10:00:00Z'
-        first_name:
-          type: string
-          description: The contact first name
-          example: Steve
-        emails:
-          type: array
-          items:
-            type: string
-          description: List of contact email addresses
-          example:
-          - steve@apple.com
-        deal_ids:
-          type: array
-          items:
-            type: string
-          description: List of associated deal IDs
-          example:
-          - deal-001
-          - deal-002
-        account_ids:
-          type: array
-          items:
-            type: string
-          description: List of associated account IDs
-          example:
-          - account-123
-          - account-456
-        company_name:
-          type: string
-          description: The contact company name
-          example: Apple Inc.
-        updated_at:
-          type: string
-          description: Timestamp when the contact was last updated
-          example: '2023-08-25T15:30:00Z'
-    ContactResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Contact'
-      required:
-      - data
   securitySchemes:
     basic:
       type: http

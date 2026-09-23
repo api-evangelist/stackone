@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: Marketing Accounts API
   description: The documentation for the StackOne Unified API - MARKETING
@@ -316,20 +316,6 @@ paths:
       x-speakeasy-name-override: get_account
 components:
   schemas:
-    AccountsPaginated:
-      type: object
-      properties:
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        raw:
-          type: string
-      required:
-      - next_page
-      - data
     AccountAddress:
       type: object
       properties:
@@ -347,26 +333,20 @@ components:
           type: string
         location_type:
           type: string
-    LinkedAccountMeta:
+    AccountsPaginated:
       type: object
       properties:
-        provider:
+        next_page:
           type: string
-        category:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        raw:
           type: string
-          enum:
-          - ats
-          - hris
-          - hris-legacy
-          - crm
-          - marketing
-          - stackone
-        models:
-          type: object
       required:
-      - provider
-      - category
-      - models
+      - next_page
+      - data
     Account:
       type: object
       properties:
@@ -432,6 +412,26 @@ components:
       - origin_username
       - created_at
       - updated_at
+    LinkedAccountMeta:
+      type: object
+      properties:
+        provider:
+          type: string
+        category:
+          type: string
+          enum:
+          - ats
+          - hris
+          - hris-legacy
+          - crm
+          - marketing
+          - stackone
+        models:
+          type: object
+      required:
+      - provider
+      - category
+      - models
     AccountResult:
       type: object
       properties:

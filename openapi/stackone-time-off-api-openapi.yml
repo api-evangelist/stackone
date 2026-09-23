@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Marketing Accounts Time Off API
+  title: Marketing Time Off API
   description: The documentation for the StackOne Unified API - MARKETING
   contact: {}
   version: 1.0.0
@@ -269,14 +269,19 @@ paths:
       x-speakeasy-name-override: create_time_off_request
 components:
   schemas:
-    TimeOffResult:
+    TimeOffPaginated:
       type: object
       properties:
         raw:
           type: string
+        next_page:
+          type: string
         data:
-          $ref: '#/components/schemas/TimeOff'
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeOff'
       required:
+      - next_page
       - data
     HrisCreateTimeOffRequestDto:
       type: object
@@ -316,48 +321,15 @@ components:
       required:
       - value
       - source_value
-    TimeOffTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - sick
-          - unmapped_value
-          - vacation
-      required:
-      - value
-      - source_value
-    TimeOffPaginated:
+    TimeOffResult:
       type: object
       properties:
         raw:
           type: string
-        next_page:
-          type: string
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeOff'
+          $ref: '#/components/schemas/TimeOff'
       required:
-      - next_page
       - data
-    CreateTimeOffResult:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-        message:
-          type: string
-      required:
-      - statusCode
-      - message
-      - timestamp
     TimeOff:
       type: object
       properties:
@@ -393,6 +365,34 @@ components:
         created_date:
           type: string
           description: The created date of the time off request
+    CreateTimeOffResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+        message:
+          type: string
+      required:
+      - statusCode
+      - message
+      - timestamp
+    TimeOffTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - sick
+          - unmapped_value
+          - vacation
+      required:
+      - value
+      - source_value
   securitySchemes:
     basic:
       type: http

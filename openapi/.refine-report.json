@@ -1,28 +1,7 @@
 {
   "provider": "stackone",
   "sources": [
-    "stackone-accounts-api-openapi.yml",
-    "stackone-applications-api-openapi.yml",
-    "stackone-campaigns-api-openapi.yml",
-    "stackone-candidates-api-openapi.yml",
-    "stackone-companies-api-openapi.yml",
-    "stackone-connect-sessions-api-openapi.yml",
-    "stackone-contacts-api-openapi.yml",
-    "stackone-departments-api-openapi.yml",
-    "stackone-employees-api-openapi.yml",
-    "stackone-employments-api-openapi.yml",
-    "stackone-interview-stages-api-openapi.yml",
-    "stackone-interviews-api-openapi.yml",
-    "stackone-job-postings-api-openapi.yml",
-    "stackone-jobs-api-openapi.yml",
-    "stackone-lists-api-openapi.yml",
-    "stackone-locations-api-openapi.yml",
-    "stackone-offers-api-openapi.yml",
-    "stackone-proxy-api-openapi.yml",
-    "stackone-rejected-reasons-api-openapi.yml",
-    "stackone-templates-api-openapi.yml",
-    "stackone-time-off-api-openapi.yml",
-    "stackone-users-api-openapi.yml"
+    "_original/stackone-openapi.yml"
   ],
   "outputs": [
     "stackone-accounts-api-openapi.yml",
@@ -51,6 +30,33 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "stackone-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "stackone-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-applications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-campaigns-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-candidates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-companies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-connect-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-departments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-employees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-employments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-interview-stages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-interviews-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-job-postings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-lists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-offers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-proxy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-rejected-reasons-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-time-off-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stackone-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
