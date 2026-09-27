@@ -182,19 +182,25 @@ paths:
       x-speakeasy-name-override: get_job
 components:
   schemas:
-    HiringTeam:
+    JobStatusEnum:
       type: object
       properties:
-        email:
+        value:
           type: string
-        role:
+          enum:
+          - published
+          - draft
+          - pending
+          - internal
+          - archived
+          - closed
+          - open
+          - unmapped_value
+        source_value:
           type: string
-        user_id:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
+      required:
+      - value
+      - source_value
     Job:
       type: object
       properties:
@@ -239,25 +245,19 @@ components:
       - job_status
       - created_at
       - updated_at
-    JobStatusEnum:
+    HiringTeam:
       type: object
       properties:
-        value:
+        email:
           type: string
-          enum:
-          - published
-          - draft
-          - pending
-          - internal
-          - archived
-          - closed
-          - open
-          - unmapped_value
-        source_value:
+        role:
           type: string
-      required:
-      - value
-      - source_value
+        user_id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
     JobResult:
       type: object
       properties:

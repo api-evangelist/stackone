@@ -269,20 +269,19 @@ paths:
       x-speakeasy-name-override: create_time_off_request
 components:
   schemas:
-    TimeOffPaginated:
+    TimeOffStatusEnum:
       type: object
       properties:
-        raw:
+        source_value:
           type: string
-        next_page:
+        value:
           type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeOff'
+          enum:
+          - approved
+          - unmapped_value
       required:
-      - next_page
-      - data
+      - value
+      - source_value
     HrisCreateTimeOffRequestDto:
       type: object
       properties:
@@ -308,28 +307,6 @@ components:
           type: string
           description: The approver ID
           example: 1687-4
-    TimeOffStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - approved
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    TimeOffResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/TimeOff'
-      required:
-      - data
     TimeOff:
       type: object
       properties:
@@ -365,6 +342,20 @@ components:
         created_date:
           type: string
           description: The created date of the time off request
+    TimeOffPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeOff'
+      required:
+      - next_page
+      - data
     CreateTimeOffResult:
       type: object
       properties:
@@ -393,6 +384,15 @@ components:
       required:
       - value
       - source_value
+    TimeOffResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/TimeOff'
+      required:
+      - data
   securitySchemes:
     basic:
       type: http

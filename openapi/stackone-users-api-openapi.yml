@@ -182,28 +182,6 @@ paths:
       x-speakeasy-name-override: list_users
 components:
   schemas:
-    User:
-      type: object
-      properties:
-        last_name:
-          type: string
-        name:
-          type: string
-        phone:
-          type: string
-        id:
-          type: string
-        email:
-          type: string
-        first_name:
-          type: string
-      required:
-      - id
-      - email
-      - first_name
-      - last_name
-      - name
-      - phone
     UsersPaginated:
       type: object
       properties:
@@ -229,6 +207,28 @@ components:
       required:
       - data
       - raw
+    User:
+      type: object
+      properties:
+        last_name:
+          type: string
+        name:
+          type: string
+        phone:
+          type: string
+        id:
+          type: string
+        email:
+          type: string
+        first_name:
+          type: string
+      required:
+      - id
+      - email
+      - first_name
+      - last_name
+      - name
+      - phone
   securitySchemes:
     basic:
       type: http

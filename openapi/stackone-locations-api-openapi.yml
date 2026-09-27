@@ -353,52 +353,6 @@ paths:
       x-speakeasy-name-override: list_locations
 components:
   schemas:
-    ATSLocationResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/ATSLocation'
-      required:
-      - data
-    ATSLocationsPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ATSLocation'
-      required:
-      - next_page
-      - data
-    LocationTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - home
-          - work
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    HRISLocationResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/HRISLocation'
-      required:
-      - data
     ATSLocation:
       type: object
       properties:
@@ -409,63 +363,20 @@ components:
       required:
       - id
       - name
-    HRISLocation:
+    HRISLocationsPaginated:
       type: object
       properties:
-        zip_code:
+        next_page:
           type: string
-          description: The ZIP code/Postal code of the location
-          example: NG33 5NR
-        street_1:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/HRISLocation'
+        raw:
           type: string
-          description: The first line of the address
-          example: Water Lane
-        street_2:
-          type: string
-          description: The second line of the address
-          example: Woolsthorpe by Colsterworth
-        updated_at:
-          type: string
-          description: The updated_at date
-          example: '2023-06-14T01:00:00Z'
-        id:
-          type: string
-          description: The unique ID of the location
-          example: '123456'
-        phone_number:
-          type: string
-          description: The phone number of the location
-          example: +44 1476 860 364
-        employee_id:
-          type: string
-          description: The employee ID
-          example: 1687-3
-        city:
-          type: string
-          description: The city where the location is situated
-          example: Grantham
-        country:
-          allOf:
-          - $ref: '#/components/schemas/CountryCodeEnum'
-          description: The country code
-          example: GB
-        name:
-          type: string
-          description: The name of the location
-          example: Woolsthorpe Manor
-        created_at:
-          type: string
-          description: The created_at date
-          example: '2023-06-14T01:00:00Z'
-        state:
-          type: string
-          description: The state where the location is situated
-          example: Lincolnshire
-        location_type:
-          allOf:
-          - $ref: '#/components/schemas/LocationTypeEnum'
-          description: The location type
-          example: work
+      required:
+      - next_page
+      - data
     CountryCodeEnum:
       type: object
       properties:
@@ -726,20 +637,109 @@ components:
       required:
       - value
       - source_value
-    HRISLocationsPaginated:
+    HRISLocationResult:
       type: object
       properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/HRISLocation'
+      required:
+      - data
+    ATSLocationsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
         next_page:
           type: string
         data:
           type: array
           items:
-            $ref: '#/components/schemas/HRISLocation'
-        raw:
-          type: string
+            $ref: '#/components/schemas/ATSLocation'
       required:
       - next_page
       - data
+    ATSLocationResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/ATSLocation'
+      required:
+      - data
+    HRISLocation:
+      type: object
+      properties:
+        zip_code:
+          type: string
+          description: The ZIP code/Postal code of the location
+          example: NG33 5NR
+        street_1:
+          type: string
+          description: The first line of the address
+          example: Water Lane
+        street_2:
+          type: string
+          description: The second line of the address
+          example: Woolsthorpe by Colsterworth
+        updated_at:
+          type: string
+          description: The updated_at date
+          example: '2023-06-14T01:00:00Z'
+        id:
+          type: string
+          description: The unique ID of the location
+          example: '123456'
+        phone_number:
+          type: string
+          description: The phone number of the location
+          example: +44 1476 860 364
+        employee_id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        city:
+          type: string
+          description: The city where the location is situated
+          example: Grantham
+        country:
+          allOf:
+          - $ref: '#/components/schemas/CountryCodeEnum'
+          description: The country code
+          example: GB
+        name:
+          type: string
+          description: The name of the location
+          example: Woolsthorpe Manor
+        created_at:
+          type: string
+          description: The created_at date
+          example: '2023-06-14T01:00:00Z'
+        state:
+          type: string
+          description: The state where the location is situated
+          example: Lincolnshire
+        location_type:
+          allOf:
+          - $ref: '#/components/schemas/LocationTypeEnum'
+          description: The location type
+          example: work
+    LocationTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - home
+          - work
+          - unmapped_value
+      required:
+      - value
+      - source_value
   securitySchemes:
     basic:
       type: http

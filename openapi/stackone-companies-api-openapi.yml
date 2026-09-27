@@ -182,6 +182,15 @@ paths:
       x-speakeasy-name-override: get_company
 components:
   schemas:
+    CompanyResult:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Company'
+        raw:
+          type: string
+      required:
+      - data
     Company:
       type: object
       properties:
@@ -199,15 +208,6 @@ components:
           example: '2023-06-14T01:00:00Z'
         id:
           type: string
-    CompanyResult:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/Company'
-        raw:
-          type: string
-      required:
-      - data
     CompaniesPaginated:
       type: object
       properties:

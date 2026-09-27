@@ -223,51 +223,6 @@ paths:
       x-speakeasy-name-override: create_offer
 components:
   schemas:
-    OffersResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Offer'
-      required:
-      - data
-    AtsCreateOfferRequestDto:
-      type: object
-      properties:
-        offer_history:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfferHistory'
-        application_id:
-          type: string
-        start_date:
-          type: string
-          format: date-time
-        offer_status:
-          $ref: '#/components/schemas/OfferStatusEnum'
-        salary:
-          type: number
-        currency:
-          type: string
-      required:
-      - application_id
-      - start_date
-      - offer_status
-    OffersPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Offer'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
     OfferStatusEnum:
       type: object
       properties:
@@ -282,6 +237,31 @@ components:
       required:
       - value
       - source_value
+    OfferHistory:
+      type: object
+      properties:
+        updated_at:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        salary:
+          type: number
+        currency:
+          type: string
+        created_at:
+          type: string
+      required:
+      - start_date
+    OffersResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Offer'
+      required:
+      - data
     Offer:
       type: object
       properties:
@@ -311,6 +291,20 @@ components:
       - application_id
       - start_date
       - offer_status
+    OffersPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offer'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
     CreateOfferResult:
       type: object
       properties:
@@ -325,22 +319,28 @@ components:
       - statusCode
       - message
       - timestamp
-    OfferHistory:
+    AtsCreateOfferRequestDto:
       type: object
       properties:
-        updated_at:
+        offer_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfferHistory'
+        application_id:
           type: string
         start_date:
           type: string
           format: date-time
+        offer_status:
+          $ref: '#/components/schemas/OfferStatusEnum'
         salary:
           type: number
         currency:
           type: string
-        created_at:
-          type: string
       required:
+      - application_id
       - start_date
+      - offer_status
   securitySchemes:
     basic:
       type: http

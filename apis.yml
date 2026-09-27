@@ -7,12 +7,13 @@ apis:
   - Employees
   - HRIS
   - Human Resources
-  - Unified-API
+  - Unified API
   tags_raw:
   - Employees
   - HRIS
   - Human Resources
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/hris/introduction
   properties:
   - url: https://docs.stackone.com/hris/introduction
@@ -27,14 +28,14 @@ apis:
   name: StackOne Unified ATS API
   tags:
   - Applicant Tracking
-  - ATS
-  - Recruitment
-  - Unified-API
+  - Recruiting
+  - Unified API
   tags_raw:
   - Applicant Tracking
   - ATS
   - Recruitment
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/ats/introduction
   properties:
   - url: https://docs.stackone.com/ats/introduction
@@ -49,12 +50,13 @@ apis:
   tags:
   - Contacts
   - CRM
-  - Unified-API
+  - Unified API
   tags_raw:
   - Contacts
   - CRM
   - Customer Relationship Management
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/crm/introduction
   properties:
   - url: https://docs.stackone.com/crm/introduction
@@ -70,12 +72,13 @@ apis:
   - Courses
   - Learning Management
   - LMS
-  - Unified-API
+  - Unified API
   tags_raw:
   - Courses
   - Learning Management
   - LMS
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/lms/introduction
   properties:
   - url: https://docs.stackone.com/lms/introduction
@@ -90,12 +93,13 @@ apis:
   - Access Management
   - Identity and Access Management
   - Identity
-  - Unified-API
+  - Unified API
   tags_raw:
   - Access Management
   - IAM
   - Identity
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/iam/introduction
   properties:
   - url: https://docs.stackone.com/iam/introduction
@@ -109,13 +113,15 @@ apis:
   tags:
   - Documents
   - File
-  - Knowledge-Management
-  - Unified-API
+  - Knowledge Management
+  - Unified API
   tags_raw:
   - Documents
   - Files
   - Knowledge Management
   - Unified API
+  - Knowledge-Management
+  - Unified-API
   humanURL: https://docs.stackone.com/documents/introduction
   properties:
   - url: https://docs.stackone.com/documents/introduction
@@ -131,13 +137,14 @@ apis:
   - Email
   - Marketing
   - SMS
-  - Unified-API
+  - Unified API
   tags_raw:
   - Campaigns
   - Email
   - Marketing
   - SMS
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/marketing/introduction
   properties:
   - url: https://docs.stackone.com/marketing/introduction
@@ -152,12 +159,13 @@ apis:
   - Help Desk
   - Support
   - Ticketing
-  - Unified-API
+  - Unified API
   tags_raw:
   - Helpdesk
   - Support
   - Ticketing
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/ticketing/introduction
   properties:
   - url: https://docs.stackone.com/ticketing/introduction
@@ -171,12 +179,13 @@ apis:
   - Chat
   - Communications
   - Messaging
-  - Unified-API
+  - Unified API
   tags_raw:
   - Chat
   - Communication
   - Messaging
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/messaging/introduction
   properties:
   - url: https://docs.stackone.com/messaging/introduction
@@ -190,12 +199,13 @@ apis:
   - Assessment
   - Background Checks
   - Screening
-  - Unified-API
+  - Unified API
   tags_raw:
   - Assessments
   - Background Checks
   - Screening
   - Unified API
+  - Unified-API
   humanURL: https://docs.stackone.com/screening/introduction
   properties:
   - url: https://docs.stackone.com/screening/introduction

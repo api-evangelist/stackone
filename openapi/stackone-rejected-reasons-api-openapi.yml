@@ -198,6 +198,19 @@ components:
       required:
       - value
       - source_value
+    RejectedReason:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        rejected_reason_type:
+          $ref: '#/components/schemas/RejectedReasonTypeEnum'
+      required:
+      - id
+      - label
+      - rejected_reason_type
     RejectedReasonsPaginated:
       type: object
       properties:
@@ -212,19 +225,6 @@ components:
       required:
       - next_page
       - data
-    RejectedReason:
-      type: object
-      properties:
-        id:
-          type: string
-        label:
-          type: string
-        rejected_reason_type:
-          $ref: '#/components/schemas/RejectedReasonTypeEnum'
-      required:
-      - id
-      - label
-      - rejected_reason_type
     RejectedReasonResult:
       type: object
       properties:

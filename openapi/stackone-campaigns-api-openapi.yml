@@ -178,6 +178,34 @@ paths:
       x-speakeasy-name-override: list_campaigns
 components:
   schemas:
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          type: string
+          enum:
+          - email
+          - sms
+          - web_push
+          - ios_push
+          - android_push
+          - app_push
+          - omni_channel
+          - unknown
+          - unmapped_value
+        message_content:
+          oneOf:
+          - $ref: '#/components/schemas/SmsMessageContents'
+          - $ref: '#/components/schemas/EmailMessageContents'
+          - $ref: '#/components/schemas/PushMessageContents'
+      required:
+      - id
+      - name
+      - message_type
     SmsMessageContents:
       type: object
       properties:
@@ -187,6 +215,23 @@ components:
           type: string
       required:
       - body
+    EmailMessageContents:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        from:
+          type: string
+        reply-to:
+          type: string
+        preheader:
+          type: string
+      required:
+      - subject
+      - body
+      - from
     Campaign:
       type: object
       properties:
@@ -292,51 +337,6 @@ components:
       required:
       - next_page
       - data
-    EmailMessageContents:
-      type: object
-      properties:
-        subject:
-          type: string
-        body:
-          type: string
-        from:
-          type: string
-        reply-to:
-          type: string
-        preheader:
-          type: string
-      required:
-      - subject
-      - body
-      - from
-    Message:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        message_type:
-          type: string
-          enum:
-          - email
-          - sms
-          - web_push
-          - ios_push
-          - android_push
-          - app_push
-          - omni_channel
-          - unknown
-          - unmapped_value
-        message_content:
-          oneOf:
-          - $ref: '#/components/schemas/SmsMessageContents'
-          - $ref: '#/components/schemas/EmailMessageContents'
-          - $ref: '#/components/schemas/PushMessageContents'
-      required:
-      - id
-      - name
-      - message_type
   securitySchemes:
     basic:
       type: http

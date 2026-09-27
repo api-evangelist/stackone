@@ -196,59 +196,6 @@ paths:
       x-speakeasy-name-override: list_job_postings
 components:
   schemas:
-    Compensation:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - salary
-          - hourly
-          - commission
-          - bonus
-          - equity
-          - other
-          - unmapped_value
-        pay_period:
-          type: string
-          enum:
-          - hour
-          - day
-          - week
-          - every_two_weeks
-          - month
-          - quarter
-          - every_six_months
-          - year
-          - none
-          - unmapped_value
-        pay_frequency:
-          type: string
-          enum:
-          - hourly
-          - weekly
-          - bi_weekly
-          - four_weekly
-          - semi_monthly
-          - monthly
-          - bi_monthly
-          - quarterly
-          - semi_annually
-          - yearly
-          - thirteen_monthly
-          - pro_rata
-          - unmapped_value
-          - half_yearly
-        currency:
-          type: string
-        value:
-          type: string
-        min_value:
-          type: string
-        max_value:
-          type: string
     Answer:
       type: object
       properties:
@@ -262,45 +209,6 @@ components:
           $ref: '#/components/schemas/AnswerEnum'
       required:
       - values
-    AnswerEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - short_text
-          - long_text
-          - attachment
-          - multi_select
-          - single_select
-          - boolean
-          - number
-          - date
-        source_value:
-          type: string
-    JobPostingResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/JobPosting'
-      required:
-      - data
-    Location:
-      type: object
-      properties:
-        name:
-          type: string
-        id:
-          type: string
-    Content:
-      type: object
-      properties:
-        html:
-          type: string
-        plain:
-          type: string
     JobPostingsPaginated:
       type: object
       properties:
@@ -476,6 +384,98 @@ components:
             $ref: '#/components/schemas/Answer'
       required:
       - answers
+    Content:
+      type: object
+      properties:
+        html:
+          type: string
+        plain:
+          type: string
+    AnswerEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - short_text
+          - long_text
+          - attachment
+          - multi_select
+          - single_select
+          - boolean
+          - number
+          - date
+        source_value:
+          type: string
+    Compensation:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - salary
+          - hourly
+          - commission
+          - bonus
+          - equity
+          - other
+          - unmapped_value
+        pay_period:
+          type: string
+          enum:
+          - hour
+          - day
+          - week
+          - every_two_weeks
+          - month
+          - quarter
+          - every_six_months
+          - year
+          - none
+          - unmapped_value
+        pay_frequency:
+          type: string
+          enum:
+          - hourly
+          - weekly
+          - bi_weekly
+          - four_weekly
+          - semi_monthly
+          - monthly
+          - bi_monthly
+          - quarterly
+          - semi_annually
+          - yearly
+          - thirteen_monthly
+          - pro_rata
+          - unmapped_value
+          - half_yearly
+        currency:
+          type: string
+        value:
+          type: string
+        min_value:
+          type: string
+        max_value:
+          type: string
+    Location:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+    JobPostingResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/JobPosting'
+      required:
+      - data
   securitySchemes:
     basic:
       type: http

@@ -267,15 +267,51 @@ paths:
       x-speakeasy-name-override: create_contact
 components:
   schemas:
-    ContactResult:
+    CrmCreateContactRequestDto:
       type: object
       properties:
-        raw:
+        phone_numbers:
+          type: array
+          items:
+            type: string
+          description: List of contact phone numbers
+          example:
+          - 123-456-7890
+        deal_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated deal IDs
+          example:
+          - deal-001
+          - deal-002
+        account_ids:
+          type: array
+          items:
+            type: string
+          description: List of associated account IDs
+          example:
+          - account-123
+          - account-456
+        first_name:
           type: string
-        data:
-          $ref: '#/components/schemas/Contact'
-      required:
-      - data
+          description: The contact first name
+          example: Steve
+        last_name:
+          type: string
+          description: The contact last name
+          example: Wozniak
+        company_name:
+          type: string
+          description: The contact company name
+          example: Apple Inc.
+        emails:
+          type: array
+          items:
+            type: string
+          description: List of contact email addresses
+          example:
+          - steve@apple.com
     Contact:
       type: object
       properties:
@@ -333,6 +369,15 @@ components:
           type: string
           description: Timestamp when the contact was last updated
           example: '2023-08-25T15:30:00Z'
+    ContactResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Contact'
+      required:
+      - data
     ContactsPaginated:
       type: object
       properties:
@@ -347,51 +392,6 @@ components:
       required:
       - next_page
       - data
-    CrmCreateContactRequestDto:
-      type: object
-      properties:
-        phone_numbers:
-          type: array
-          items:
-            type: string
-          description: List of contact phone numbers
-          example:
-          - 123-456-7890
-        deal_ids:
-          type: array
-          items:
-            type: string
-          description: List of associated deal IDs
-          example:
-          - deal-001
-          - deal-002
-        account_ids:
-          type: array
-          items:
-            type: string
-          description: List of associated account IDs
-          example:
-          - account-123
-          - account-456
-        first_name:
-          type: string
-          description: The contact first name
-          example: Steve
-        last_name:
-          type: string
-          description: The contact last name
-          example: Wozniak
-        company_name:
-          type: string
-          description: The contact company name
-          example: Apple Inc.
-        emails:
-          type: array
-          items:
-            type: string
-          description: List of contact email addresses
-          example:
-          - steve@apple.com
   securitySchemes:
     basic:
       type: http

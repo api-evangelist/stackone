@@ -494,28 +494,129 @@ paths:
       x-speakeasy-name-override: get_candidate_note
 components:
   schemas:
-    SocialLink:
+    NotesPaginated:
       type: object
       properties:
-        url:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+      required:
+      - next_page
+      - data
+    AtsCreateCandidateRequestDto:
+      type: object
+      properties:
+        last_name:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+        phone:
+          type: string
+        company:
+          type: string
+        title:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        first_name:
+          type: string
+      required:
+      - name
+      - first_name
+      - last_name
+      - emails
+      - title
+    CandidateEmail:
+      type: object
+      properties:
+        value:
           type: string
         type:
           type: string
       required:
       - type
-      - url
-    AtsCreateNotesRequestDto:
+      - value
+    AtsUpdateCandidatesRequestDto:
+      type: object
+      properties:
+        phone:
+          type: string
+        company:
+          type: string
+        title:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+    CandidateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Candidate'
+      required:
+      - data
+    CandidatesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Candidate'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    Note:
       type: object
       properties:
         visibility:
           $ref: '#/components/schemas/NotesVisibilityEnum'
+        deleted_at:
+          type: string
+        id:
+          type: string
         content:
           type: array
           items:
             type: string
+        updated_at:
+          type: string
+        created_at:
+          type: string
       required:
+      - id
       - content
       - visibility
+      - created_at
+      - updated_at
+      - deleted_at
     Candidate:
       type: object
       properties:
@@ -581,100 +682,6 @@ components:
       - statusCode
       - message
       - timestamp
-    CandidateEmail:
-      type: object
-      properties:
-        value:
-          type: string
-        type:
-          type: string
-      required:
-      - type
-      - value
-    Note:
-      type: object
-      properties:
-        visibility:
-          $ref: '#/components/schemas/NotesVisibilityEnum'
-        deleted_at:
-          type: string
-        id:
-          type: string
-        content:
-          type: array
-          items:
-            type: string
-        updated_at:
-          type: string
-        created_at:
-          type: string
-      required:
-      - id
-      - content
-      - visibility
-      - created_at
-      - updated_at
-      - deleted_at
-    CandidateResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Candidate'
-      required:
-      - data
-    NotesPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Note'
-      required:
-      - next_page
-      - data
-    CandidatesPaginated:
-      type: object
-      properties:
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Candidate'
-        raw:
-          type: string
-      required:
-      - next_page
-      - data
-    AtsUpdateCandidatesRequestDto:
-      type: object
-      properties:
-        phone:
-          type: string
-        company:
-          type: string
-        title:
-          type: string
-        application_ids:
-          type: array
-          items:
-            type: string
-        name:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        emails:
-          type: array
-          items:
-            $ref: '#/components/schemas/CandidateEmail'
     NoteResult:
       type: object
       properties:
@@ -684,35 +691,18 @@ components:
           $ref: '#/components/schemas/Note'
       required:
       - data
-    AtsCreateCandidateRequestDto:
+    AtsCreateNotesRequestDto:
       type: object
       properties:
-        last_name:
-          type: string
-        emails:
-          type: array
-          items:
-            $ref: '#/components/schemas/CandidateEmail'
-        phone:
-          type: string
-        company:
-          type: string
-        title:
-          type: string
-        application_ids:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        content:
           type: array
           items:
             type: string
-        name:
-          type: string
-        first_name:
-          type: string
       required:
-      - name
-      - first_name
-      - last_name
-      - emails
-      - title
+      - content
+      - visibility
     NotesVisibilityEnum:
       type: object
       properties:
@@ -726,6 +716,16 @@ components:
       required:
       - value
       - source_value
+    SocialLink:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - url
   securitySchemes:
     basic:
       type: http

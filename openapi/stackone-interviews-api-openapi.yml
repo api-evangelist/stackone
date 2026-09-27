@@ -182,6 +182,48 @@ paths:
       x-speakeasy-name-override: list_interviews
 components:
   schemas:
+    InterviewsResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Interview'
+      required:
+      - data
+    Interviewer:
+      type: object
+      properties:
+        email:
+          type: string
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - first_name
+      - last_name
+      - name
+      - email
+    InterviewsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interview'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
     InterviewStage:
       type: object
       properties:
@@ -200,46 +242,6 @@ components:
       required:
       - id
       - name
-    InterviewsResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Interview'
-      required:
-      - data
-    InterviewsPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Interview'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
-    InterviewStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - unscheduled
-          - scheduled
-          - completed
-          - cancelled
-          - pending_feedback
-          - unmapped_value
-      required:
-      - value
-      - source_value
     InterviewPart:
       type: object
       properties:
@@ -308,25 +310,23 @@ components:
       - interviewer_ids
       - start_at
       - end_at
-    Interviewer:
+    InterviewStatusEnum:
       type: object
       properties:
-        email:
+        source_value:
           type: string
-        id:
+        value:
           type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        name:
-          type: string
+          enum:
+          - unscheduled
+          - scheduled
+          - completed
+          - cancelled
+          - pending_feedback
+          - unmapped_value
       required:
-      - id
-      - first_name
-      - last_name
-      - name
-      - email
+      - value
+      - source_value
   securitySchemes:
     basic:
       type: http

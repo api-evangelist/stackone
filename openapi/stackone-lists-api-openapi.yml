@@ -200,15 +200,6 @@ components:
       required:
       - id
       - name
-    ListResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/List'
-      required:
-      - data
     ListTypeEnum:
       type: object
       properties:
@@ -223,6 +214,15 @@ components:
       required:
       - value
       - source_value
+    ListResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/List'
+      required:
+      - data
     ListsPaginated:
       type: object
       properties:
