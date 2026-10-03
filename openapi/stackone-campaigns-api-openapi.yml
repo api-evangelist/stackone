@@ -178,6 +178,32 @@ paths:
       x-speakeasy-name-override: list_campaigns
 components:
   schemas:
+    EmailMessageContents:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        from:
+          type: string
+        reply-to:
+          type: string
+        preheader:
+          type: string
+      required:
+      - subject
+      - body
+      - from
+    CampaignResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Campaign'
+      required:
+      - data
     Message:
       type: object
       properties:
@@ -206,32 +232,6 @@ components:
       - id
       - name
       - message_type
-    SmsMessageContents:
-      type: object
-      properties:
-        from:
-          type: string
-        body:
-          type: string
-      required:
-      - body
-    EmailMessageContents:
-      type: object
-      properties:
-        subject:
-          type: string
-        body:
-          type: string
-        from:
-          type: string
-        reply-to:
-          type: string
-        preheader:
-          type: string
-      required:
-      - subject
-      - body
-      - from
     Campaign:
       type: object
       properties:
@@ -307,22 +307,6 @@ components:
           type: boolean
       required:
       - name
-    PushMessageContents:
-      type: object
-      properties:
-        body:
-          type: string
-      required:
-      - body
-    CampaignResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Campaign'
-      required:
-      - data
     CampaignsPaginated:
       type: object
       properties:
@@ -337,6 +321,22 @@ components:
       required:
       - next_page
       - data
+    SmsMessageContents:
+      type: object
+      properties:
+        from:
+          type: string
+        body:
+          type: string
+      required:
+      - body
+    PushMessageContents:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
   securitySchemes:
     basic:
       type: http

@@ -182,25 +182,6 @@ paths:
       x-speakeasy-name-override: get_job
 components:
   schemas:
-    JobStatusEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - published
-          - draft
-          - pending
-          - internal
-          - archived
-          - closed
-          - open
-          - unmapped_value
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
     Job:
       type: object
       properties:
@@ -258,15 +239,6 @@ components:
           type: string
         last_name:
           type: string
-    JobResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        job:
-          $ref: '#/components/schemas/Job'
-      required:
-      - job
     JobsPaginated:
       type: object
       properties:
@@ -281,6 +253,34 @@ components:
       required:
       - next_page
       - data
+    JobResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        job:
+          $ref: '#/components/schemas/Job'
+      required:
+      - job
+    JobStatusEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - published
+          - draft
+          - pending
+          - internal
+          - archived
+          - closed
+          - open
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
   securitySchemes:
     basic:
       type: http

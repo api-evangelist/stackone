@@ -200,29 +200,6 @@ components:
       required:
       - id
       - name
-    ListTypeEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - contacts
-          - companies
-          - unmapped_value
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
-    ListResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/List'
-      required:
-      - data
     ListsPaginated:
       type: object
       properties:
@@ -237,6 +214,29 @@ components:
       required:
       - next_page
       - data
+    ListResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/List'
+      required:
+      - data
+    ListTypeEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - contacts
+          - companies
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
   securitySchemes:
     basic:
       type: http

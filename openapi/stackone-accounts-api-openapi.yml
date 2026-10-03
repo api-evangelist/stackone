@@ -316,67 +316,6 @@ paths:
       x-speakeasy-name-override: get_account
 components:
   schemas:
-    AccountResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Account'
-      required:
-      - data
-    LinkedAccountMeta:
-      type: object
-      properties:
-        provider:
-          type: string
-        category:
-          type: string
-          enum:
-          - ats
-          - hris
-          - hris-legacy
-          - crm
-          - marketing
-          - stackone
-        models:
-          type: object
-      required:
-      - provider
-      - category
-      - models
-    LinkedAccount:
-      type: object
-      properties:
-        active:
-          type: boolean
-        origin_owner_name:
-          type: string
-        origin_username:
-          type: string
-        credentials:
-          type: object
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        provider:
-          type: string
-        origin_owner_id:
-          type: string
-        id:
-          type: string
-      required:
-      - id
-      - provider
-      - active
-      - origin_owner_id
-      - origin_owner_name
-      - origin_username
-      - created_at
-      - updated_at
     Account:
       type: object
       properties:
@@ -410,20 +349,6 @@ components:
       - id
       - owner_id
       - name
-    AccountsPaginated:
-      type: object
-      properties:
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        raw:
-          type: string
-      required:
-      - next_page
-      - data
     AccountAddress:
       type: object
       properties:
@@ -441,6 +366,81 @@ components:
           type: string
         location_type:
           type: string
+    AccountResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Account'
+      required:
+      - data
+    AccountsPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    LinkedAccount:
+      type: object
+      properties:
+        active:
+          type: boolean
+        origin_owner_name:
+          type: string
+        origin_username:
+          type: string
+        credentials:
+          type: object
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        provider:
+          type: string
+        origin_owner_id:
+          type: string
+        id:
+          type: string
+      required:
+      - id
+      - provider
+      - active
+      - origin_owner_id
+      - origin_owner_name
+      - origin_username
+      - created_at
+      - updated_at
+    LinkedAccountMeta:
+      type: object
+      properties:
+        provider:
+          type: string
+        category:
+          type: string
+          enum:
+          - ats
+          - hris
+          - hris-legacy
+          - crm
+          - marketing
+          - stackone
+        models:
+          type: object
+      required:
+      - provider
+      - category
+      - models
   securitySchemes:
     basic:
       type: http

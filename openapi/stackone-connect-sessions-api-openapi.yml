@@ -76,50 +76,6 @@ paths:
       x-speakeasy-name-override: create_connect_session
 components:
   schemas:
-    ConnectSessionCreate:
-      type: object
-      properties:
-        expires_in:
-          type: number
-          description: How long the session should be valid for in seconds
-          default: 1800
-        metadata:
-          type: object
-          description: The metadata for the connection
-        categories:
-          type: array
-          items:
-            type: string
-            enum:
-            - ats
-            - hris
-            - hris-legacy
-            - crm
-            - marketing
-            - stackone
-          description: The categories of the provider to connect to
-          example:
-          - ats
-          - hris
-          - hrisLegacy
-          - crm
-          - marketing
-          - stackOne
-        provider:
-          type: string
-          description: The provider to connect to
-        origin_owner_id:
-          type: string
-          description: The origin owner identifier
-        origin_owner_name:
-          type: string
-          description: The origin owner name
-        origin_username:
-          type: string
-          description: The origin username
-      required:
-      - origin_owner_id
-      - origin_owner_name
     ConnectSessionToken:
       type: object
       properties:
@@ -169,6 +125,50 @@ components:
       - origin_owner_name
       - created_at
       - token
+    ConnectSessionCreate:
+      type: object
+      properties:
+        expires_in:
+          type: number
+          description: How long the session should be valid for in seconds
+          default: 1800
+        metadata:
+          type: object
+          description: The metadata for the connection
+        categories:
+          type: array
+          items:
+            type: string
+            enum:
+            - ats
+            - hris
+            - hris-legacy
+            - crm
+            - marketing
+            - stackone
+          description: The categories of the provider to connect to
+          example:
+          - ats
+          - hris
+          - hrisLegacy
+          - crm
+          - marketing
+          - stackOne
+        provider:
+          type: string
+          description: The provider to connect to
+        origin_owner_id:
+          type: string
+          description: The origin owner identifier
+        origin_owner_name:
+          type: string
+          description: The origin owner name
+        origin_username:
+          type: string
+          description: The origin username
+      required:
+      - origin_owner_id
+      - origin_owner_name
     ConnectSession:
       type: object
       properties:

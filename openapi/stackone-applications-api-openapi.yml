@@ -450,6 +450,44 @@ paths:
       x-speakeasy-name-override: create_application
 components:
   schemas:
+    InterviewStage:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - name
+    Questionnaire:
+      type: object
+      properties:
+        id:
+          type: string
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+      required:
+      - answers
+    OffersResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Offer'
+      required:
+      - data
     RejectedReason:
       type: object
       properties:
@@ -463,35 +501,16 @@ components:
       - id
       - label
       - rejected_reason_type
-    Offer:
+    AttachmentType:
       type: object
       properties:
-        offer_history:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfferHistory'
-        id:
+        source_value:
           type: string
-        offer_status:
-          $ref: '#/components/schemas/OfferStatusEnum'
-        created_at:
+        value:
           type: string
-        updated_at:
-          type: string
-        salary:
-          type: number
-        application_id:
-          type: string
-        start_date:
-          type: string
-          format: date-time
-        currency:
-          type: string
-      required:
-      - id
-      - application_id
-      - start_date
-      - offer_status
+          enum:
+          - resume
+          - unmapped_value
     ApplicationStatusEnum:
       type: object
       properties:
@@ -509,72 +528,6 @@ components:
       required:
       - value
       - source_value
-    OffersPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Offer'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
-    ApplicationAttachment:
-      type: object
-      properties:
-        url:
-          type: string
-        type:
-          type: array
-          items:
-            $ref: '#/components/schemas/AttachmentType'
-        file_name:
-          type: string
-        content:
-          type: string
-    CreateResult:
-      type: object
-      properties:
-        message:
-          type: string
-          example: Record created successfully.
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-          example: 200
-      required:
-      - statusCode
-      - message
-      - timestamp
-    ApplicationsPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Application'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
-    OffersResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Offer'
-      required:
-      - data
     AtsUpdateApplicationRequestDto:
       type: object
       properties:
@@ -596,179 +549,6 @@ components:
           type: string
         job_id:
           type: string
-    UpdateResult:
-      type: object
-      properties:
-        message:
-          type: string
-          example: Record updated successfully.
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-          example: 200
-      required:
-      - statusCode
-      - message
-      - timestamp
-    Questionnaire:
-      type: object
-      properties:
-        id:
-          type: string
-        answers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Answer'
-      required:
-      - answers
-    InterviewStage:
-      type: object
-      properties:
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        name:
-          type: string
-        order:
-          type: number
-      required:
-      - id
-      - name
-    Answer:
-      type: object
-      properties:
-        values:
-          type: array
-          items:
-            type: string
-        id:
-          type: string
-        type:
-          $ref: '#/components/schemas/AnswerEnum'
-      required:
-      - values
-    OfferStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - pending
-          - retracted
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    OfferHistory:
-      type: object
-      properties:
-        updated_at:
-          type: string
-        start_date:
-          type: string
-          format: date-time
-        salary:
-          type: number
-        currency:
-          type: string
-        created_at:
-          type: string
-      required:
-      - start_date
-    AtsCreateApplicationRequestDto:
-      type: object
-      properties:
-        questionnaire:
-          $ref: '#/components/schemas/Questionnaire'
-        candidate:
-          $ref: '#/components/schemas/ApplicationCandidate'
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApplicationAttachment'
-        candidate_id:
-          type: string
-        job_id:
-          type: string
-        location_ids:
-          type: array
-          items:
-            type: string
-        application_status:
-          $ref: '#/components/schemas/ApplicationStatusEnum'
-      required:
-      - application_status
-      - questionnaire
-      - candidate
-    AttachmentType:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - resume
-          - unmapped_value
-    AnswerEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - short_text
-          - long_text
-          - attachment
-          - multi_select
-          - single_select
-          - boolean
-          - number
-          - date
-        source_value:
-          type: string
-    ApplicationCandidate:
-      type: object
-      properties:
-        email:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-    ApplicationResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Application'
-      required:
-      - data
-    RejectedReasonTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - rejected_by_candidate
-          - rejected_by_organization
-          - other
-          - unknown
-          - unmapped_value
-      required:
-      - value
-      - source_value
     Application:
       type: object
       properties:
@@ -818,6 +598,226 @@ components:
       - application_status
       - questionnaire
       - candidate
+    ApplicationResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Application'
+      required:
+      - data
+    Answer:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/AnswerEnum'
+      required:
+      - values
+    AnswerEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - short_text
+          - long_text
+          - attachment
+          - multi_select
+          - single_select
+          - boolean
+          - number
+          - date
+        source_value:
+          type: string
+    Offer:
+      type: object
+      properties:
+        offer_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfferHistory'
+        id:
+          type: string
+        offer_status:
+          $ref: '#/components/schemas/OfferStatusEnum'
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        salary:
+          type: number
+        application_id:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        currency:
+          type: string
+      required:
+      - id
+      - application_id
+      - start_date
+      - offer_status
+    ApplicationAttachment:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttachmentType'
+        file_name:
+          type: string
+        content:
+          type: string
+    OfferHistory:
+      type: object
+      properties:
+        updated_at:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        salary:
+          type: number
+        currency:
+          type: string
+        created_at:
+          type: string
+      required:
+      - start_date
+    OfferStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - pending
+          - retracted
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    ApplicationCandidate:
+      type: object
+      properties:
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+    OffersPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offer'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    AtsCreateApplicationRequestDto:
+      type: object
+      properties:
+        questionnaire:
+          $ref: '#/components/schemas/Questionnaire'
+        candidate:
+          $ref: '#/components/schemas/ApplicationCandidate'
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationAttachment'
+        candidate_id:
+          type: string
+        job_id:
+          type: string
+        location_ids:
+          type: array
+          items:
+            type: string
+        application_status:
+          $ref: '#/components/schemas/ApplicationStatusEnum'
+      required:
+      - application_status
+      - questionnaire
+      - candidate
+    CreateResult:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Record created successfully.
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+          example: 200
+      required:
+      - statusCode
+      - message
+      - timestamp
+    ApplicationsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Application'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    RejectedReasonTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - rejected_by_candidate
+          - rejected_by_organization
+          - other
+          - unknown
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    UpdateResult:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Record updated successfully.
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+          example: 200
+      required:
+      - statusCode
+      - message
+      - timestamp
   securitySchemes:
     basic:
       type: http

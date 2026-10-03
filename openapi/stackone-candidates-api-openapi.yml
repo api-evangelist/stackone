@@ -494,20 +494,32 @@ paths:
       x-speakeasy-name-override: get_candidate_note
 components:
   schemas:
-    NotesPaginated:
+    CreateCandidateNoteResult:
       type: object
       properties:
-        raw:
+        statusCode:
+          type: number
+        message:
           type: string
-        next_page:
+        timestamp:
           type: string
-        data:
+          format: date-time
+      required:
+      - statusCode
+      - message
+      - timestamp
+    AtsCreateNotesRequestDto:
+      type: object
+      properties:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        content:
           type: array
           items:
-            $ref: '#/components/schemas/Note'
+            type: string
       required:
-      - next_page
-      - data
+      - content
+      - visibility
     AtsCreateCandidateRequestDto:
       type: object
       properties:
@@ -537,48 +549,6 @@ components:
       - last_name
       - emails
       - title
-    CandidateEmail:
-      type: object
-      properties:
-        value:
-          type: string
-        type:
-          type: string
-      required:
-      - type
-      - value
-    AtsUpdateCandidatesRequestDto:
-      type: object
-      properties:
-        phone:
-          type: string
-        company:
-          type: string
-        title:
-          type: string
-        application_ids:
-          type: array
-          items:
-            type: string
-        name:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        emails:
-          type: array
-          items:
-            $ref: '#/components/schemas/CandidateEmail'
-    CandidateResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Candidate'
-      required:
-      - data
     CandidatesPaginated:
       type: object
       properties:
@@ -593,30 +563,6 @@ components:
       required:
       - next_page
       - data
-    Note:
-      type: object
-      properties:
-        visibility:
-          $ref: '#/components/schemas/NotesVisibilityEnum'
-        deleted_at:
-          type: string
-        id:
-          type: string
-        content:
-          type: array
-          items:
-            type: string
-        updated_at:
-          type: string
-        created_at:
-          type: string
-      required:
-      - id
-      - content
-      - visibility
-      - created_at
-      - updated_at
-      - deleted_at
     Candidate:
       type: object
       properties:
@@ -668,41 +614,40 @@ components:
       - title
       - created_at
       - updated_at
-    CreateCandidateNoteResult:
-      type: object
-      properties:
-        statusCode:
-          type: number
-        message:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-      required:
-      - statusCode
-      - message
-      - timestamp
-    NoteResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Note'
-      required:
-      - data
-    AtsCreateNotesRequestDto:
+    Note:
       type: object
       properties:
         visibility:
           $ref: '#/components/schemas/NotesVisibilityEnum'
+        deleted_at:
+          type: string
+        id:
+          type: string
         content:
           type: array
           items:
             type: string
+        updated_at:
+          type: string
+        created_at:
+          type: string
       required:
+      - id
       - content
       - visibility
+      - created_at
+      - updated_at
+      - deleted_at
+    SocialLink:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - url
     NotesVisibilityEnum:
       type: object
       properties:
@@ -716,16 +661,71 @@ components:
       required:
       - value
       - source_value
-    SocialLink:
+    AtsUpdateCandidatesRequestDto:
       type: object
       properties:
-        url:
+        phone:
+          type: string
+        company:
+          type: string
+        title:
+          type: string
+        application_ids:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateEmail'
+    NotesPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+      required:
+      - next_page
+      - data
+    NoteResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Note'
+      required:
+      - data
+    CandidateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Candidate'
+      required:
+      - data
+    CandidateEmail:
+      type: object
+      properties:
+        value:
           type: string
         type:
           type: string
       required:
       - type
-      - url
+      - value
   securitySchemes:
     basic:
       type: http

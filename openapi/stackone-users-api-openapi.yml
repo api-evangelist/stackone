@@ -197,16 +197,6 @@ components:
       - next_page
       - data
       - raw
-    UserResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/User'
-      required:
-      - data
-      - raw
     User:
       type: object
       properties:
@@ -229,6 +219,16 @@ components:
       - last_name
       - name
       - phone
+    UserResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/User'
+      required:
+      - data
+      - raw
   securitySchemes:
     basic:
       type: http

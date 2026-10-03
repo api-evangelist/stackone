@@ -196,33 +196,59 @@ paths:
       x-speakeasy-name-override: list_job_postings
 components:
   schemas:
-    Answer:
+    Compensation:
       type: object
       properties:
-        values:
-          type: array
-          items:
-            type: string
-        id:
+        name:
           type: string
         type:
-          $ref: '#/components/schemas/AnswerEnum'
-      required:
-      - values
-    JobPostingsPaginated:
-      type: object
-      properties:
-        raw:
           type: string
-        next_page:
+          enum:
+          - salary
+          - hourly
+          - commission
+          - bonus
+          - equity
+          - other
+          - unmapped_value
+        pay_period:
           type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobPosting'
-      required:
-      - next_page
-      - data
+          enum:
+          - hour
+          - day
+          - week
+          - every_two_weeks
+          - month
+          - quarter
+          - every_six_months
+          - year
+          - none
+          - unmapped_value
+        pay_frequency:
+          type: string
+          enum:
+          - hourly
+          - weekly
+          - bi_weekly
+          - four_weekly
+          - semi_monthly
+          - monthly
+          - bi_monthly
+          - quarterly
+          - semi_annually
+          - yearly
+          - thirteen_monthly
+          - pro_rata
+          - unmapped_value
+          - half_yearly
+        currency:
+          type: string
+        value:
+          type: string
+        min_value:
+          type: string
+        max_value:
+          type: string
     JobPosting:
       type: object
       properties:
@@ -373,24 +399,19 @@ components:
               type: date
       required:
       - id
-    Questionnaire:
+    Answer:
       type: object
       properties:
-        id:
-          type: string
-        answers:
+        values:
           type: array
           items:
-            $ref: '#/components/schemas/Answer'
+            type: string
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/AnswerEnum'
       required:
-      - answers
-    Content:
-      type: object
-      properties:
-        html:
-          type: string
-        plain:
-          type: string
+      - values
     AnswerEnum:
       type: object
       properties:
@@ -407,66 +428,17 @@ components:
           - date
         source_value:
           type: string
-    Compensation:
+    Questionnaire:
       type: object
       properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - salary
-          - hourly
-          - commission
-          - bonus
-          - equity
-          - other
-          - unmapped_value
-        pay_period:
-          type: string
-          enum:
-          - hour
-          - day
-          - week
-          - every_two_weeks
-          - month
-          - quarter
-          - every_six_months
-          - year
-          - none
-          - unmapped_value
-        pay_frequency:
-          type: string
-          enum:
-          - hourly
-          - weekly
-          - bi_weekly
-          - four_weekly
-          - semi_monthly
-          - monthly
-          - bi_monthly
-          - quarterly
-          - semi_annually
-          - yearly
-          - thirteen_monthly
-          - pro_rata
-          - unmapped_value
-          - half_yearly
-        currency:
-          type: string
-        value:
-          type: string
-        min_value:
-          type: string
-        max_value:
-          type: string
-    Location:
-      type: object
-      properties:
-        name:
-          type: string
         id:
           type: string
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Answer'
+      required:
+      - answers
     JobPostingResult:
       type: object
       properties:
@@ -475,6 +447,34 @@ components:
         data:
           $ref: '#/components/schemas/JobPosting'
       required:
+      - data
+    Location:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+    Content:
+      type: object
+      properties:
+        html:
+          type: string
+        plain:
+          type: string
+    JobPostingsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobPosting'
+      required:
+      - next_page
       - data
   securitySchemes:
     basic:

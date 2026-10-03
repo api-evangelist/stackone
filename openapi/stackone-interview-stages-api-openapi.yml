@@ -182,15 +182,6 @@ paths:
       x-speakeasy-name-override: list_interview_stages
 components:
   schemas:
-    InterviewStageResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/InterviewStage'
-      required:
-      - data
     InterviewStage:
       type: object
       properties:
@@ -209,6 +200,15 @@ components:
       required:
       - id
       - name
+    InterviewStageResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/InterviewStage'
+      required:
+      - data
     InterviewStagesPaginated:
       type: object
       properties:

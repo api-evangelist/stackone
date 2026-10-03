@@ -785,69 +785,48 @@ paths:
       x-speakeasy-name-override: update_email_template
 components:
   schemas:
-    PushMessageContents:
+    EmailMessages:
       type: object
       properties:
-        body:
-          type: string
-      required:
-      - body
-    MarketingCreatePushTemplateRequestDto:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/PushMessages'
-    MarketingCreateTemplateRequestDto:
-      type: object
-      properties:
-        messages:
-          $ref: '#/components/schemas/Message'
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-    PushMessages:
-      type: object
-      properties:
-        message_content:
-          $ref: '#/components/schemas/PushMessageContents'
         id:
           type: string
         name:
           type: string
         message_type:
           $ref: '#/components/schemas/MessageTypeEnum'
-    Template:
+        message_content:
+          $ref: '#/components/schemas/EmailMessageContents'
+    EmailMessageContents:
       type: object
       properties:
-        updated_at:
+        subject:
+          type: string
+        body:
+          type: string
+        from:
+          type: string
+        reply-to:
+          type: string
+        preheader:
+          type: string
+      required:
+      - subject
+      - body
+      - from
+    CreateTemplateResult:
+      type: object
+      properties:
+        message:
+          type: string
+        timestamp:
           type: string
           format: date-time
-        id:
-          type: string
-        name:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        created_at:
-          type: string
-          format: date-time
+        statusCode:
+          type: number
+      required:
+      - statusCode
+      - message
+      - timestamp
     TemplatesPaginated:
       type: object
       properties:
@@ -925,57 +904,6 @@ components:
       required:
       - value
       - source_value
-    CreateTemplateResult:
-      type: object
-      properties:
-        message:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-      required:
-      - statusCode
-      - message
-      - timestamp
-    EmailMessages:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        message_type:
-          $ref: '#/components/schemas/MessageTypeEnum'
-        message_content:
-          $ref: '#/components/schemas/EmailMessageContents'
-    EmailMessageContents:
-      type: object
-      properties:
-        subject:
-          type: string
-        body:
-          type: string
-        from:
-          type: string
-        reply-to:
-          type: string
-        preheader:
-          type: string
-      required:
-      - subject
-      - body
-      - from
-    SmsMessageContents:
-      type: object
-      properties:
-        from:
-          type: string
-        body:
-          type: string
-      required:
-      - body
     TemplateResult:
       type: object
       properties:
@@ -985,6 +913,78 @@ components:
           $ref: '#/components/schemas/Template'
       required:
       - data
+    MarketingCreatePushTemplateRequestDto:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PushMessages'
+    SmsMessageContents:
+      type: object
+      properties:
+        from:
+          type: string
+        body:
+          type: string
+      required:
+      - body
+    PushMessages:
+      type: object
+      properties:
+        message_content:
+          $ref: '#/components/schemas/PushMessageContents'
+        id:
+          type: string
+        name:
+          type: string
+        message_type:
+          $ref: '#/components/schemas/MessageTypeEnum'
+    Template:
+      type: object
+      properties:
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+    MarketingCreateTemplateRequestDto:
+      type: object
+      properties:
+        messages:
+          $ref: '#/components/schemas/Message'
+        id:
+          type: string
+        name:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    PushMessageContents:
+      type: object
+      properties:
+        body:
+          type: string
+      required:
+      - body
   securitySchemes:
     basic:
       type: http

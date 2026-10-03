@@ -191,76 +191,6 @@ components:
           $ref: '#/components/schemas/Interview'
       required:
       - data
-    Interviewer:
-      type: object
-      properties:
-        email:
-          type: string
-        id:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        name:
-          type: string
-      required:
-      - id
-      - first_name
-      - last_name
-      - name
-      - email
-    InterviewsPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Interview'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
-    InterviewStage:
-      type: object
-      properties:
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        name:
-          type: string
-        order:
-          type: number
-      required:
-      - id
-      - name
-    InterviewPart:
-      type: object
-      properties:
-        meeting_provider:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        interviewer_ids:
-          type: array
-          items:
-            type: string
-        meeting_url:
-          type: string
     Interview:
       type: object
       properties:
@@ -327,6 +257,76 @@ components:
       required:
       - value
       - source_value
+    InterviewStage:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - name
+    InterviewsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interview'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    InterviewPart:
+      type: object
+      properties:
+        meeting_provider:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        interviewer_ids:
+          type: array
+          items:
+            type: string
+        meeting_url:
+          type: string
+    Interviewer:
+      type: object
+      properties:
+        email:
+          type: string
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - first_name
+      - last_name
+      - name
+      - email
   securitySchemes:
     basic:
       type: http

@@ -282,6 +282,29 @@ components:
       required:
       - value
       - source_value
+    TimeOffPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeOff'
+      required:
+      - next_page
+      - data
+    TimeOffResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/TimeOff'
+      required:
+      - data
     HrisCreateTimeOffRequestDto:
       type: object
       properties:
@@ -307,6 +330,20 @@ components:
           type: string
           description: The approver ID
           example: 1687-4
+    CreateTimeOffResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+        message:
+          type: string
+      required:
+      - statusCode
+      - message
+      - timestamp
     TimeOff:
       type: object
       properties:
@@ -342,34 +379,6 @@ components:
         created_date:
           type: string
           description: The created date of the time off request
-    TimeOffPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeOff'
-      required:
-      - next_page
-      - data
-    CreateTimeOffResult:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-        message:
-          type: string
-      required:
-      - statusCode
-      - message
-      - timestamp
     TimeOffTypeEnum:
       type: object
       properties:
@@ -384,15 +393,6 @@ components:
       required:
       - value
       - source_value
-    TimeOffResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/TimeOff'
-      required:
-      - data
   securitySchemes:
     basic:
       type: http
