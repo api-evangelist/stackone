@@ -316,6 +316,55 @@ paths:
       x-speakeasy-name-override: get_account
 components:
   schemas:
+    LinkedAccount:
+      type: object
+      properties:
+        active:
+          type: boolean
+        origin_owner_name:
+          type: string
+        origin_username:
+          type: string
+        credentials:
+          type: object
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        provider:
+          type: string
+        origin_owner_id:
+          type: string
+        id:
+          type: string
+      required:
+      - id
+      - provider
+      - active
+      - origin_owner_id
+      - origin_owner_name
+      - origin_username
+      - created_at
+      - updated_at
+    AccountAddress:
+      type: object
+      properties:
+        street_1:
+          type: string
+        street_2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip_code:
+          type: string
+        country:
+          type: string
+        location_type:
+          type: string
     Account:
       type: object
       properties:
@@ -349,78 +398,6 @@ components:
       - id
       - owner_id
       - name
-    AccountAddress:
-      type: object
-      properties:
-        street_1:
-          type: string
-        street_2:
-          type: string
-        city:
-          type: string
-        state:
-          type: string
-        zip_code:
-          type: string
-        country:
-          type: string
-        location_type:
-          type: string
-    AccountResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Account'
-      required:
-      - data
-    AccountsPaginated:
-      type: object
-      properties:
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        raw:
-          type: string
-      required:
-      - next_page
-      - data
-    LinkedAccount:
-      type: object
-      properties:
-        active:
-          type: boolean
-        origin_owner_name:
-          type: string
-        origin_username:
-          type: string
-        credentials:
-          type: object
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        provider:
-          type: string
-        origin_owner_id:
-          type: string
-        id:
-          type: string
-      required:
-      - id
-      - provider
-      - active
-      - origin_owner_id
-      - origin_owner_name
-      - origin_username
-      - created_at
-      - updated_at
     LinkedAccountMeta:
       type: object
       properties:
@@ -441,6 +418,29 @@ components:
       - provider
       - category
       - models
+    AccountsPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
+    AccountResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Account'
+      required:
+      - data
   securitySchemes:
     basic:
       type: http

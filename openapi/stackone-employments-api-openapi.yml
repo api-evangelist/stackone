@@ -182,6 +182,26 @@ paths:
       x-speakeasy-name-override: list_employments
 components:
   schemas:
+    PayPeriodEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - hour
+          - day
+          - week
+          - every_two_weeks
+          - month
+          - quarter
+          - every_six_months
+          - year
+          - unmapped_value
+      required:
+      - value
+      - source_value
     EmploymentsPaginated:
       type: object
       properties:
@@ -196,6 +216,82 @@ components:
       required:
       - next_page
       - data
+    EmploymentResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Employment'
+      required:
+      - data
+    EmploymentScheduleTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - full_time
+          - shifts
+          - part_time
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    PayFrequencyEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - hourly
+          - weekly
+          - bi_weekly
+          - four_weekly
+          - semi_monthly
+          - monthly
+          - bi_monthly
+          - quarterly
+          - semi_annually
+          - yearly
+          - thirteen_monthly
+          - pro_rata
+          - unmapped_value
+          - half_yearly
+      required:
+      - value
+      - source_value
+    EmploymentTypeEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - intern
+          - permanent
+          - apprentice
+          - freelance
+          - terminated
+          - temporary
+          - seasonal
+          - volunteer
+          - probation
+          - internal
+          - external
+          - employer_of_record
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
     Employment:
       type: object
       properties:
@@ -254,102 +350,6 @@ components:
           example: hourly
       required:
       - employee_id
-    EmploymentTypeEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - full_time
-          - part_time
-          - contractor
-          - intern
-          - permanent
-          - apprentice
-          - freelance
-          - terminated
-          - temporary
-          - seasonal
-          - volunteer
-          - probation
-          - internal
-          - external
-          - employer_of_record
-          - unmapped_value
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
-    EmploymentResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Employment'
-      required:
-      - data
-    EmploymentScheduleTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - full_time
-          - shifts
-          - part_time
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    PayFrequencyEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - hourly
-          - weekly
-          - bi_weekly
-          - four_weekly
-          - semi_monthly
-          - monthly
-          - bi_monthly
-          - quarterly
-          - semi_annually
-          - yearly
-          - thirteen_monthly
-          - pro_rata
-          - unmapped_value
-          - half_yearly
-      required:
-      - value
-      - source_value
-    PayPeriodEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - hour
-          - day
-          - week
-          - every_two_weeks
-          - month
-          - quarter
-          - every_six_months
-          - year
-          - unmapped_value
-      required:
-      - value
-      - source_value
   securitySchemes:
     basic:
       type: http

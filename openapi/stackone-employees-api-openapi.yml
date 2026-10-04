@@ -527,20 +527,26 @@ paths:
       x-speakeasy-name-override: create_employee
 components:
   schemas:
-    TimeOffPaginated:
+    PayPeriodEnum:
       type: object
       properties:
-        raw:
+        source_value:
           type: string
-        next_page:
+        value:
           type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeOff'
+          enum:
+          - hour
+          - day
+          - week
+          - every_two_weeks
+          - month
+          - quarter
+          - every_six_months
+          - year
+          - unmapped_value
       required:
-      - next_page
-      - data
+      - value
+      - source_value
     CountryCodeEnum:
       type: object
       properties:
@@ -801,6 +807,59 @@ components:
       required:
       - value
       - source_value
+    EthnicityEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - white
+          - black_or_african_american
+          - asian
+          - hispanic_or_latino
+          - american_indian_or_alaska_native
+          - native_hawaiian_or_pacific_islander
+          - two_or_more_races
+          - not_disclosed
+          - other
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    GenderEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - male
+          - female
+          - non_binary
+          - other
+          - not_disclosed
+          - diverse
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    LocationTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - home
+          - work
+          - unmapped_value
+      required:
+      - value
+      - source_value
     EmployeeCustomFields:
       type: object
       properties:
@@ -874,52 +933,178 @@ components:
         created_date:
           type: string
           description: The created date of the time off request
-    PayFrequencyEnum:
+    EmployeeResult:
       type: object
       properties:
-        source_value:
+        data:
+          $ref: '#/components/schemas/Employee'
+        raw:
           type: string
-        value:
-          type: string
-          enum:
-          - hourly
-          - weekly
-          - bi_weekly
-          - four_weekly
-          - semi_monthly
-          - monthly
-          - bi_monthly
-          - quarterly
-          - semi_annually
-          - yearly
-          - thirteen_monthly
-          - pro_rata
-          - unmapped_value
-          - half_yearly
       required:
-      - value
-      - source_value
-    PayPeriodEnum:
+      - data
+    CreateTimeOffResult:
       type: object
       properties:
-        source_value:
+        timestamp:
           type: string
-        value:
+          format: date-time
+        statusCode:
+          type: number
+        message:
           type: string
-          enum:
-          - hour
-          - day
-          - week
-          - every_two_weeks
-          - month
-          - quarter
-          - every_six_months
-          - year
-          - unmapped_value
       required:
-      - value
-      - source_value
-    GenderEnum:
+      - statusCode
+      - message
+      - timestamp
+    Employee:
+      type: object
+      properties:
+        avatar_url:
+          type: string
+          description: The employee avatar Url
+          example: https://example.com/avatar.png
+        date_of_birth:
+          type: string
+          description: The employee date_of_birth
+          example: '1990-01-01'
+        manager_id:
+          type: string
+          description: The employee manager ID
+          example: '67890'
+        home_location:
+          allOf:
+          - $ref: '#/components/schemas/HRISLocation'
+          description: The employee home location
+        employment_status:
+          allOf:
+          - $ref: '#/components/schemas/EmploymentStatusEnum'
+          description: The employee employment status
+          example: active
+        first_name:
+          type: string
+          description: The employee first name
+          example: Issac
+        work_phone_number:
+          type: string
+          description: The employee work phone number
+          example: '+1234567890'
+        termination_date:
+          type: string
+          description: The employee termination date
+          example: '2023-06-14T00:00:00Z'
+        avatar:
+          allOf:
+          - $ref: '#/components/schemas/Image'
+          description: The employee avatar
+          example: https://example.com/avatar.png
+        job_title:
+          type: string
+          description: The employee job title
+          example: Physicist
+        employment_contract_type:
+          allOf:
+          - $ref: '#/components/schemas/EmploymentScheduleTypeEnum'
+          description: The employment work schedule type (e.g., full-time, part-time)
+          example: full_time
+        work_location:
+          allOf:
+          - $ref: '#/components/schemas/HRISLocation'
+          description: The employee work location
+        tenure:
+          type: string
+          description: The employee tenure
+          example: 2
+        work_anniversary:
+          type: string
+          description: The employee work anniversary
+          example: '2022-06-14T00:00:00Z'
+        start_date:
+          type: string
+          description: The employee start date
+          example: '2022-01-01'
+        employments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employment'
+          description: The employee employments
+        department:
+          type: string
+          description: The employee department
+          example: Physics
+        updated_at:
+          type: string
+          description: The updated_at date
+          example: '2023-06-14T01:00:00Z'
+        last_name:
+          type: string
+          description: The employee last name
+          example: Newton
+        marital_status:
+          allOf:
+          - $ref: '#/components/schemas/MaritalStatusEnum'
+          description: The employee marital status
+          example: single
+        display_name:
+          type: string
+          description: The employee display name
+          example: Sir Issac Newton
+        company_name:
+          type: string
+          description: The employee company name
+          example: Example Corp
+        custom_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmployeeCustomFields'
+          description: The employee custom fields
+        personal_email:
+          type: string
+          description: The employee personal email
+          example: isaac.newton@example.com
+        id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        work_email:
+          type: string
+          description: The employee work email
+          example: newton@example.com
+        name:
+          type: string
+          description: The employee name
+          example: Issac Newton
+        personal_phone_number:
+          type: string
+          description: The employee personal phone number
+          example: '+1234567890'
+        birthday:
+          type: string
+          description: The employee birthday
+          example: '2023-06-14T00:00:00Z'
+        employment_type:
+          allOf:
+          - $ref: '#/components/schemas/EmploymentTypeEnum'
+          description: The employee employment type
+          example: full_time
+        hire_date:
+          type: string
+          description: The employee hire date
+          example: '2022-01-01'
+        ethnicity:
+          allOf:
+          - $ref: '#/components/schemas/EthnicityEnum'
+          description: The employee ethnicity
+          example: white
+        created_at:
+          type: string
+          description: The created_at date
+          example: '2023-06-14T01:00:00Z'
+        gender:
+          allOf:
+          - $ref: '#/components/schemas/GenderEnum'
+          description: The employee gender
+          example: male
+    EmployeeCustomFieldTypeEnum:
       type: object
       properties:
         source_value:
@@ -927,12 +1112,11 @@ components:
         value:
           type: string
           enum:
-          - male
-          - female
-          - non_binary
-          - other
-          - not_disclosed
-          - diverse
+          - date
+          - float
+          - integer
+          - list
+          - text
           - unmapped_value
       required:
       - value
@@ -4772,112 +4956,6 @@ components:
       required:
       - value
       - source_value
-    TimeOffStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - approved
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    EmploymentTypeEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - full_time
-          - part_time
-          - contractor
-          - intern
-          - permanent
-          - apprentice
-          - freelance
-          - terminated
-          - temporary
-          - seasonal
-          - volunteer
-          - probation
-          - internal
-          - external
-          - employer_of_record
-          - unmapped_value
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
-    HRISLocation:
-      type: object
-      properties:
-        zip_code:
-          type: string
-          description: The ZIP code/Postal code of the location
-          example: NG33 5NR
-        street_1:
-          type: string
-          description: The first line of the address
-          example: Water Lane
-        street_2:
-          type: string
-          description: The second line of the address
-          example: Woolsthorpe by Colsterworth
-        updated_at:
-          type: string
-          description: The updated_at date
-          example: '2023-06-14T01:00:00Z'
-        id:
-          type: string
-          description: The unique ID of the location
-          example: '123456'
-        phone_number:
-          type: string
-          description: The phone number of the location
-          example: +44 1476 860 364
-        employee_id:
-          type: string
-          description: The employee ID
-          example: 1687-3
-        city:
-          type: string
-          description: The city where the location is situated
-          example: Grantham
-        country:
-          allOf:
-          - $ref: '#/components/schemas/CountryCodeEnum'
-          description: The country code
-          example: GB
-        name:
-          type: string
-          description: The name of the location
-          example: Woolsthorpe Manor
-        created_at:
-          type: string
-          description: The created_at date
-          example: '2023-06-14T01:00:00Z'
-        state:
-          type: string
-          description: The state where the location is situated
-          example: Lincolnshire
-        location_type:
-          allOf:
-          - $ref: '#/components/schemas/LocationTypeEnum'
-          description: The location type
-          example: work
-    TimeOffResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/TimeOff'
-      required:
-      - data
     EmploymentScheduleTypeEnum:
       type: object
       properties:
@@ -4893,20 +4971,106 @@ components:
       required:
       - value
       - source_value
-    CreateEmployeeResult:
+    PayFrequencyEnum:
       type: object
       properties:
-        message:
+        source_value:
           type: string
-        timestamp:
+        value:
           type: string
-          format: date-time
-        statusCode:
-          type: number
+          enum:
+          - hourly
+          - weekly
+          - bi_weekly
+          - four_weekly
+          - semi_monthly
+          - monthly
+          - bi_monthly
+          - quarterly
+          - semi_annually
+          - yearly
+          - thirteen_monthly
+          - pro_rata
+          - unmapped_value
+          - half_yearly
       required:
-      - statusCode
-      - message
-      - timestamp
+      - value
+      - source_value
+    HrisCreateTimeOffRequestDto:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffStatusEnum'
+          description: The status of the time off request
+        type:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffTypeEnum'
+          description: The type of the time off request
+        start_date:
+          type: string
+          description: The start date of the time off request
+        end_date:
+          type: string
+          description: The end date of the time off request
+        employee_id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        approver_id:
+          type: string
+          description: The approver ID
+          example: 1687-4
+    TimeOffStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - approved
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    TimeOffTypeEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - sick
+          - unmapped_value
+          - vacation
+      required:
+      - value
+      - source_value
+    TimeOffPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeOff'
+      required:
+      - next_page
+      - data
+    TimeOffResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/TimeOff'
+      required:
+      - data
     EmployeesPaginated:
       type: object
       properties:
@@ -4921,57 +5085,6 @@ components:
       required:
       - next_page
       - data
-    HrisLocationsCreateRequestDto:
-      type: object
-      properties:
-        city:
-          type: string
-          description: The city where the location is situated
-          example: Grantham
-        zip_code:
-          type: string
-          description: The ZIP code/Postal code of the location
-          example: NG33 5NR
-        country:
-          allOf:
-          - $ref: '#/components/schemas/CountryCodeEnum'
-          description: The country code
-          example: GB
-        state:
-          allOf:
-          - $ref: '#/components/schemas/ISO3166_2SubDivisionEnum'
-          description: The ISO3166-2 sub division where the location is situated
-          example: GB-LIN
-        name:
-          type: string
-          description: The name of the location
-          example: Woolsthorpe Manor
-        phone_number:
-          type: string
-          description: The phone number of the location
-          example: +44 1476 860 364
-        street_1:
-          type: string
-          description: The first line of the address
-          example: Water Lane
-        street_2:
-          type: string
-          description: The second line of the address
-          example: Woolsthorpe by Colsterworth
-    LocationTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - home
-          - work
-          - unmapped_value
-      required:
-      - value
-      - source_value
     HrisCreateEmployeeRequestDto:
       type: object
       properties:
@@ -5108,91 +5221,6 @@ components:
           items:
             $ref: '#/components/schemas/EmployeeCustomFields'
           description: The employee custom fields
-    EmploymentStatusEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - active
-          - pending
-          - terminated
-          - leave
-          - unmapped_value
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
-    HrisCreateTimeOffRequestDto:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/TimeOffStatusEnum'
-          description: The status of the time off request
-        type:
-          allOf:
-          - $ref: '#/components/schemas/TimeOffTypeEnum'
-          description: The type of the time off request
-        start_date:
-          type: string
-          description: The start date of the time off request
-        end_date:
-          type: string
-          description: The end date of the time off request
-        employee_id:
-          type: string
-          description: The employee ID
-          example: 1687-3
-        approver_id:
-          type: string
-          description: The approver ID
-          example: 1687-4
-    EmployeeResult:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/Employee'
-        raw:
-          type: string
-      required:
-      - data
-    EthnicityEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - white
-          - black_or_african_american
-          - asian
-          - hispanic_or_latino
-          - american_indian_or_alaska_native
-          - native_hawaiian_or_pacific_islander
-          - two_or_more_races
-          - not_disclosed
-          - other
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    TimeOffTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - sick
-          - unmapped_value
-          - vacation
-      required:
-      - value
-      - source_value
     MaritalStatusEnum:
       type: object
       properties:
@@ -5211,6 +5239,164 @@ components:
           - other
           - not_disclosed
           - unmapped_value
+      required:
+      - value
+      - source_value
+    EmploymentStatusEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - active
+          - pending
+          - terminated
+          - leave
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
+    CreateEmployeeResult:
+      type: object
+      properties:
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+      required:
+      - statusCode
+      - message
+      - timestamp
+    HRISLocation:
+      type: object
+      properties:
+        zip_code:
+          type: string
+          description: The ZIP code/Postal code of the location
+          example: NG33 5NR
+        street_1:
+          type: string
+          description: The first line of the address
+          example: Water Lane
+        street_2:
+          type: string
+          description: The second line of the address
+          example: Woolsthorpe by Colsterworth
+        updated_at:
+          type: string
+          description: The updated_at date
+          example: '2023-06-14T01:00:00Z'
+        id:
+          type: string
+          description: The unique ID of the location
+          example: '123456'
+        phone_number:
+          type: string
+          description: The phone number of the location
+          example: +44 1476 860 364
+        employee_id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        city:
+          type: string
+          description: The city where the location is situated
+          example: Grantham
+        country:
+          allOf:
+          - $ref: '#/components/schemas/CountryCodeEnum'
+          description: The country code
+          example: GB
+        name:
+          type: string
+          description: The name of the location
+          example: Woolsthorpe Manor
+        created_at:
+          type: string
+          description: The created_at date
+          example: '2023-06-14T01:00:00Z'
+        state:
+          type: string
+          description: The state where the location is situated
+          example: Lincolnshire
+        location_type:
+          allOf:
+          - $ref: '#/components/schemas/LocationTypeEnum'
+          description: The location type
+          example: work
+    Image:
+      type: object
+      properties:
+        base64:
+          type: string
+        url:
+          type: string
+    HrisLocationsCreateRequestDto:
+      type: object
+      properties:
+        city:
+          type: string
+          description: The city where the location is situated
+          example: Grantham
+        zip_code:
+          type: string
+          description: The ZIP code/Postal code of the location
+          example: NG33 5NR
+        country:
+          allOf:
+          - $ref: '#/components/schemas/CountryCodeEnum'
+          description: The country code
+          example: GB
+        state:
+          allOf:
+          - $ref: '#/components/schemas/ISO3166_2SubDivisionEnum'
+          description: The ISO3166-2 sub division where the location is situated
+          example: GB-LIN
+        name:
+          type: string
+          description: The name of the location
+          example: Woolsthorpe Manor
+        phone_number:
+          type: string
+          description: The phone number of the location
+          example: +44 1476 860 364
+        street_1:
+          type: string
+          description: The first line of the address
+          example: Water Lane
+        street_2:
+          type: string
+          description: The second line of the address
+          example: Woolsthorpe by Colsterworth
+    EmploymentTypeEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - full_time
+          - part_time
+          - contractor
+          - intern
+          - permanent
+          - apprentice
+          - freelance
+          - terminated
+          - temporary
+          - seasonal
+          - volunteer
+          - probation
+          - internal
+          - external
+          - employer_of_record
+          - unmapped_value
+        source_value:
+          type: string
       required:
       - value
       - source_value
@@ -5272,192 +5458,6 @@ components:
           example: hourly
       required:
       - employee_id
-    Image:
-      type: object
-      properties:
-        base64:
-          type: string
-        url:
-          type: string
-    CreateTimeOffResult:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-        message:
-          type: string
-      required:
-      - statusCode
-      - message
-      - timestamp
-    Employee:
-      type: object
-      properties:
-        avatar_url:
-          type: string
-          description: The employee avatar Url
-          example: https://example.com/avatar.png
-        date_of_birth:
-          type: string
-          description: The employee date_of_birth
-          example: '1990-01-01'
-        manager_id:
-          type: string
-          description: The employee manager ID
-          example: '67890'
-        home_location:
-          allOf:
-          - $ref: '#/components/schemas/HRISLocation'
-          description: The employee home location
-        employment_status:
-          allOf:
-          - $ref: '#/components/schemas/EmploymentStatusEnum'
-          description: The employee employment status
-          example: active
-        first_name:
-          type: string
-          description: The employee first name
-          example: Issac
-        work_phone_number:
-          type: string
-          description: The employee work phone number
-          example: '+1234567890'
-        termination_date:
-          type: string
-          description: The employee termination date
-          example: '2023-06-14T00:00:00Z'
-        avatar:
-          allOf:
-          - $ref: '#/components/schemas/Image'
-          description: The employee avatar
-          example: https://example.com/avatar.png
-        job_title:
-          type: string
-          description: The employee job title
-          example: Physicist
-        employment_contract_type:
-          allOf:
-          - $ref: '#/components/schemas/EmploymentScheduleTypeEnum'
-          description: The employment work schedule type (e.g., full-time, part-time)
-          example: full_time
-        work_location:
-          allOf:
-          - $ref: '#/components/schemas/HRISLocation'
-          description: The employee work location
-        tenure:
-          type: string
-          description: The employee tenure
-          example: 2
-        work_anniversary:
-          type: string
-          description: The employee work anniversary
-          example: '2022-06-14T00:00:00Z'
-        start_date:
-          type: string
-          description: The employee start date
-          example: '2022-01-01'
-        employments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Employment'
-          description: The employee employments
-        department:
-          type: string
-          description: The employee department
-          example: Physics
-        updated_at:
-          type: string
-          description: The updated_at date
-          example: '2023-06-14T01:00:00Z'
-        last_name:
-          type: string
-          description: The employee last name
-          example: Newton
-        marital_status:
-          allOf:
-          - $ref: '#/components/schemas/MaritalStatusEnum'
-          description: The employee marital status
-          example: single
-        display_name:
-          type: string
-          description: The employee display name
-          example: Sir Issac Newton
-        company_name:
-          type: string
-          description: The employee company name
-          example: Example Corp
-        custom_fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmployeeCustomFields'
-          description: The employee custom fields
-        personal_email:
-          type: string
-          description: The employee personal email
-          example: isaac.newton@example.com
-        id:
-          type: string
-          description: The employee ID
-          example: 1687-3
-        work_email:
-          type: string
-          description: The employee work email
-          example: newton@example.com
-        name:
-          type: string
-          description: The employee name
-          example: Issac Newton
-        personal_phone_number:
-          type: string
-          description: The employee personal phone number
-          example: '+1234567890'
-        birthday:
-          type: string
-          description: The employee birthday
-          example: '2023-06-14T00:00:00Z'
-        employment_type:
-          allOf:
-          - $ref: '#/components/schemas/EmploymentTypeEnum'
-          description: The employee employment type
-          example: full_time
-        hire_date:
-          type: string
-          description: The employee hire date
-          example: '2022-01-01'
-        ethnicity:
-          allOf:
-          - $ref: '#/components/schemas/EthnicityEnum'
-          description: The employee ethnicity
-          example: white
-        created_at:
-          type: string
-          description: The created_at date
-          example: '2023-06-14T01:00:00Z'
-        gender:
-          allOf:
-          - $ref: '#/components/schemas/GenderEnum'
-          description: The employee gender
-          example: male
-    EmployeeCustomFieldTypeEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - date
-          - float
-          - integer
-          - list
-          - text
-          - unmapped_value
-      required:
-      - value
-      - source_value
   securitySchemes:
     basic:
       type: http

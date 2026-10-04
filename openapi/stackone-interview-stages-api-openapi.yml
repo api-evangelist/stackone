@@ -200,15 +200,6 @@ components:
       required:
       - id
       - name
-    InterviewStageResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/InterviewStage'
-      required:
-      - data
     InterviewStagesPaginated:
       type: object
       properties:
@@ -222,6 +213,15 @@ components:
             $ref: '#/components/schemas/InterviewStage'
       required:
       - next_page
+      - data
+    InterviewStageResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/InterviewStage'
+      required:
       - data
   securitySchemes:
     basic:

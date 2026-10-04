@@ -494,32 +494,6 @@ paths:
       x-speakeasy-name-override: get_candidate_note
 components:
   schemas:
-    CreateCandidateNoteResult:
-      type: object
-      properties:
-        statusCode:
-          type: number
-        message:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-      required:
-      - statusCode
-      - message
-      - timestamp
-    AtsCreateNotesRequestDto:
-      type: object
-      properties:
-        visibility:
-          $ref: '#/components/schemas/NotesVisibilityEnum'
-        content:
-          type: array
-          items:
-            type: string
-      required:
-      - content
-      - visibility
     AtsCreateCandidateRequestDto:
       type: object
       properties:
@@ -549,6 +523,37 @@ components:
       - last_name
       - emails
       - title
+    CandidateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Candidate'
+      required:
+      - data
+    AtsCreateNotesRequestDto:
+      type: object
+      properties:
+        visibility:
+          $ref: '#/components/schemas/NotesVisibilityEnum'
+        content:
+          type: array
+          items:
+            type: string
+      required:
+      - content
+      - visibility
+    CandidateEmail:
+      type: object
+      properties:
+        value:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - value
     CandidatesPaginated:
       type: object
       properties:
@@ -614,6 +619,43 @@ components:
       - title
       - created_at
       - updated_at
+    NotesPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+      required:
+      - next_page
+      - data
+    NoteResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Note'
+      required:
+      - data
+    CreateCandidateNoteResult:
+      type: object
+      properties:
+        statusCode:
+          type: number
+        message:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+      required:
+      - statusCode
+      - message
+      - timestamp
     Note:
       type: object
       properties:
@@ -638,29 +680,6 @@ components:
       - created_at
       - updated_at
       - deleted_at
-    SocialLink:
-      type: object
-      properties:
-        url:
-          type: string
-        type:
-          type: string
-      required:
-      - type
-      - url
-    NotesVisibilityEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - private
-          - public
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
     AtsUpdateCandidatesRequestDto:
       type: object
       properties:
@@ -684,48 +703,29 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CandidateEmail'
-    NotesPaginated:
+    SocialLink:
       type: object
       properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Note'
-      required:
-      - next_page
-      - data
-    NoteResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Note'
-      required:
-      - data
-    CandidateResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Candidate'
-      required:
-      - data
-    CandidateEmail:
-      type: object
-      properties:
-        value:
+        url:
           type: string
         type:
           type: string
       required:
       - type
+      - url
+    NotesVisibilityEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - private
+          - public
+        source_value:
+          type: string
+      required:
       - value
+      - source_value
   securitySchemes:
     basic:
       type: http

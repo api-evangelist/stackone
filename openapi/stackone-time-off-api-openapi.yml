@@ -269,19 +269,6 @@ paths:
       x-speakeasy-name-override: create_time_off_request
 components:
   schemas:
-    TimeOffStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - approved
-          - unmapped_value
-      required:
-      - value
-      - source_value
     TimeOffPaginated:
       type: object
       properties:
@@ -296,6 +283,20 @@ components:
       required:
       - next_page
       - data
+    CreateTimeOffResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+        message:
+          type: string
+      required:
+      - statusCode
+      - message
+      - timestamp
     TimeOffResult:
       type: object
       properties:
@@ -330,20 +331,6 @@ components:
           type: string
           description: The approver ID
           example: 1687-4
-    CreateTimeOffResult:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-        message:
-          type: string
-      required:
-      - statusCode
-      - message
-      - timestamp
     TimeOff:
       type: object
       properties:
@@ -379,6 +366,19 @@ components:
         created_date:
           type: string
           description: The created date of the time off request
+    TimeOffStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - approved
+          - unmapped_value
+      required:
+      - value
+      - source_value
     TimeOffTypeEnum:
       type: object
       properties:

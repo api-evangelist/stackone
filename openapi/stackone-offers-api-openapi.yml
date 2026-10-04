@@ -223,43 +223,6 @@ paths:
       x-speakeasy-name-override: create_offer
 components:
   schemas:
-    OffersPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Offer'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
-    CreateOfferResult:
-      type: object
-      properties:
-        timestamp:
-          type: string
-          format: date-time
-        statusCode:
-          type: number
-        message:
-          type: string
-      required:
-      - statusCode
-      - message
-      - timestamp
-    OffersResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Offer'
-      required:
-      - data
     AtsCreateOfferRequestDto:
       type: object
       properties:
@@ -327,6 +290,43 @@ components:
           type: string
       required:
       - start_date
+    CreateOfferResult:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        statusCode:
+          type: number
+        message:
+          type: string
+      required:
+      - statusCode
+      - message
+      - timestamp
+    OffersResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Offer'
+      required:
+      - data
+    OffersPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offer'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
     OfferStatusEnum:
       type: object
       properties:

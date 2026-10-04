@@ -182,19 +182,14 @@ paths:
       x-speakeasy-name-override: list_users
 components:
   schemas:
-    UsersPaginated:
+    UserResult:
       type: object
       properties:
         raw:
           type: string
-        next_page:
-          type: string
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
+          $ref: '#/components/schemas/User'
       required:
-      - next_page
       - data
       - raw
     User:
@@ -219,14 +214,19 @@ components:
       - last_name
       - name
       - phone
-    UserResult:
+    UsersPaginated:
       type: object
       properties:
         raw:
           type: string
+        next_page:
+          type: string
         data:
-          $ref: '#/components/schemas/User'
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
       required:
+      - next_page
       - data
       - raw
   securitySchemes:

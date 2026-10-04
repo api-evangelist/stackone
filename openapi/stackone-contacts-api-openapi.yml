@@ -267,20 +267,6 @@ paths:
       x-speakeasy-name-override: create_contact
 components:
   schemas:
-    ContactsPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Contact'
-      required:
-      - next_page
-      - data
     Contact:
       type: object
       properties:
@@ -338,6 +324,15 @@ components:
           type: string
           description: Timestamp when the contact was last updated
           example: '2023-08-25T15:30:00Z'
+    ContactResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Contact'
+      required:
+      - data
     CrmCreateContactRequestDto:
       type: object
       properties:
@@ -383,14 +378,19 @@ components:
           description: List of contact email addresses
           example:
           - steve@apple.com
-    ContactResult:
+    ContactsPaginated:
       type: object
       properties:
         raw:
           type: string
+        next_page:
+          type: string
         data:
-          $ref: '#/components/schemas/Contact'
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
       required:
+      - next_page
       - data
   securitySchemes:
     basic:

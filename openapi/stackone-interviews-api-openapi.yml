@@ -182,15 +182,23 @@ paths:
       x-speakeasy-name-override: list_interviews
 components:
   schemas:
-    InterviewsResult:
+    InterviewStatusEnum:
       type: object
       properties:
-        raw:
+        source_value:
           type: string
-        data:
-          $ref: '#/components/schemas/Interview'
+        value:
+          type: string
+          enum:
+          - unscheduled
+          - scheduled
+          - completed
+          - cancelled
+          - pending_feedback
+          - unmapped_value
       required:
-      - data
+      - value
+      - source_value
     Interview:
       type: object
       properties:
@@ -240,55 +248,6 @@ components:
       - interviewer_ids
       - start_at
       - end_at
-    InterviewStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - unscheduled
-          - scheduled
-          - completed
-          - cancelled
-          - pending_feedback
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    InterviewStage:
-      type: object
-      properties:
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        name:
-          type: string
-        order:
-          type: number
-      required:
-      - id
-      - name
-    InterviewsPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Interview'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
     InterviewPart:
       type: object
       properties:
@@ -327,6 +286,47 @@ components:
       - last_name
       - name
       - email
+    InterviewsResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Interview'
+      required:
+      - data
+    InterviewStage:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - name
+    InterviewsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interview'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
   securitySchemes:
     basic:
       type: http
