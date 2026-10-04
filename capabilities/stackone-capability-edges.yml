@@ -1,0 +1,134 @@
+slug: stackone
+provider: StackOne
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 13
+edges:
+- tag: Applications
+  spec_file: stackone-applications-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: GET /unified/ats/applications ats_list_applications List Applications; GET /unified/ats/applications/{id}/offers
+    ats_list_applications_offers; schemas InterviewStage, ApplicationCandidate, RejectedReason
+  reason: ATS job applications, interview stages and offers are unambiguously recruiting/hiring data,
+    realising Talent Acquisition Management regardless of who buys the integration platform.
+- tag: Candidates
+  spec_file: stackone-candidates-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: GET /unified/ats/candidates ats_list_candidates List Candidates; POST /unified/ats/candidates/{id}/notes
+    Create Candidate Note; schemas Candidate, CandidateEmail
+  reason: ATS candidate records and recruiter notes are core sourcing/recruiting data, mapping cleanly
+    to Talent Acquisition Management.
+- tag: Interview Stages
+  spec_file: stackone-interview-stages-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: GET /unified/ats/interview_stages  ats_list_interview_stages  List Interview Stages
+  reason: Applicant-tracking interview stage data — recruiting pipeline configuration, squarely Talent
+    Acquisition Management.
+- tag: Interviews
+  spec_file: stackone-interviews-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: 'GET /unified/ats/interviews  ats_list_interviews; schemas: Interviewer, InterviewStatusEnum'
+  reason: Reads candidate interviews and interviewers from ATS systems — recruiting/hiring process data.
+- tag: Job Postings
+  spec_file: stackone-job-postings-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: GET /unified/ats/job_postings  ats_list_job_postings  List Job Postings
+  reason: Job postings with compensation and questionnaires from applicant-tracking systems — sourcing
+    and recruiting, not marketing despite the title.
+- tag: Offers
+  spec_file: stackone-offers-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.9
+  evidence: GET /unified/ats/offers  ats_list_offers  List Offers; schemas Offer, OfferStatusEnum, AtsCreateOfferRequestDto
+  reason: ATS (applicant tracking) job offers — recruiting/hiring lifecycle, i.e. Talent Acquisition Management.
+    Title 'Marketing' is spurious per rule 6.
+- tag: Employees
+  spec_file: stackone-employees-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.88
+  evidence: GET /unified/hris/employees  hris_list_employees  List Employees; POST /unified/hris/employees/{id}/time_off  hris_create_employee_time_off_request
+  reason: Employee record CRUD plus time-off requests against HRIS systems — core employee record keeping
+    and HR service delivery.
+- tag: Time Off
+  spec_file: stackone-time-off-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.88
+  evidence: GET /unified/hris/time_off  hris_list_time_off_requests  List time off requests; TimeOffStatusEnum
+  reason: HRIS time-off request lifecycle — absence administration within HR operations.
+- tag: Jobs
+  spec_file: stackone-jobs-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.85
+  evidence: 'GET /unified/ats/jobs  ats_list_jobs  List Jobs; schemas: HiringTeam, JobStatusEnum'
+  reason: ATS requisition/job records with hiring team — recruiting lifecycle data, Talent Acquisition.
+    'Jobs' here is a hiring requisition, not a batch job.
+- tag: Contacts
+  spec_file: stackone-contacts-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.8
+  evidence: POST /unified/crm/contacts  crm_create_contact  Creates a new Contact
+  reason: CRUD over CRM contact records through a unified CRM API — customer/contact master data maintenance,
+    i.e. Customer Data Management.
+- tag: Employments
+  spec_file: stackone-employments-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.8
+  evidence: 'GET /unified/hris/employments  hris_list_employments; schemas: Employment, PayFrequencyEnum,
+    PayPeriodEnum'
+  reason: Employment records with pay frequency/period from HRIS systems — employee records and payroll
+    administration data, i.e. HR Operations.
+- tag: Rejected Reasons
+  spec_file: stackone-rejected-reasons-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.8
+  evidence: GET /unified/ats/rejected_reasons  ats_list_rejected_reasons  List Rejected Reasons; RejectedReasonTypeEnum
+  reason: ATS candidate rejection reason reference data, part of recruiting/hiring process; thin surface
+    but clearly applicant-tracking domain.
+- tag: Templates
+  spec_file: stackone-templates-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.8
+  evidence: POST /unified/marketing/templates/email  marketing_create_email_template; List push templates;
+    omni-channel template
+  reason: Marketing email/push/omni-channel message templates — marketing automation / digital marketing
+    content assets.
