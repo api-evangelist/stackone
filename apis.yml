@@ -524,6 +524,12 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stackone.png
 access: 3rd-Party
 common:
+  - type: Plans
+    url: plans/stackone-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/stackone-rate-limits.yml
+  - type: FinOps
+    url: finops/stackone-finops.yml
   - type: CapabilityMap
     url: capabilities/stackone-capability-edges.yml
     name: StackOne Business Capability Map
