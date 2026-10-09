@@ -177,3 +177,49 @@ plans:
 maintainers:
   - name: StackOne
     url: https://www.stackone.com/
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - object
+  - period
+  - request
+  plans:
+  - name: Starter
+    access: freemium
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    - other
+    - period
+    - request
+    periods:
+    - month
+    - per-use
+  - name: Core
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - object
+    - other
+    - period
+    - request
+    periods:
+    - month
+    - per-use
+  - name: Enterprise
+    access: enterprise
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    - period
+    - request
+    periods:
+    - month
+    - per-use
