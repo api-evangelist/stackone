@@ -64,7 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-StackOne is an AI-powered embedded integration platform as a service (iPaaS) designed to simplify and accelerate how SaaS vendors and AI agents connect with enterprise software. It combines a proprietary LLM-based agent with a real-time execution engine to automate and manage integrations no need for manual API wiring or data syncing.
+StackOne is a Tool Gateway that connects AI agents to business applications (550+ connectors and 34,000+ actions), exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
 
 **APIs.json:** [https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml)
 
@@ -75,26 +75,28 @@ StackOne is an AI-powered embedded integration platform as a service (iPaaS) des
 
 ## Tags
 
-- Integrations
-- iPaaS
+- AI Agents
+- MCP
+- Agent Infrastructure
 
 ## Timestamps
 
 - **Created:** 2025-06-05
-- **Modified:** 2026-05-19
+- **Modified:** 2026-10-14
 
 ## APIs
 
 ### StackOne
 
-One integration platform, two powerful interfaces: Unified APIs for SaaS products, and AI Agent Actions. Ship hundreds of integrations in days.
+StackOne is a Tool Gateway that connects AI agents to business applications (550+ connectors and 34,000+ actions), exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
 
 - **Human URL:** [https://www.stackone.com/](https://www.stackone.com/)
 
 #### Tags
 
-- Integrations
-- iPaaS
+- AI Agents
+- MCP
+- Agent Infrastructure
 
 #### Properties
 
@@ -103,7 +105,7 @@ One integration platform, two powerful interfaces: Unified APIs for SaaS product
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified HRIS API
+### StackOne Unified HRIS API (Legacy)
 
 StackOne Unified HRIS API provides a single, standardized interface to interact with multiple HR information system providers, normalizing data models for employee data, shifts, time-off, documents, and benefits across platforms.
 
@@ -123,7 +125,7 @@ StackOne Unified HRIS API provides a single, standardized interface to interact 
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified ATS API
+### StackOne Unified ATS API (Legacy)
 
 StackOne Unified ATS API standardizes recruitment workflows across applicant tracking system providers, providing consistent data models for candidates, job postings, applications, and hiring pipeline management.
 
@@ -143,7 +145,7 @@ StackOne Unified ATS API standardizes recruitment workflows across applicant tra
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified CRM API
+### StackOne Unified CRM API (Legacy)
 
 StackOne Unified CRM API provides a standardized interface for managing customer contacts, accounts, and opportunities across multiple CRM platforms, ensuring a consistent view of customer data.
 
@@ -163,7 +165,7 @@ StackOne Unified CRM API provides a standardized interface for managing customer
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified LMS API
+### StackOne Unified LMS API (Legacy)
 
 StackOne Unified LMS API standardizes learning management across platforms, streamlining course delivery, user progress tracking, content management, and assignments with consistent data models across LMS and learning content providers.
 
@@ -182,7 +184,7 @@ StackOne Unified LMS API standardizes learning management across platforms, stre
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified IAM API
+### StackOne Unified IAM API (Legacy)
 
 StackOne Unified IAM API provides a standardized interface for identity and access management across providers, with comprehensive user management, role and permission mapping, group management, and resource access control.
 
@@ -201,7 +203,7 @@ StackOne Unified IAM API provides a standardized interface for identity and acce
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified Documents API
+### StackOne Unified Documents API (Legacy)
 
 StackOne Unified Documents API provides a standardized interface for file and knowledge management across platforms like Google Drive, SharePoint, Dropbox, and Box, with consistent data models for drives, folders, and documents.
 
@@ -220,7 +222,7 @@ StackOne Unified Documents API provides a standardized interface for file and kn
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified Marketing API
+### StackOne Unified Marketing API (Legacy)
 
 StackOne Unified Marketing API standardizes campaign management across platforms, streamlining messages (SMS, Email, Push), campaigns, templates, and more with consistent endpoints across marketing automation providers.
 
@@ -240,7 +242,7 @@ StackOne Unified Marketing API standardizes campaign management across platforms
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified Ticketing API
+### StackOne Unified Ticketing API (Legacy)
 
 StackOne Unified Ticketing API standardizes support workflows across helpdesk platforms, with consistent data models for ticket management, comments, and status tracking.
 
@@ -259,7 +261,7 @@ StackOne Unified Ticketing API standardizes support workflows across helpdesk pl
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified Messaging API
+### StackOne Unified Messaging API (Legacy)
 
 StackOne Unified Messaging API standardizes communication workflows across platforms, with consistent data models for conversations, message delivery, and participant management.
 
@@ -278,7 +280,7 @@ StackOne Unified Messaging API standardizes communication workflows across platf
 - [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### StackOne Unified Screening API
+### StackOne Unified Screening API (Legacy)
 
 StackOne Unified Screening API standardizes candidate verification across platforms, streamlining background checks, assessments, and screening workflows with consistent data models.
 
