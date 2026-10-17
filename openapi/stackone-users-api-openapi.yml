@@ -182,16 +182,6 @@ paths:
       x-speakeasy-name-override: list_users
 components:
   schemas:
-    UserResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/User'
-      required:
-      - data
-      - raw
     User:
       type: object
       properties:
@@ -227,6 +217,16 @@ components:
             $ref: '#/components/schemas/User'
       required:
       - next_page
+      - data
+      - raw
+    UserResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/User'
+      required:
       - data
       - raw
   securitySchemes:

@@ -191,6 +191,20 @@ components:
           type: string
       required:
       - data
+    CompaniesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
     Company:
       type: object
       properties:
@@ -208,20 +222,6 @@ components:
           example: '2023-06-14T01:00:00Z'
         id:
           type: string
-    CompaniesPaginated:
-      type: object
-      properties:
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Company'
-        raw:
-          type: string
-      required:
-      - next_page
-      - data
   securitySchemes:
     basic:
       type: http

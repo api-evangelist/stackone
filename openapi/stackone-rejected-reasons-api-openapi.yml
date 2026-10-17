@@ -209,15 +209,6 @@ components:
       required:
       - next_page
       - data
-    RejectedReasonResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/RejectedReason'
-      required:
-      - data
     RejectedReasonTypeEnum:
       type: object
       properties:
@@ -234,6 +225,15 @@ components:
       required:
       - value
       - source_value
+    RejectedReasonResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/RejectedReason'
+      required:
+      - data
   securitySchemes:
     basic:
       type: http

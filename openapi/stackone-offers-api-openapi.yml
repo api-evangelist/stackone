@@ -223,28 +223,6 @@ paths:
       x-speakeasy-name-override: create_offer
 components:
   schemas:
-    AtsCreateOfferRequestDto:
-      type: object
-      properties:
-        offer_history:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfferHistory'
-        application_id:
-          type: string
-        start_date:
-          type: string
-          format: date-time
-        offer_status:
-          $ref: '#/components/schemas/OfferStatusEnum'
-        salary:
-          type: number
-        currency:
-          type: string
-      required:
-      - application_id
-      - start_date
-      - offer_status
     Offer:
       type: object
       properties:
@@ -274,6 +252,56 @@ components:
       - application_id
       - start_date
       - offer_status
+    AtsCreateOfferRequestDto:
+      type: object
+      properties:
+        offer_history:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfferHistory'
+        application_id:
+          type: string
+        start_date:
+          type: string
+          format: date-time
+        offer_status:
+          $ref: '#/components/schemas/OfferStatusEnum'
+        salary:
+          type: number
+        currency:
+          type: string
+      required:
+      - application_id
+      - start_date
+      - offer_status
+    OffersPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offer'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    OfferStatusEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - pending
+          - retracted
+          - unmapped_value
+      required:
+      - value
+      - source_value
     OfferHistory:
       type: object
       properties:
@@ -313,34 +341,6 @@ components:
           $ref: '#/components/schemas/Offer'
       required:
       - data
-    OffersPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Offer'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
-    OfferStatusEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - pending
-          - retracted
-          - unmapped_value
-      required:
-      - value
-      - source_value
   securitySchemes:
     basic:
       type: http

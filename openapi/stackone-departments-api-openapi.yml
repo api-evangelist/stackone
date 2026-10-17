@@ -182,6 +182,16 @@ paths:
       x-speakeasy-name-override: get_department
 components:
   schemas:
+    Department:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+      required:
+      - id
+      - name
     DepartmentsPaginated:
       type: object
       properties:
@@ -196,16 +206,6 @@ components:
       required:
       - next_page
       - data
-    Department:
-      type: object
-      properties:
-        name:
-          type: string
-        id:
-          type: string
-      required:
-      - id
-      - name
     DepartmentResult:
       type: object
       properties:

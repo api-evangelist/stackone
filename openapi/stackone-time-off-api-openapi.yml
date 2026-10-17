@@ -269,68 +269,33 @@ paths:
       x-speakeasy-name-override: create_time_off_request
 components:
   schemas:
-    TimeOffPaginated:
+    TimeOffStatusEnum:
       type: object
       properties:
-        raw:
+        source_value:
           type: string
-        next_page:
+        value:
           type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimeOff'
+          enum:
+          - approved
+          - unmapped_value
       required:
-      - next_page
-      - data
-    CreateTimeOffResult:
+      - value
+      - source_value
+    TimeOffTypeEnum:
       type: object
       properties:
-        timestamp:
+        source_value:
           type: string
-          format: date-time
-        statusCode:
-          type: number
-        message:
+        value:
           type: string
+          enum:
+          - sick
+          - unmapped_value
+          - vacation
       required:
-      - statusCode
-      - message
-      - timestamp
-    TimeOffResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/TimeOff'
-      required:
-      - data
-    HrisCreateTimeOffRequestDto:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/TimeOffStatusEnum'
-          description: The status of the time off request
-        type:
-          allOf:
-          - $ref: '#/components/schemas/TimeOffTypeEnum'
-          description: The type of the time off request
-        start_date:
-          type: string
-          description: The start date of the time off request
-        end_date:
-          type: string
-          description: The end date of the time off request
-        employee_id:
-          type: string
-          description: The employee ID
-          example: 1687-3
-        approver_id:
-          type: string
-          description: The approver ID
-          example: 1687-4
+      - value
+      - source_value
     TimeOff:
       type: object
       properties:
@@ -366,33 +331,68 @@ components:
         created_date:
           type: string
           description: The created date of the time off request
-    TimeOffStatusEnum:
+    CreateTimeOffResult:
       type: object
       properties:
-        source_value:
+        timestamp:
           type: string
-        value:
+          format: date-time
+        statusCode:
+          type: number
+        message:
           type: string
-          enum:
-          - approved
-          - unmapped_value
       required:
-      - value
-      - source_value
-    TimeOffTypeEnum:
+      - statusCode
+      - message
+      - timestamp
+    TimeOffPaginated:
       type: object
       properties:
-        source_value:
+        raw:
           type: string
-        value:
+        next_page:
           type: string
-          enum:
-          - sick
-          - unmapped_value
-          - vacation
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeOff'
       required:
-      - value
-      - source_value
+      - next_page
+      - data
+    HrisCreateTimeOffRequestDto:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffStatusEnum'
+          description: The status of the time off request
+        type:
+          allOf:
+          - $ref: '#/components/schemas/TimeOffTypeEnum'
+          description: The type of the time off request
+        start_date:
+          type: string
+          description: The start date of the time off request
+        end_date:
+          type: string
+          description: The end date of the time off request
+        employee_id:
+          type: string
+          description: The employee ID
+          example: 1687-3
+        approver_id:
+          type: string
+          description: The approver ID
+          example: 1687-4
+    TimeOffResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/TimeOff'
+      required:
+      - data
   securitySchemes:
     basic:
       type: http

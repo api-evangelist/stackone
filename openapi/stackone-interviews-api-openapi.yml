@@ -182,6 +182,39 @@ paths:
       x-speakeasy-name-override: list_interviews
 components:
   schemas:
+    InterviewsPaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Interview'
+        raw:
+          type: string
+        next_page:
+          type: string
+      required:
+      - next_page
+      - data
+    InterviewPart:
+      type: object
+      properties:
+        meeting_provider:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        interviewer_ids:
+          type: array
+          items:
+            type: string
+        meeting_url:
+          type: string
     InterviewStatusEnum:
       type: object
       properties:
@@ -199,6 +232,25 @@ components:
       required:
       - value
       - source_value
+    Interviewer:
+      type: object
+      properties:
+        email:
+          type: string
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - first_name
+      - last_name
+      - name
+      - email
     Interview:
       type: object
       properties:
@@ -248,44 +300,6 @@ components:
       - interviewer_ids
       - start_at
       - end_at
-    InterviewPart:
-      type: object
-      properties:
-        meeting_provider:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        interviewer_ids:
-          type: array
-          items:
-            type: string
-        meeting_url:
-          type: string
-    Interviewer:
-      type: object
-      properties:
-        email:
-          type: string
-        id:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        name:
-          type: string
-      required:
-      - id
-      - first_name
-      - last_name
-      - name
-      - email
     InterviewsResult:
       type: object
       properties:
@@ -313,20 +327,6 @@ components:
       required:
       - id
       - name
-    InterviewsPaginated:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Interview'
-        raw:
-          type: string
-        next_page:
-          type: string
-      required:
-      - next_page
-      - data
   securitySchemes:
     basic:
       type: http

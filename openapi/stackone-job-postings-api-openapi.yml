@@ -346,6 +346,13 @@ components:
               type: date
       required:
       - id
+    Location:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
     Compensation:
       type: object
       properties:
@@ -399,6 +406,36 @@ components:
           type: string
         max_value:
           type: string
+    JobPostingsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobPosting'
+      required:
+      - next_page
+      - data
+    JobPostingResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/JobPosting'
+      required:
+      - data
+    Content:
+      type: object
+      properties:
+        html:
+          type: string
+        plain:
+          type: string
     AnswerEnum:
       type: object
       properties:
@@ -415,20 +452,6 @@ components:
           - date
         source_value:
           type: string
-    JobPostingsPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobPosting'
-      required:
-      - next_page
-      - data
     Answer:
       type: object
       properties:
@@ -442,29 +465,6 @@ components:
           $ref: '#/components/schemas/AnswerEnum'
       required:
       - values
-    Location:
-      type: object
-      properties:
-        name:
-          type: string
-        id:
-          type: string
-    Content:
-      type: object
-      properties:
-        html:
-          type: string
-        plain:
-          type: string
-    JobPostingResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/JobPosting'
-      required:
-      - data
     Questionnaire:
       type: object
       properties:

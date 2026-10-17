@@ -182,24 +182,6 @@ paths:
       x-speakeasy-name-override: list_interview_stages
 components:
   schemas:
-    InterviewStage:
-      type: object
-      properties:
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        id:
-          type: string
-        name:
-          type: string
-        order:
-          type: number
-      required:
-      - id
-      - name
     InterviewStagesPaginated:
       type: object
       properties:
@@ -223,6 +205,24 @@ components:
           $ref: '#/components/schemas/InterviewStage'
       required:
       - data
+    InterviewStage:
+      type: object
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - name
   securitySchemes:
     basic:
       type: http

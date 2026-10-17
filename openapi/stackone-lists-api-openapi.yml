@@ -180,29 +180,6 @@ paths:
       x-speakeasy-name-override: get_list
 components:
   schemas:
-    ListResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/List'
-      required:
-      - data
-    ListTypeEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - contacts
-          - companies
-          - unmapped_value
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
     List:
       type: object
       properties:
@@ -223,6 +200,20 @@ components:
       required:
       - id
       - name
+    ListTypeEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - contacts
+          - companies
+          - unmapped_value
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
     ListsPaginated:
       type: object
       properties:
@@ -236,6 +227,15 @@ components:
             $ref: '#/components/schemas/List'
       required:
       - next_page
+      - data
+    ListResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/List'
+      required:
       - data
   securitySchemes:
     basic:

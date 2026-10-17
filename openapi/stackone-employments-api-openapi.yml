@@ -182,49 +182,6 @@ paths:
       x-speakeasy-name-override: list_employments
 components:
   schemas:
-    PayPeriodEnum:
-      type: object
-      properties:
-        source_value:
-          type: string
-        value:
-          type: string
-          enum:
-          - hour
-          - day
-          - week
-          - every_two_weeks
-          - month
-          - quarter
-          - every_six_months
-          - year
-          - unmapped_value
-      required:
-      - value
-      - source_value
-    EmploymentsPaginated:
-      type: object
-      properties:
-        raw:
-          type: string
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Employment'
-      required:
-      - next_page
-      - data
-    EmploymentResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Employment'
-      required:
-      - data
     EmploymentScheduleTypeEnum:
       type: object
       properties:
@@ -240,31 +197,15 @@ components:
       required:
       - value
       - source_value
-    PayFrequencyEnum:
+    EmploymentResult:
       type: object
       properties:
-        source_value:
+        raw:
           type: string
-        value:
-          type: string
-          enum:
-          - hourly
-          - weekly
-          - bi_weekly
-          - four_weekly
-          - semi_monthly
-          - monthly
-          - bi_monthly
-          - quarterly
-          - semi_annually
-          - yearly
-          - thirteen_monthly
-          - pro_rata
-          - unmapped_value
-          - half_yearly
+        data:
+          $ref: '#/components/schemas/Employment'
       required:
-      - value
-      - source_value
+      - data
     EmploymentTypeEnum:
       type: object
       properties:
@@ -350,6 +291,65 @@ components:
           example: hourly
       required:
       - employee_id
+    EmploymentsPaginated:
+      type: object
+      properties:
+        raw:
+          type: string
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employment'
+      required:
+      - next_page
+      - data
+    PayPeriodEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - hour
+          - day
+          - week
+          - every_two_weeks
+          - month
+          - quarter
+          - every_six_months
+          - year
+          - unmapped_value
+      required:
+      - value
+      - source_value
+    PayFrequencyEnum:
+      type: object
+      properties:
+        source_value:
+          type: string
+        value:
+          type: string
+          enum:
+          - hourly
+          - weekly
+          - bi_weekly
+          - four_weekly
+          - semi_monthly
+          - monthly
+          - bi_monthly
+          - quarterly
+          - semi_annually
+          - yearly
+          - thirteen_monthly
+          - pro_rata
+          - unmapped_value
+          - half_yearly
+      required:
+      - value
+      - source_value
   securitySchemes:
     basic:
       type: http

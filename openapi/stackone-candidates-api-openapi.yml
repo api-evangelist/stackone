@@ -494,6 +494,48 @@ paths:
       x-speakeasy-name-override: get_candidate_note
 components:
   schemas:
+    NotesVisibilityEnum:
+      type: object
+      properties:
+        value:
+          type: string
+          enum:
+          - private
+          - public
+        source_value:
+          type: string
+      required:
+      - value
+      - source_value
+    SocialLink:
+      type: object
+      properties:
+        url:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - url
+    CandidateResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Candidate'
+      required:
+      - data
+    CandidateEmail:
+      type: object
+      properties:
+        value:
+          type: string
+        type:
+          type: string
+      required:
+      - type
+      - value
     AtsCreateCandidateRequestDto:
       type: object
       properties:
@@ -523,15 +565,6 @@ components:
       - last_name
       - emails
       - title
-    CandidateResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Candidate'
-      required:
-      - data
     AtsCreateNotesRequestDto:
       type: object
       properties:
@@ -544,30 +577,6 @@ components:
       required:
       - content
       - visibility
-    CandidateEmail:
-      type: object
-      properties:
-        value:
-          type: string
-        type:
-          type: string
-      required:
-      - type
-      - value
-    CandidatesPaginated:
-      type: object
-      properties:
-        next_page:
-          type: string
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Candidate'
-        raw:
-          type: string
-      required:
-      - next_page
-      - data
     Candidate:
       type: object
       properties:
@@ -633,29 +642,6 @@ components:
       required:
       - next_page
       - data
-    NoteResult:
-      type: object
-      properties:
-        raw:
-          type: string
-        data:
-          $ref: '#/components/schemas/Note'
-      required:
-      - data
-    CreateCandidateNoteResult:
-      type: object
-      properties:
-        statusCode:
-          type: number
-        message:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-      required:
-      - statusCode
-      - message
-      - timestamp
     Note:
       type: object
       properties:
@@ -680,6 +666,29 @@ components:
       - created_at
       - updated_at
       - deleted_at
+    NoteResult:
+      type: object
+      properties:
+        raw:
+          type: string
+        data:
+          $ref: '#/components/schemas/Note'
+      required:
+      - data
+    CandidatesPaginated:
+      type: object
+      properties:
+        next_page:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Candidate'
+        raw:
+          type: string
+      required:
+      - next_page
+      - data
     AtsUpdateCandidatesRequestDto:
       type: object
       properties:
@@ -703,29 +712,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CandidateEmail'
-    SocialLink:
+    CreateCandidateNoteResult:
       type: object
       properties:
-        url:
+        statusCode:
+          type: number
+        message:
           type: string
-        type:
+        timestamp:
           type: string
+          format: date-time
       required:
-      - type
-      - url
-    NotesVisibilityEnum:
-      type: object
-      properties:
-        value:
-          type: string
-          enum:
-          - private
-          - public
-        source_value:
-          type: string
-      required:
-      - value
-      - source_value
+      - statusCode
+      - message
+      - timestamp
   securitySchemes:
     basic:
       type: http
