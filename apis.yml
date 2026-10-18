@@ -6,17 +6,18 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Employees
   - HRIS
   - Human Resources
   - Unified API
+  - Legacy
   tags_raw:
   - Employees
   - HRIS
   - Human Resources
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -33,16 +34,17 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Applicant Tracking
   - Recruiting
   - Unified API
+  - Legacy
   tags_raw:
   - Applicant Tracking
   - ATS
   - Recruitment
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -58,16 +60,17 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Contacts
   - CRM
   - Unified API
+  - Legacy
   tags_raw:
   - Contacts
   - CRM
   - Customer Relationship Management
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -83,17 +86,17 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Courses
-  - Learning Management
   - LMS
   - Unified API
+  - Legacy
   tags_raw:
   - Courses
   - Learning Management
   - LMS
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -108,17 +111,17 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
-  - Access Management
   - Identity and Access Management
   - Identity
   - Unified API
+  - Legacy
   tags_raw:
   - Access Management
   - IAM
   - Identity
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -133,11 +136,11 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Documents
   - File
   - Knowledge Management
   - Unified API
+  - Legacy
   tags_raw:
   - Documents
   - Files
@@ -145,6 +148,7 @@ apis:
   - Unified API
   - Knowledge-Management
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -159,12 +163,12 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Campaigns
   - Email
   - Marketing
   - SMS
   - Unified API
+  - Legacy
   tags_raw:
   - Campaigns
   - Email
@@ -172,6 +176,7 @@ apis:
   - SMS
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -186,17 +191,18 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Help Desk
   - Support
   - Ticketing
   - Unified API
+  - Legacy
   tags_raw:
   - Helpdesk
   - Support
   - Ticketing
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -210,17 +216,18 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Chat
   - Communications
   - Messaging
   - Unified API
+  - Legacy
   tags_raw:
   - Chat
   - Communication
   - Messaging
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -234,17 +241,18 @@ apis:
   x-status: legacy
   x-status-evidence: 'The Legacy Unified APIs are no longer in active development. Existing functionality remains supported. (https://docs.stackone.com/legacy-unified-apis/introduction, fetched 2026-10-14)'
   tags:
-  - Legacy
   - Assessment
   - Background Checks
   - Screening
   - Unified API
+  - Legacy
   tags_raw:
   - Assessments
   - Background Checks
   - Screening
   - Unified API
   - Unified-API
+  - Legacy
   humanURL: https://docs.stackone.com/legacy-unified-apis/introduction
   properties:
   - url: https://docs.stackone.com/legacy-unified-apis/introduction
@@ -531,7 +539,7 @@ name: StackOne
 tags:
   - AI Agents
   - MCP
-  - Agent Infrastructure
+  - AI Agent Infrastructure
 tags_raw:
   - AI Agents
   - MCP
