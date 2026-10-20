@@ -1,3 +1,18 @@
+generated: '2026-10-20'
+method: searched
+source:
+- https://zapier.com/apps/stackone/integrations
+- https://n8n.io/integrations/stackone/
+- https://composio.dev/toolkits/stackone
+- https://monid.ai/tools/stackone
+checked:
+- https://registry.modelcontextprotocol.io/v0/servers
+- https://composio.dev/toolkits/stackone
+- https://monid.ai/tools/stackone
+- https://n8n.io/integrations/stackone/
+- https://zapier.com/apps/stackone/integrations
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: MCP Registry
   partner: mcp
@@ -14,7 +29,7 @@ edges:
     registered_name: com.stackone/mcp
     register_id: com.stackone/mcp
     detected_by: sweep-agent-tools.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
   mcp_registry:
     servers:
     - com.stackone/mcp
@@ -30,7 +45,4 @@ edges:
   - namespace-domain
   detected_by: sweep-agent-tools.py
   first_seen: '2026-10-14'
-generated: '2026-10-14'
-method: searched
-checked:
-- https://registry.modelcontextprotocol.io/v0/servers
+templates: []
