@@ -64,7 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-StackOne is a Tool Gateway that connects AI agents to business applications (550+ connectors and 34,000+ actions), exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
+StackOne is a Tool Gateway that connects AI agents to business applications, exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
 
 **APIs.json:** [https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml)
 
@@ -88,7 +88,7 @@ StackOne is a Tool Gateway that connects AI agents to business applications (550
 
 ### StackOne
 
-StackOne is a Tool Gateway that connects AI agents to business applications (550+ connectors and 34,000+ actions), exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
+StackOne is a Tool Gateway that connects AI agents to business applications, exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
 
 - **Human URL:** [https://www.stackone.com/](https://www.stackone.com/)
 
