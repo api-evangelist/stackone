@@ -1,4 +1,4 @@
-# StackOne (stackone)
+# StackOne
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,300 +66,249 @@
 
 StackOne is a Tool Gateway that connects AI agents to business applications, exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/apis.yml)
+**Areas:** AI Agents · MCP · AI Agent Infrastructure
+
+## StackOne on APIs.io
+
+Everything profiled for StackOne is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/stackone/](https://apis.io/providers/stackone/)** — or go straight to one of the APIs or properties below.
+
+### APIs (33)
+
+- [StackOne Unified HRIS API (Legacy)](https://apis.io/apis/stackone/hris-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified HRIS API provides a single, standardized interface to…
+- [StackOne Unified ATS API (Legacy)](https://apis.io/apis/stackone/ats-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified ATS API standardizes recruitment workflows across…
+- [StackOne Unified CRM API (Legacy)](https://apis.io/apis/stackone/crm-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified CRM API provides a standardized interface for managing…
+- [StackOne Unified LMS API (Legacy)](https://apis.io/apis/stackone/lms-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified LMS API standardizes learning management across…
+- [StackOne Unified IAM API (Legacy)](https://apis.io/apis/stackone/iam-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified IAM API provides a standardized interface for identity…
+- [StackOne Unified Documents API (Legacy)](https://apis.io/apis/stackone/documents-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified Documents API provides a standardized interface for…
+- [StackOne Unified Marketing API (Legacy)](https://apis.io/apis/stackone/marketing-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified Marketing API standardizes campaign management across…
+- [StackOne Unified Ticketing API (Legacy)](https://apis.io/apis/stackone/ticketing-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified Ticketing API standardizes support workflows across…
+- [StackOne Unified Messaging API (Legacy)](https://apis.io/apis/stackone/messaging-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified Messaging API standardizes communication workflows…
+- [StackOne Unified Screening API (Legacy)](https://apis.io/apis/stackone/screening-api/) — Legacy (no longer in active development; existing functionality remains supported). StackOne Unified Screening API standardizes candidate verification…
+- [StackOne Platform API](https://apis.io/apis/stackone/platform-api/) — StackOne Platform API serves as the control plane for managing accounts, executing actions, controlling integrations, discovering connectors, monitoring and…
+- [StackOne Accounts API](https://apis.io/apis/stackone/stackone-accounts-api/) — The Accounts API from StackOne — 5 operation(s) for accounts.
+- [StackOne Applications API](https://apis.io/apis/stackone/stackone-applications-api/) — The Applications API from StackOne — 4 operation(s) for applications.
+- [StackOne Campaigns API](https://apis.io/apis/stackone/stackone-campaigns-api/) — The Campaigns API from StackOne — 2 operation(s) for campaigns.
+- [StackOne Candidates API](https://apis.io/apis/stackone/stackone-candidates-api/) — The Candidates API from StackOne — 4 operation(s) for candidates.
+- [StackOne Companies API](https://apis.io/apis/stackone/stackone-companies-api/) — The Companies API from StackOne — 2 operation(s) for companies.
+- [StackOne Connect Sessions API](https://apis.io/apis/stackone/stackone-connect-sessions-api/) — The Connect Sessions API from StackOne — 2 operation(s) for connect sessions.
+- [StackOne Contacts API](https://apis.io/apis/stackone/stackone-contacts-api/) — The Contacts API from StackOne — 2 operation(s) for contacts.
+- [StackOne Departments API](https://apis.io/apis/stackone/stackone-departments-api/) — The Departments API from StackOne — 2 operation(s) for departments.
+- [StackOne Employees API](https://apis.io/apis/stackone/stackone-employees-api/) — The Employees API from StackOne — 4 operation(s) for employees.
+- [StackOne Employments API](https://apis.io/apis/stackone/stackone-employments-api/) — The Employments API from StackOne — 2 operation(s) for employments.
+- [StackOne Interview Stages API](https://apis.io/apis/stackone/stackone-interview-stages-api/) — The Interview Stages API from StackOne — 2 operation(s) for interview stages.
+- [StackOne Interviews API](https://apis.io/apis/stackone/stackone-interviews-api/) — The Interviews API from StackOne — 2 operation(s) for interviews.
+- [StackOne Job Postings API](https://apis.io/apis/stackone/stackone-job-postings-api/) — The Job Postings API from StackOne — 2 operation(s) for job postings.
+- [StackOne Jobs API](https://apis.io/apis/stackone/stackone-jobs-api/) — The Jobs API from StackOne — 2 operation(s) for jobs.
+- [StackOne Lists API](https://apis.io/apis/stackone/stackone-lists-api/) — The Lists API from StackOne — 2 operation(s) for lists.
+- [StackOne Locations API](https://apis.io/apis/stackone/stackone-locations-api/) — The Locations API from StackOne — 4 operation(s) for locations.
+- [StackOne Offers API](https://apis.io/apis/stackone/stackone-offers-api/) — The Offers API from StackOne — 2 operation(s) for offers.
+- [StackOne Proxy API](https://apis.io/apis/stackone/stackone-proxy-api/) — The Proxy API from StackOne — 1 operation(s) for proxy.
+- [StackOne Rejected Reasons API](https://apis.io/apis/stackone/stackone-rejected-reasons-api/) — The Rejected Reasons API from StackOne — 2 operation(s) for rejected reasons.
+- [StackOne Templates API](https://apis.io/apis/stackone/stackone-templates-api/) — The Templates API from StackOne — 6 operation(s) for templates.
+- [StackOne Time Off API](https://apis.io/apis/stackone/stackone-time-off-api/) — The Time Off API from StackOne — 2 operation(s) for time off.
+- [StackOne Users API](https://apis.io/apis/stackone/stackone-users-api/) — The Users API from StackOne — 2 operation(s) for users.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (2)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [stackone](https://apis.io/servers/stackone/stackone/)
+- [StackOne MCP Server Quickstart](https://apis.io/servers/stackone/stackone-mcp-server-quickstart/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Stackone Agentic Access](https://apis.io/agentic-access/stackone/stackone-agentic-access/)
+
+#### JSON Schema (139)
+
+The data models the API reads and writes.
+
+- [Account](https://apis.io/schemas/stackone/stackone-account/)
+- [AccountAddress](https://apis.io/schemas/stackone/stackone-accountaddress/)
+- [AccountResult](https://apis.io/schemas/stackone/stackone-accountresult/)
+- [AccountsPaginated](https://apis.io/schemas/stackone/stackone-accountspaginated/)
+- [Answer](https://apis.io/schemas/stackone/stackone-answer/)
+- [AnswerEnum](https://apis.io/schemas/stackone/stackone-answerenum/)
+- [Application](https://apis.io/schemas/stackone/stackone-application/)
+- [ApplicationAttachment](https://apis.io/schemas/stackone/stackone-applicationattachment/)
+- [ApplicationCandidate](https://apis.io/schemas/stackone/stackone-applicationcandidate/)
+- [ApplicationResult](https://apis.io/schemas/stackone/stackone-applicationresult/)
+- [ApplicationsPaginated](https://apis.io/schemas/stackone/stackone-applicationspaginated/)
+- [ApplicationStatusEnum](https://apis.io/schemas/stackone/stackone-applicationstatusenum/)
+- [AtsCreateApplicationRequestDto](https://apis.io/schemas/stackone/stackone-atscreateapplicationrequestdto/)
+- [AtsCreateCandidateRequestDto](https://apis.io/schemas/stackone/stackone-atscreatecandidaterequestdto/)
+- [AtsCreateNotesRequestDto](https://apis.io/schemas/stackone/stackone-atscreatenotesrequestdto/)
+- [AtsCreateOfferRequestDto](https://apis.io/schemas/stackone/stackone-atscreateofferrequestdto/)
+- [ATSLocation](https://apis.io/schemas/stackone/stackone-atslocation/)
+- [ATSLocationResult](https://apis.io/schemas/stackone/stackone-atslocationresult/)
+- [ATSLocationsPaginated](https://apis.io/schemas/stackone/stackone-atslocationspaginated/)
+- [AtsUpdateApplicationRequestDto](https://apis.io/schemas/stackone/stackone-atsupdateapplicationrequestdto/)
+- [AtsUpdateCandidatesRequestDto](https://apis.io/schemas/stackone/stackone-atsupdatecandidatesrequestdto/)
+- [AttachmentType](https://apis.io/schemas/stackone/stackone-attachmenttype/)
+- [Campaign](https://apis.io/schemas/stackone/stackone-campaign/)
+- [CampaignResult](https://apis.io/schemas/stackone/stackone-campaignresult/)
+- [CampaignsPaginated](https://apis.io/schemas/stackone/stackone-campaignspaginated/)
+- …and 114 more published on APIs.io
 
-## Scope
+#### JSON Structure (2)
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Data models expressed in JSON Structure.
 
-## Tags
+- [Stackone Employee Structure](https://apis.io/json-structure/stackone/stackone-employee-structure/)
+- [Stackone Structure](https://apis.io/json-structure/stackone/stackone-structure/)
 
-- AI Agents
-- MCP
-- Agent Infrastructure
+#### JSON-LD (1)
 
-## Timestamps
+Linked-data contexts for the provider's vocabulary.
 
-- **Created:** 2025-06-05
-- **Modified:** 2026-10-14
+- [Stackone Context](https://apis.io/jsonld/stackone/stackone-context/)
 
-## APIs
+#### Vocabulary (1)
 
-### StackOne
+The provider's domain terms, defined.
 
-StackOne is a Tool Gateway that connects AI agents to business applications, exposed through an MCP gateway, A2A agents and a Platform API, with agent authentication, tool discovery, tool policies, prompt-injection defense (StackOne Defender), an agent execution engine, observability and an AI integration builder. Its earlier Unified APIs (HRIS, ATS, CRM, LMS, IAM, Documents, Marketing, Ticketing, Messaging, Screening) are legacy: no longer in active development, with existing functionality still supported.
+- [StackOne Vocabulary](https://apis.io/vocabularies/stackone/stackone-vocabulary/)
 
-- **Human URL:** [https://www.stackone.com/](https://www.stackone.com/)
+#### Examples (1)
 
-#### Tags
+Example requests and responses.
 
-- AI Agents
-- MCP
-- Agent Infrastructure
+- [Stackone List Employees Example](https://apis.io/examples/stackone/stackone-list-employees-example/)
 
-#### Properties
+#### Collections (45)
 
-- [Documentation](https://www.stackone.com/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/stackone/refs/heads/main/openapi/stackone-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### StackOne Unified HRIS API (Legacy)
+- [Marketing](https://apis.io/collections/stackone/open-stackone/)
+- [Marketing Accounts API](https://apis.io/collections/stackone/open-stackone-accounts-api/)
+- [Marketing Accounts Applications API](https://apis.io/collections/stackone/open-stackone-applications-api/)
+- [Marketing Accounts Campaigns API](https://apis.io/collections/stackone/open-stackone-campaigns-api/)
+- [Marketing Accounts Candidates API](https://apis.io/collections/stackone/open-stackone-candidates-api/)
+- [Marketing Accounts Companies API](https://apis.io/collections/stackone/open-stackone-companies-api/)
+- [Marketing Accounts Connect Sessions API](https://apis.io/collections/stackone/open-stackone-connect-sessions-api/)
+- [Marketing Accounts Contacts API](https://apis.io/collections/stackone/open-stackone-contacts-api/)
+- [Marketing Accounts Departments API](https://apis.io/collections/stackone/open-stackone-departments-api/)
+- [Marketing Accounts Employees API](https://apis.io/collections/stackone/open-stackone-employees-api/)
+- [Marketing Accounts Employments API](https://apis.io/collections/stackone/open-stackone-employments-api/)
+- [Marketing Accounts Interview Stages API](https://apis.io/collections/stackone/open-stackone-interview-stages-api/)
+- [Marketing Accounts Interviews API](https://apis.io/collections/stackone/open-stackone-interviews-api/)
+- [Marketing Accounts Job Postings API](https://apis.io/collections/stackone/open-stackone-job-postings-api/)
+- [Marketing Accounts Jobs API](https://apis.io/collections/stackone/open-stackone-jobs-api/)
+- [Marketing Accounts Lists API](https://apis.io/collections/stackone/open-stackone-lists-api/)
+- [Marketing Accounts Locations API](https://apis.io/collections/stackone/open-stackone-locations-api/)
+- [Marketing Accounts Offers API](https://apis.io/collections/stackone/open-stackone-offers-api/)
+- [Marketing Accounts Proxy API](https://apis.io/collections/stackone/open-stackone-proxy-api/)
+- [Marketing Accounts Rejected Reasons API](https://apis.io/collections/stackone/open-stackone-rejected-reasons-api/)
+- [Marketing Accounts Templates API](https://apis.io/collections/stackone/open-stackone-templates-api/)
+- [Marketing Accounts Time Off API](https://apis.io/collections/stackone/open-stackone-time-off-api/)
+- [Marketing Accounts Users API](https://apis.io/collections/stackone/open-stackone-users-api/)
+- [Marketing Accounts API](https://apis.io/collections/stackone/postman-stackone-accounts-api/)
+- [Marketing Accounts Applications API](https://apis.io/collections/stackone/postman-stackone-applications-api/)
+- …and 20 more published on APIs.io
 
-StackOne Unified HRIS API provides a single, standardized interface to interact with multiple HR information system providers, normalizing data models for employee data, shifts, time-off, documents, and benefits across platforms.
+#### Governance rules (2)
 
-- **Human URL:** [https://docs.stackone.com/hris/introduction](https://docs.stackone.com/hris/introduction)
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [StackOne — jsonschema rules](https://apis.io/rules/stackone/stackone-jsonschema-spectral-rules/)
+- [StackOne API Rules](https://apis.io/rules/stackone/stackone-rules/)
 
-- Employees
-- HRIS
-- Human Resources
-- Unified API
+#### Security (3)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://docs.stackone.com/hris/introduction)
-- [API Reference](https://docs.stackone.com/hris/api-reference/employees/list-employees)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Stackone Authentication](https://apis.io/security/stackone/stackone-authentication/)
+- [Stackone Domain Security](https://apis.io/security/stackone/stackone-domain-security/)
+- [Stackone Trust Center](https://apis.io/security/stackone/stackone-trust-center/)
 
-### StackOne Unified ATS API (Legacy)
+#### Plans and pricing (1)
 
-StackOne Unified ATS API standardizes recruitment workflows across applicant tracking system providers, providing consistent data models for candidates, job postings, applications, and hiring pipeline management.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://docs.stackone.com/ats/introduction](https://docs.stackone.com/ats/introduction)
+- [Stackone Plans Pricing](https://apis.io/plans/stackone/stackone-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Applicant Tracking
-- ATS
-- Recruitment
-- Unified API
+Published request limits.
 
-#### Properties
+- [Stackone Rate Limits](https://apis.io/rate-limits/stackone/stackone-rate-limits/)
 
-- [Documentation](https://docs.stackone.com/ats/introduction)
-- [API Reference](https://docs.stackone.com/ats/api-reference/jobs/list-jobs)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### StackOne Unified CRM API (Legacy)
+What the API costs to run, by operation.
 
-StackOne Unified CRM API provides a standardized interface for managing customer contacts, accounts, and opportunities across multiple CRM platforms, ensuring a consistent view of customer data.
+- [Stackone Finops](https://apis.io/finops/stackone/stackone-finops/)
 
-- **Human URL:** [https://docs.stackone.com/crm/introduction](https://docs.stackone.com/crm/introduction)
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Contacts
-- CRM
-- Customer Relationship Management
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/crm/introduction)
-- [API Reference](https://docs.stackone.com/crm/api-reference/contacts/creates-a-new-contact)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified LMS API (Legacy)
-
-StackOne Unified LMS API standardizes learning management across platforms, streamlining course delivery, user progress tracking, content management, and assignments with consistent data models across LMS and learning content providers.
-
-- **Human URL:** [https://docs.stackone.com/lms/introduction](https://docs.stackone.com/lms/introduction)
-
-#### Tags
-
-- Courses
-- Learning Management
-- LMS
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/lms/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified IAM API (Legacy)
-
-StackOne Unified IAM API provides a standardized interface for identity and access management across providers, with comprehensive user management, role and permission mapping, group management, and resource access control.
-
-- **Human URL:** [https://docs.stackone.com/iam/introduction](https://docs.stackone.com/iam/introduction)
-
-#### Tags
-
-- Access Management
-- IAM
-- Identity
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/iam/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified Documents API (Legacy)
-
-StackOne Unified Documents API provides a standardized interface for file and knowledge management across platforms like Google Drive, SharePoint, Dropbox, and Box, with consistent data models for drives, folders, and documents.
-
-- **Human URL:** [https://docs.stackone.com/documents/introduction](https://docs.stackone.com/documents/introduction)
-
-#### Tags
-
-- Documents
-- Files
-- Knowledge Management
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/documents/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified Marketing API (Legacy)
-
-StackOne Unified Marketing API standardizes campaign management across platforms, streamlining messages (SMS, Email, Push), campaigns, templates, and more with consistent endpoints across marketing automation providers.
-
-- **Human URL:** [https://docs.stackone.com/marketing/introduction](https://docs.stackone.com/marketing/introduction)
-
-#### Tags
-
-- Campaigns
-- Email
-- Marketing
-- SMS
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/marketing/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified Ticketing API (Legacy)
-
-StackOne Unified Ticketing API standardizes support workflows across helpdesk platforms, with consistent data models for ticket management, comments, and status tracking.
-
-- **Human URL:** [https://docs.stackone.com/ticketing/introduction](https://docs.stackone.com/ticketing/introduction)
-
-#### Tags
-
-- Helpdesk
-- Support
-- Ticketing
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/ticketing/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified Messaging API (Legacy)
-
-StackOne Unified Messaging API standardizes communication workflows across platforms, with consistent data models for conversations, message delivery, and participant management.
-
-- **Human URL:** [https://docs.stackone.com/messaging/introduction](https://docs.stackone.com/messaging/introduction)
-
-#### Tags
-
-- Chat
-- Communication
-- Messaging
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/messaging/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Unified Screening API (Legacy)
-
-StackOne Unified Screening API standardizes candidate verification across platforms, streamlining background checks, assessments, and screening workflows with consistent data models.
-
-- **Human URL:** [https://docs.stackone.com/screening/introduction](https://docs.stackone.com/screening/introduction)
-
-#### Tags
-
-- Assessments
-- Background Checks
-- Screening
-- Unified API
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/screening/introduction)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### StackOne Platform API
-
-StackOne Platform API serves as the control plane for managing accounts, executing actions, controlling integrations, discovering connectors, monitoring and debugging via logs, and proxy requests across StackOne projects and AI agents.
-
-- **Human URL:** [https://docs.stackone.com/reference/getting-started-with-your-api](https://docs.stackone.com/reference/getting-started-with-your-api)
-
-#### Tags
-
-- Accounts
-- Actions
-- Administration
-- Platform
-
-#### Properties
-
-- [Documentation](https://docs.stackone.com/reference/getting-started-with-your-api)
-- [Postman Collection](collections/stackone.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/stackone.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/StackOneHQ)
 - [Website](https://www.stackone.com/)
-- [Case Studies](https://www.stackone.com/case-studies)
-- [Blog](https://www.stackone.com/blog)
-- [Changelog](https://www.stackone.com/changelog)
-- [Events](https://www.stackone.com/events)
 - [Documentation](https://docs.stackone.com/guides/stackone-basics)
-- [Getting Started](https://docs.stackone.com/agents/guides/getting-started)
-- [About](https://www.stackone.com/company)
+- [Getting started](https://docs.stackone.com/agents/guides/getting-started)
 - [Pricing](https://www.stackone.com/pricing/)
-- [Status Page](https://status.stackone.com/)
-- [Login](https://app.stackone.com/)
-- [Partners](https://www.stackone.com/partners)
-- [Integration Catalog](https://www.stackone.com/integrations)
-- [LinkedIn](https://www.linkedin.com/company/stackonehq/)
-- [X (Twitter)](https://x.com/StackOneHQ)
-- [S D Ks](https://docs.stackone.com/guides/stackone-api-sdks)
-- [S D K Type Script](https://github.com/StackOneHQ/stackone-client-typescript)
-- [S D K Python](https://github.com/StackOneHQ/stackone-ai-python)
-- [S D K Node](https://github.com/StackOneHQ/stackone-ai-node)
-- [S D K Ruby](https://github.com/StackOneHQ/stackone-client-ruby)
-- [S D K Java](https://github.com/StackOneHQ/stackone-client-java)
-- [S D K P H P](https://github.com/stackoneHQ/stackone-client-php)
-- [S D K C Sharp](https://github.com/StackOneHQ/stackone-client-csharp)
-- [S D K Package](https://www.npmjs.com/package/@stackone/stackone-client-ts)
-- [S D K Package](https://rubygems.org/gems/stackone_client)
-- [S D K Package](https://packagist.org/packages/stackone/client-sdk)
-- [Postman Collection](https://github.com/StackOneHQ/stackone-client-postman) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [M C P Servers](https://docs.stackone.com/mcp/quickstart)
-- [A2 A Protocol](https://docs.stackone.com/a2a/introduction)
-- [A I Toolset](https://docs.stackone.com/agents/typescript/introduction)
-- [OpenAPI](https://docs.stackone.com/agents/guides/openapi-tools) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Integration Hub](https://hub.stackone.com/about)
-- [L L Ms Txt](https://docs.stackone.com/llms.txt)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Integrations](https://www.stackone.com/connectors/)
+- [Changelog](https://www.stackone.com/changelog)
+- [Blog](https://www.stackone.com/blog)
+- [GitHub](https://github.com/StackOneHQ)
+- [Status](https://status.stackone.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 45.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.3 |
+| Contract quality | 52.4 |
+| Contract governance | 9.8 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 54.8 |
+| Access clarity | 39.5 |
+
+**Agent readiness 48.6** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/stackone/](https://apis.io/providers/stackone/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for StackOne: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/stackone/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
